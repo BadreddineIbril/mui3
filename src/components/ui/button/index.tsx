@@ -18,7 +18,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      data-button={variant ?? ""}
+      data-button={variant}
       data-size={size}
       {...props}
       onClick={(e) => {
