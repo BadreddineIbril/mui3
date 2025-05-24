@@ -1,11 +1,90 @@
 import Icon from "@/components/misc/icon";
 import Button from "@/components/ui/button";
+import IconButton from "@/components/ui/icon-button";
 
 const Home = () => {
   return (
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section
+        style={{
+          display: "flex",
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <IconButton size="xs" variant="tonal" disabled>
+          <Icon name="favorite" />
+        </IconButton>
+        <IconButton size="xs" variant="tonal">
+          <Icon name="favorite" />
+        </IconButton>
+        <IconButton size="sm" variant="tonal">
+          <Icon name="favorite" />
+        </IconButton>
+        <IconButton size="md" variant="tonal">
+          <Icon name="favorite" />
+        </IconButton>
+        <IconButton size="lg" variant="tonal">
+          <Icon name="favorite" />
+        </IconButton>
+        <IconButton size="xl" variant="tonal">
+          <Icon name="favorite" />
+        </IconButton>
+      </section>
+
+      <section
+        style={{
+          display: "flex",
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <IconButton size="xs" variant="tonal" width="narrow" disabled>
+          <Icon name="favorite" />
+        </IconButton>
+        <IconButton size="xs" variant="tonal" width="narrow" flipIconInRtl>
+          <Icon name="arrow_back" />
+        </IconButton>
+        <IconButton size="sm" variant="tonal" width="narrow">
+          <Icon name="favorite" />
+        </IconButton>
+        <IconButton size="md" variant="tonal" width="narrow">
+          <Icon name="favorite" />
+        </IconButton>
+        <IconButton size="lg" variant="tonal" width="narrow">
+          <Icon name="favorite" />
+        </IconButton>
+        <IconButton size="xl" variant="tonal" width="narrow">
+          <Icon name="favorite" />
+        </IconButton>
+      </section>
+
+      <section
+        style={{
+          display: "flex",
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <IconButton size="xs" variant="tonal" width="wide" disabled>
+          <Icon name="favorite" />
+        </IconButton>
+        <IconButton size="xs" variant="tonal" width="wide">
+          <Icon name="favorite" />
+        </IconButton>
+        <IconButton size="sm" variant="tonal" width="wide">
+          <Icon name="favorite" />
+        </IconButton>
+        <IconButton size="md" variant="tonal" width="wide">
+          <Icon name="favorite" />
+        </IconButton>
+        <IconButton size="lg" variant="tonal" width="wide">
+          <Icon name="favorite" />
+        </IconButton>
+        <IconButton size="xl" variant="tonal" width="wide">
+          <Icon name="favorite" />
+        </IconButton>
+      </section>
+
       <section
         style={{
           display: "flex",
