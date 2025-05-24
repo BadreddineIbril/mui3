@@ -1,12 +1,40 @@
 import Icon from "@/components/misc/icon";
 import Button from "@/components/ui/button";
 import IconButton from "@/components/ui/icon-button";
+import Radio from "@/components/ui/radio";
 
 const Home = () => {
   return (
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section
+        style={{
+          display: "flex",
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <label style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Radio name="fruit" value="tomato" defaultChecked disabled />
+          Tomato
+        </label>
+        <label style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Radio name="fruit" value="potato" disabled />
+          Potato
+        </label>
+        <label style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Radio name="fruit" value="orange" />
+          Orange
+        </label>
+        <label style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Radio name="fruit" value="banana" />
+          Banana
+        </label>
+        <label style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Radio name="fruit" value="kiwi" />
+          Kiwi
+        </label>
+      </section>
       <section
         style={{
           display: "flex",

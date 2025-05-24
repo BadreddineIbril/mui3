@@ -1,0 +1,101 @@
+[data-radio] {
+  --radio-size: 20px;
+  --radio-offset: calc(var(--radio-size) / 4);
+  --radio-dot-size: calc(var(--radio-size) * 0.5);
+
+  cursor: pointer;
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  width: var(--radio-size);
+  height: var(--radio-size);
+  margin: var(--radio-offset);
+  outline-offset: 10px;
+  outline: 10px solid transparent;
+  border-radius: var(--radius-circled);
+  border: 2px solid var(--color-on-surface-variant);
+  transition: var(--transition-standard-fast-effects);
+
+  &::before {
+    content: "";
+    scale: 0;
+    position: absolute;
+    clip-path: circle();
+    translate: -50% -50%;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    width: var(--radio-dot-size);
+    height: var(--radio-dot-size);
+    background-color: var(--color-primary);
+    transition: var(--transition-standard-default-effects);
+  }
+
+  &::after {
+    inset: 0;
+    scale: 2.5;
+    opacity: 0;
+    position: absolute;
+    border-radius: var(--radius-circled);
+    background-color: color-mix(
+      in srgb,
+      var(--color-on-surface) 8%,
+      transparent
+    );
+  }
+
+  &:hover:not(:checked, :disabled) {
+    border-color: var(--color-on-surface);
+  }
+
+  &:active,
+  &:hover:not(:disabled)::after {
+    content: "";
+    animation: ripple var(--transition-standard-default-effects) forwards;
+
+    &:active::after {
+      background-color: color-mix(
+        in srgb,
+        var(--color-on-surface) 10%,
+        transparent
+      );
+    }
+  }
+
+  &:checked {
+    border-color: var(--color-primary);
+
+    &::before {
+      scale: 1;
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+    border-color: color-mix(in srgb, var(--color-on-surface) 38%, transparent);
+
+    &:checked::before {
+      background-color: color-mix(
+        in srgb,
+        var(--color-on-surface) 38%,
+        transparent
+      );
+    }
+  }
+
+  &:focus-visible {
+    animation: focus var(--transition-standard-slow-spatial) forwards;
+  }
+}
+
+@keyframes ripple {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes focus {
+  to {
+    outline-width: 3px;
+    outline-color: var(--color-secondary-on-container);
+  }
+}
