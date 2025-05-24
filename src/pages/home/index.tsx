@@ -1,9 +1,19 @@
 import Icon from "@/components/misc/icon";
 import Button from "@/components/ui/button";
+import Checkbox from "@/components/ui/checkox";
 import IconButton from "@/components/ui/icon-button";
 import Radio from "@/components/ui/radio";
+import { useEffect, useRef } from "react";
 
 const Home = () => {
+  const checkbox = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (checkbox.current) {
+      checkbox.current.indeterminate = true;
+    }
+  }, []);
+
   return (
     <main
       data-page="home"
@@ -15,7 +25,35 @@ const Home = () => {
           flexDirection: "column",
         }}>
         <label style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <Radio name="fruit" value="tomato" defaultChecked disabled />
+          <Checkbox name="fruita" value="tomato" disabled />
+          Tomato
+        </label>
+        <label style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Checkbox name="fruita" value="potato" disabled />
+          Potato
+        </label>
+        <label style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Checkbox name="fruita" value="orange" ref={checkbox} />
+          Orange
+        </label>
+        <label style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Checkbox name="fruita" value="banana" required />
+          Banana
+        </label>
+        <label style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Checkbox name="fruita" value="kiwi" />
+          Kiwi
+        </label>
+      </section>
+
+      <section
+        style={{
+          display: "flex",
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <label style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <Radio name="fruit" value="tomato" disabled />
           Tomato
         </label>
         <label style={{ display: "flex", alignItems: "center", gap: "10px" }}>
@@ -23,7 +61,7 @@ const Home = () => {
           Potato
         </label>
         <label style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <Radio name="fruit" value="orange" />
+          <Radio name="fruit" value="orange" defaultChecked />
           Orange
         </label>
         <label style={{ display: "flex", alignItems: "center", gap: "10px" }}>

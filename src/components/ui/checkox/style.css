@@ -1,38 +1,37 @@
-[data-radio] {
-  --radio-size: 20px;
-  --radio-offset: calc(var(--radio-size) / 4);
-  --radio-dot-size: calc(var(--radio-size) * 0.5);
+[data-checkbox] {
+  --checkbox-size: 18px;
+  --checkbox-offset: calc(var(--checkbox-size) / 3);
 
   cursor: pointer;
   position: relative;
   appearance: none;
   -webkit-appearance: none;
-  width: var(--radio-size);
-  height: var(--radio-size);
-  margin: var(--radio-offset);
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  margin: var(--checkbox-offset);
   outline-offset: 10px;
   outline: 10px solid transparent;
-  border-radius: var(--radius-circled);
+  background-color: transparent;
+  border-radius: var(--radius-xs);
   border: 2px solid var(--color-on-surface-variant);
   transition: var(--transition-standard-fast-effects);
 
   &::before {
     content: "";
-    scale: 0;
     position: absolute;
-    clip-path: circle();
-    translate: -50% -50%;
     inset-block-start: 50%;
     inset-inline-start: 50%;
-    width: var(--radio-dot-size);
-    height: var(--radio-dot-size);
-    background-color: var(--color-primary);
-    transition: var(--transition-standard-default-effects);
+    width: calc(var(--checkbox-size) / 5);
+    height: calc(var(--checkbox-size) / 4);
+    border-block-end: 2px solid transparent;
+    border-inline-end: 2px solid transparent;
+    transform: translate(-50%, -60%) rotate(45deg);
+    transition: var(--transition-standard-slow-effects);
   }
 
   &::after {
     inset: 0;
-    scale: 2.5;
+    scale: 3;
     opacity: 0;
     position: absolute;
     border-radius: var(--radius-circled);
@@ -43,7 +42,7 @@
     );
   }
 
-  &:hover:not(:checked, :disabled) {
+  &:hover:not(:checked, :indeterminate, :disabled) {
     border-color: var(--color-on-surface);
   }
 
@@ -61,11 +60,21 @@
     }
   }
 
-  &:checked {
-    border-color: var(--color-primary);
+  &:checked,
+  &:indeterminate {
+    border-color: transparent;
+    background-color: var(--color-primary);
 
     &::before {
-      scale: 1;
+      height: calc(var(--checkbox-size) / 2);
+      border-color: var(--color-on-primary);
+    }
+
+    &:indeterminate::before {
+      height: 0;
+      width: 80%;
+      border-inline-end: none;
+      transform: translate(-50%, -50%) rotate(0deg);
     }
   }
 
@@ -73,7 +82,8 @@
     pointer-events: none;
     border-color: color-mix(in srgb, var(--color-on-surface) 38%, transparent);
 
-    &:checked::before {
+    &:checked {
+      border-color: transparent;
       background-color: color-mix(
         in srgb,
         var(--color-on-surface) 38%,
