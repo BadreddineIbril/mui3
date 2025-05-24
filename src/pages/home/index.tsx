@@ -1,3 +1,4 @@
+import Icon from "@/components/misc/icon";
 import Button from "@/components/ui/button";
 
 const Home = () => {
@@ -87,39 +88,27 @@ const Home = () => {
           flexDirection: "column",
         }}>
         <Button variant="outlined" size="xs" disabled>
-          <span data-icon className="material-symbols-outlined">
-            favorite
-          </span>
+          <Icon name="favorite" />
           Outlined
         </Button>
         <Button variant="outlined" size="xs">
-          <span data-icon className="material-symbols-outlined">
-            favorite
-          </span>
+          <Icon name="favorite" />
           Outlined
         </Button>
         <Button variant="outlined" size="sm">
-          <span data-icon className="material-symbols-outlined">
-            favorite
-          </span>
+          <Icon name="favorite" />
           Outlined
         </Button>
         <Button variant="outlined" size="md">
-          <span data-icon className="material-symbols-outlined">
-            favorite
-          </span>
+          <Icon name="favorite" />
           Outlined
         </Button>
         <Button variant="outlined" size="lg">
-          <span data-icon className="material-symbols-outlined">
-            favorite
-          </span>
+          <Icon name="favorite" />
           Outlined
         </Button>
         <Button variant="outlined" size="xl">
-          <span data-icon className="material-symbols-outlined">
-            favorite
-          </span>
+          <Icon name="favorite" />
           Outlined
         </Button>
       </section>
