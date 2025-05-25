@@ -1,23 +1,125 @@
 import Icon from "@/components/misc/icon";
 import Button from "@/components/ui/button";
 import Checkbox from "@/components/ui/checkox";
+import { Chips, ChipItem } from "@/components/ui/chips";
 import IconButton from "@/components/ui/icon-button";
 import Radio from "@/components/ui/radio";
-import { useEffect, useRef } from "react";
+import { useRef, useState } from "react";
 
 const Home = () => {
   const checkbox = useRef<HTMLInputElement>(null);
+  const [selected, setSelected] = useState<boolean>(false);
+  const [removed, setRemoved] = useState<boolean>(false);
 
-  useEffect(() => {
-    if (checkbox.current) {
-      checkbox.current.indeterminate = true;
-    }
-  }, []);
+  const [amenities, setAmenities] = useState<
+    { label: string; icon?: string; isSelected: boolean }[]
+  >([
+    { label: "Washer / Dryer", isSelected: false },
+    { label: "Ramp access", isSelected: false },
+    { label: "Garden", isSelected: false },
+    { label: "Cats OK", icon: "pets", isSelected: false },
+    { label: "Dogs OK", icon: "pets", isSelected: false },
+    { label: "Smoke-free", isSelected: false },
+  ]);
+
+  const [fruits, setFruits] = useState<
+    { label: string; icon?: string; isSelected: boolean }[]
+  >([
+    { label: "Banana", isSelected: true },
+    { label: "Orange", icon: "nutrition", isSelected: false },
+    { label: "Strawberry", isSelected: false },
+    { label: "Kiwi", isSelected: false },
+    { label: "Apple", isSelected: false },
+    { label: "Watermelon", isSelected: false },
+  ]);
 
   return (
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section
+        style={{
+          display: "flex",
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <Chips variant="outlined" layout="scroll">
+          {amenities.map((item, index) => (
+            <ChipItem
+              key={index}
+              variant="filter"
+              selected={item.isSelected}
+              onSelect={() =>
+                setAmenities((prev) =>
+                  prev.map((i, idx) =>
+                    idx === index ? { ...i, isSelected: !item.isSelected } : i
+                  )
+                )
+              }>
+              {item.icon && <Icon name={item.icon} />}
+              {item.label}
+            </ChipItem>
+          ))}
+        </Chips>
+      </section>
+
+      <section
+        style={{
+          display: "flex",
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <Chips variant="elevated">
+          {fruits.map((item, index) => (
+            <ChipItem
+              key={index}
+              variant="filter"
+              selected={item.isSelected}
+              onSelect={() =>
+                setFruits((prev) =>
+                  prev.map((i, idx) =>
+                    idx === index ? { ...i, isSelected: !item.isSelected } : i
+                  )
+                )
+              }>
+              {item.icon && <Icon name={item.icon} />}
+              {item.label}
+            </ChipItem>
+          ))}
+        </Chips>
+      </section>
+
+      <section
+        style={{
+          display: "flex",
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <Chips>
+          <ChipItem
+            variant="filter"
+            selected={selected}
+            onSelect={() => setSelected(!selected)}>
+            Option 1
+          </ChipItem>
+          <ChipItem
+            variant="filter"
+            selected={selected}
+            onSelect={() => setSelected(!selected)}>
+            Option 2 <Icon name="shopping_cart" />
+          </ChipItem>
+          {!removed && (
+            <ChipItem
+              variant="input"
+              removable
+              onRemove={() => setRemoved(true)}>
+              Option 3
+            </ChipItem>
+          )}
+          <ChipItem disabled>Option 4</ChipItem>
+        </Chips>
+      </section>
+
       <section
         style={{
           display: "flex",

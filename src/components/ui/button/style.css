@@ -159,16 +159,3 @@
     );
   }
 }
-
-@keyframes ripple {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes focus {
-  to {
-    outline-width: 3px;
-    outline-color: var(--color-secondary-on-container);
-  }
-}

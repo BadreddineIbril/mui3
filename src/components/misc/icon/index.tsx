@@ -1,13 +1,18 @@
+import type { ComponentProps } from "react";
 import "./style.css";
 
-type IconProps = {
+type IconProps = ComponentProps<"span"> & {
   name: string;
   fill?: boolean;
 };
 
-const Icon = ({ name, fill = false }: IconProps) => {
+const Icon = ({ name, fill = false, className, ...props }: IconProps) => {
   return (
-    <span data-icon data-fill={fill} className="material-symbols-outlined">
+    <span
+      data-icon
+      data-fill={fill}
+      className={className + " material-symbols-outlined"}
+      {...props}>
       {name}
     </span>
   );

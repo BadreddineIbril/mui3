@@ -149,7 +149,7 @@ body {
     padding-inline: 10%;
   }
 
-  [data-layout] {
+  & > [data-layout] {
     padding: 1.5em 10%;
   }
 }
