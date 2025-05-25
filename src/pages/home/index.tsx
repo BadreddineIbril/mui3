@@ -4,6 +4,7 @@ import Checkbox from "@/components/ui/checkox";
 import { Chips, ChipItem } from "@/components/ui/chips";
 import IconButton from "@/components/ui/icon-button";
 import Radio from "@/components/ui/radio";
+import Switch from "@/components/ui/switch";
 import { useRef, useState } from "react";
 
 const Home = () => {
@@ -37,6 +38,22 @@ const Home = () => {
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section
+        style={{
+          display: "flex",
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <Switch />
+        <Switch defaultChecked />
+        <Switch icons />
+        <Switch defaultChecked showOnlySelectedIcon />
+        <Switch disabled />
+        <Switch defaultChecked disabled />
+        <Switch disabled icons />
+        <Switch defaultChecked disabled icons />
+      </section>
+
       <section
         style={{
           display: "flex",
