@@ -1,0 +1,108 @@
+[data-tabs] {
+  [data-tabs-list] {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(var(--length), 1fr);
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-outline-variant);
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: var(--color-primary);
+      inset-block-end: 0;
+      inset-inline-start: calc(var(--active) * (100% / var(--length)));
+      transition: var(--transition-standard-slow-effects);
+    }
+
+    [data-tabs-trigger] {
+      border: none;
+      cursor: pointer;
+      position: relative;
+      outline-offset: var(--spacing-0);
+      outline: 10px solid transparent;
+      font: var(--font-title-sm);
+      background-color: transparent;
+      color: var(--color-on-surface-variant);
+      display: grid;
+      gap: var(--spacing-2);
+      align-items: center;
+      justify-content: center;
+      padding-block: var(--spacing-16);
+
+      &[aria-selected="true"] {
+        outline-offset: calc(var(--spacing-8) * -1);
+      }
+
+      &::before {
+        inset: 0;
+        opacity: 0;
+        position: absolute;
+        background-color: color-mix(in srgb, currentColor 12%, transparent);
+      }
+
+      & > [data-icon] {
+        font-size: 24px;
+      }
+
+      &:hover {
+        color: var(--color-on-surface);
+        background-color: color-mix(in srgb, currentColor 8%, transparent);
+      }
+
+      &:active::before {
+        content: "";
+        animation: ripple var(--transition-standard-default-effects) forwards;
+      }
+
+      &:focus-visible {
+        animation: focus var(--transition-standard-slow-spatial) forwards;
+      }
+    }
+  }
+
+  [data-tabs-content] {
+    &[aria-hidden="true"] {
+      display: none;
+    }
+  }
+
+  &[data-tabs="primary"] {
+    [data-tabs-list] {
+      &::before {
+        height: 3px;
+        width: calc(100% / var(--length) / 2);
+        transform: translateX(50%);
+        border-radius: var(--radius-rounded) var(--radius-rounded) 0 0;
+      }
+
+      [data-tabs-trigger][aria-selected="true"] {
+        color: var(--color-primary);
+
+        &:hover {
+          background-color: color-mix(in srgb, currentColor 8%, transparent);
+        }
+      }
+    }
+  }
+
+  &[data-tabs="secondary"] {
+    [data-tabs-list] {
+      &::before {
+        height: 2px;
+        width: calc(100% / var(--length));
+      }
+
+      [data-tabs-trigger][aria-selected="true"] {
+        color: var(--color-on-surface);
+      }
+    }
+  }
+
+  &[data-inline-icon="true"] {
+    [data-tabs-list] [data-tabs-trigger] {
+      display: flex;
+      gap: var(--spacing-8);
+    }
+  }
+}

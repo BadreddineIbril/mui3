@@ -5,6 +5,7 @@ import { Chips, ChipItem } from "@/components/ui/chips";
 import IconButton from "@/components/ui/icon-button";
 import Radio from "@/components/ui/radio";
 import Switch from "@/components/ui/switch";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useRef, useState } from "react";
 
 const Home = () => {
@@ -38,6 +39,56 @@ const Home = () => {
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section
+        style={{
+          display: "flex",
+          flex: 2,
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <Tabs defaultTab="keyboard" variant="primary">
+          <TabsList>
+            <TabsTrigger value="keyboard">
+              <Icon name="keyboard" /> Keyboard
+            </TabsTrigger>
+            <TabsTrigger value="guitar">
+              <Icon name="tune" /> Guitar
+            </TabsTrigger>
+            <TabsTrigger value="drums">
+              <Icon name="cadence" /> Drums
+            </TabsTrigger>
+            <TabsTrigger value="piano">
+              <Icon name="piano" /> Piano
+            </TabsTrigger>
+            <TabsTrigger value="saxophone">
+              <Icon name="nightlife" /> Saxophone
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="keyboard">Keyboard</TabsContent>
+        </Tabs>
+        <Tabs defaultTab="saxophone">
+          <TabsList>
+            <TabsTrigger value="keyboard">
+              <Icon name="keyboard" />
+            </TabsTrigger>
+            <TabsTrigger value="saxophone">
+              <Icon name="nightlife" />
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="keyboard">Keyboard</TabsContent>
+        </Tabs>
+        <Tabs defaultTab="keyboard" variant="secondary">
+          <TabsList>
+            <TabsTrigger value="keyboard">Keyboard</TabsTrigger>
+            <TabsTrigger value="guitar">Guitar</TabsTrigger>
+            <TabsTrigger value="drums">Drums</TabsTrigger>
+            <TabsTrigger value="bass">Bass</TabsTrigger>
+            <TabsTrigger value="saxophone">Saxophone</TabsTrigger>
+          </TabsList>
+          <TabsContent value="keyboard">Keyboard</TabsContent>
+        </Tabs>
+      </section>
+
       <section
         style={{
           display: "flex",
