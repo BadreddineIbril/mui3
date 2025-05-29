@@ -6,6 +6,7 @@ import IconButton from "@/components/ui/icon-button";
 import Radio from "@/components/ui/radio";
 import Switch from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import TextField from "@/components/ui/text-field";
 import { useRef, useState } from "react";
 
 const Home = () => {
@@ -39,6 +40,74 @@ const Home = () => {
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section
+        style={{
+          display: "flex",
+          flex: 2,
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <TextField
+          label="Label"
+          variant="filled"
+          prefix="Com"
+          suffix="Suf"
+          placeholder="Type your name.."
+          style={{ width: "300px" }}
+        />
+        <TextField
+          label="Label"
+          type="number"
+          noSpinner
+          style={{ width: "300px" }}
+        />
+        <TextField
+          label="Label"
+          type="text"
+          disabled
+          value="ddd"
+          prefix="Com"
+          suffix="Com"
+          style={{ width: "300px" }}
+        />
+        <TextField
+          label="Label"
+          type="text"
+          disabled
+          value="ddd"
+          placeholder="Placeholder"
+          style={{ width: "300px" }}
+        />
+        <TextField
+          label="Label"
+          type="text"
+          required
+          placeholder="Placeholder"
+          style={{ width: "300px" }}
+        />
+        <TextField
+          label="Label"
+          type="text"
+          error
+          errorText="Please fill out this field."
+          placeholder="Placeholder"
+          style={{ width: "300px" }}
+        />
+        <TextField label="Label" icon="search" style={{ width: "300px" }} />
+        <TextField
+          label="Label"
+          prefix="Com"
+          suffix="Suff"
+          style={{ width: "300px" }}
+        />
+        <TextField
+          label="Label"
+          type="text"
+          supporting="Please fill out this field."
+          style={{ width: "300px" }}
+        />
+      </section>
+
       <section
         style={{
           display: "flex",
