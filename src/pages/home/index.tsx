@@ -1,8 +1,16 @@
 import Icon from "@/components/misc/icon";
 import Button from "@/components/ui/button";
-import Checkbox from "@/components/ui/checkox";
+import Checkbox from "@/components/ui/checkbox";
 import { Chips, ChipItem } from "@/components/ui/chips";
+import Divider from "@/components/ui/divider";
 import IconButton from "@/components/ui/icon-button";
+import {
+  List,
+  ListDivider,
+  ListItem,
+  ListItemLeading,
+  ListItemTrailing,
+} from "@/components/ui/list";
 import Radio from "@/components/ui/radio";
 import Switch from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -40,6 +48,77 @@ const Home = () => {
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section
+        style={{
+          display: "flex",
+          flex: 2,
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <List style={{ width: "350px" }}>
+          <ListItem>
+            <ListItemLeading
+              type="video"
+              value="https://videos.pexels.com/video-files/5644248/5644248-uhd_1440_2732_25fps.mp4"
+            />
+            New products
+          </ListItem>
+          <ListItem onClick={() => console.log("hover")}>Fruits</ListItem>
+          <ListDivider />
+          <ListItem disabled>Apple</ListItem>
+          <ListItem supportingText="Wiwi" trailingSupportingText="+100">
+            <ListItemLeading type="switch" value="none" />
+            Banana
+          </ListItem>
+          <ListItem>
+            Banana
+            <ListItemTrailing type="checkbox" value="none" />
+          </ListItem>
+          <ListItem supportingText="WOWO">
+            <ListItemLeading type="checkbox" value="none" />
+            Banana
+          </ListItem>
+          <ListItem supportingText="WOWO" disabled>
+            <ListItemLeading type="checkbox" value="none" />
+            Banana <ListItemTrailing type="icon" value="favorite" />
+          </ListItem>
+          <ListItem>
+            <ListItemLeading type="monogram" value="O" /> Orange
+          </ListItem>
+          <ListItem>
+            <ListItemLeading type="checkbox" value="favorite" /> Favorite
+          </ListItem>
+          <ListItem>
+            <ListItemLeading
+              type="image"
+              value="https://www.realsimple.com/thmb/R7Kl1qBAa2LAT05n9ZVC2CyP5jQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-eat-kiwi-GettyImages-2147529648-024b80b6e2ef4d7181914c48bf536550.jpg"
+            />
+            Kiwi
+          </ListItem>
+          <ListItem
+            disabled
+            overline="Overline"
+            supportingText="Cucumbers are long green fruits that are just as long as this multi-line description">
+            Cucumber
+            <ListItemTrailing type="icon" value="open_in_new" />
+          </ListItem>
+          <ListItem supportingText="This will link you out in a new tab">
+            Shop for Kiwis
+            <ListItemTrailing type="icon" value="open_in_new" />
+          </ListItem>
+        </List>
+      </section>
+
+      <section
+        style={{
+          display: "flex",
+          flex: 2,
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <Divider />
+      </section>
+
       <section
         style={{
           display: "flex",
