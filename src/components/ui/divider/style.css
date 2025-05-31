@@ -1,0 +1,14 @@
+[data-divider] {
+  border: none;
+  background-color: var(--color-outline-variant);
+
+  &[data-divider="horizontal"] {
+    height: 1px;
+    width: 100%;
+  }
+
+  &[data-divider="vertical"] {
+    height: 100%;
+    width: 1px;
+  }
+}
