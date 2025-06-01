@@ -15,6 +15,14 @@ import Radio from "@/components/ui/radio";
 import Switch from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import TextField from "@/components/ui/text-field";
+import {
+  Tooltip,
+  TooltipAction,
+  TooltipContent,
+  TooltipFooter,
+  TooltipSubhead,
+  TooltipSupporting,
+} from "@/components/ui/tooltip";
 import { useRef, useState } from "react";
 
 const Home = () => {
@@ -48,6 +56,32 @@ const Home = () => {
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section
+        style={{
+          display: "flex",
+          flex: 2,
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <Tooltip>
+          <Button>Hover on me</Button>
+          <TooltipContent>Plain tooltip</TooltipContent>
+        </Tooltip>
+        <Tooltip>
+          <Button variant="outlined">Hover on me</Button>
+          <TooltipContent>
+            <TooltipSubhead>Rich tooltip</TooltipSubhead>
+            <TooltipSupporting>
+              Rich tooltips bring attention to a particular element of feature
+              that warrants the user's focus.
+            </TooltipSupporting>
+            <TooltipFooter>
+              <TooltipAction>Action</TooltipAction>
+            </TooltipFooter>
+          </TooltipContent>
+        </Tooltip>
+      </section>
+
       <section
         style={{
           display: "flex",
