@@ -1,5 +1,6 @@
 import Icon from "@/components/misc/icon";
 import Button from "@/components/ui/button";
+import { ButtonGroup, ButtonGroupItem } from "@/components/ui/button-group";
 import Checkbox from "@/components/ui/checkbox";
 import { Chips, ChipItem } from "@/components/ui/chips";
 import Divider from "@/components/ui/divider";
@@ -56,6 +57,29 @@ const Home = () => {
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section
+        style={{
+          display: "flex",
+          flex: 2,
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <ButtonGroup variant="outlined" width="narrow" size="sm" asIcon>
+          <ButtonGroupItem>
+            <Icon name="bluetooth" />
+          </ButtonGroupItem>
+          <ButtonGroupItem width='default'>
+            <Icon name="alarm" />
+          </ButtonGroupItem>
+          <ButtonGroupItem>
+            <Icon name="link_off" />
+          </ButtonGroupItem>
+          <ButtonGroupItem width="wide" disabled>
+            <Icon name="wifi" />
+          </ButtonGroupItem>
+        </ButtonGroup>
+      </section>
+
       <section
         style={{
           display: "flex",
