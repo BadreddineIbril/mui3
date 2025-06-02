@@ -13,6 +13,7 @@ import {
   ListItemTrailing,
 } from "@/components/ui/list";
 import Radio from "@/components/ui/radio";
+import Slider from "@/components/ui/slider";
 import Switch from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import TextField from "@/components/ui/text-field";
@@ -61,6 +62,23 @@ const Home = () => {
         style={{
           display: "flex",
           flex: 2,
+          gap: "50px",
+          flexDirection: "column",
+        }}>
+        <Slider orientation="vertical" labeled LabelFormatter="%" size="xl" />
+        <Slider min={50} max={500} step={50} labeled />
+        <Slider style={{ width: "300px" }} labeled LabelFormatter="%" size="md" />
+        <Slider style={{ width: "300px" }} disabled defaultValue={40} />
+        <Slider style={{ width: "300px" }} defaultValue={10} size="sm" />
+        <Slider style={{ width: "300px" }} defaultValue={20} size="md" />
+        <Slider style={{ width: "300px" }} defaultValue={30} size="lg" />
+        <Slider style={{ width: "300px" }} defaultValue={40} size="xl" />
+      </section>
+
+      <section
+        style={{
+          display: "flex",
+          flex: 2,
           gap: "10px",
           flexDirection: "column",
         }}>
@@ -68,7 +86,7 @@ const Home = () => {
           <ButtonGroupItem>
             <Icon name="bluetooth" />
           </ButtonGroupItem>
-          <ButtonGroupItem width='default'>
+          <ButtonGroupItem width="default">
             <Icon name="alarm" />
           </ButtonGroupItem>
           <ButtonGroupItem>
