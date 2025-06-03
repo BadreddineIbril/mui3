@@ -1,4 +1,5 @@
 import Icon from "@/components/misc/icon";
+import Badge from "@/components/ui/badge";
 import Button from "@/components/ui/button";
 import { ButtonGroup, ButtonGroupItem } from "@/components/ui/button-group";
 import Checkbox from "@/components/ui/checkbox";
@@ -60,6 +61,28 @@ const Home = () => {
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section
+        style={{
+          display: "flex",
+          flex: 2,
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <Badge size="lg" label="999+">
+          <Icon name="favorite" />
+        </Badge>
+        <IconButton width="wide">
+          <Badge style={{ display: "flex", alignItems: "center" }}>
+            <Icon name="favorite" />
+          </Badge>
+        </IconButton>
+        <IconButton width="wide">
+          <Badge size="lg" label="1+" style={{ display: "flex", alignItems: "center" }}>
+            <Icon name="favorite" />
+          </Badge>
+        </IconButton>
+      </section>
+
       <section
         style={{
           display: "flex",

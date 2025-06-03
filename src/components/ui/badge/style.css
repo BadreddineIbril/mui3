@@ -1,0 +1,27 @@
+[data-badge] {
+  position: relative;
+  width: fit-content;
+
+  &::before {
+    position: absolute;
+    border-radius: var(--radius-rounded);
+    background-color: var(--color-error);
+  }
+
+  &[data-badge="lg"][data-label]::before {
+    content: attr(data-label);
+    font: var(--font-label-sm);
+    color: var(--color-on-error);
+    padding-inline: var(--spacing-4);
+    inset-inline-start: 50%;
+    inset-block-start: calc(var(--spacing-4) * -1);
+  }
+
+  &:not([data-label])::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    inset-block-start: 0;
+    inset-inline-start: 100%;
+  }
+}
