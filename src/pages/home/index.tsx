@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/list";
 import Radio from "@/components/ui/radio";
 import Slider from "@/components/ui/slider";
+import { SplitButton, SplitButtonItem } from "@/components/ui/split-button";
 import Switch from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import TextField from "@/components/ui/text-field";
@@ -59,6 +60,60 @@ const Home = () => {
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section
+        style={{
+          display: "flex",
+          flex: 2,
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <SplitButton>
+          <SplitButtonItem>
+            <Icon name="star" />
+            Label
+          </SplitButtonItem>
+          <SplitButtonItem>
+            <Icon name="keyboard_arrow_down" />
+          </SplitButtonItem>
+        </SplitButton>
+        <SplitButton size="sm" variant="outlined">
+          <SplitButtonItem>
+            <Icon name="star" />
+            Label
+          </SplitButtonItem>
+          <SplitButtonItem>
+            <Icon name="keyboard_arrow_down" />
+          </SplitButtonItem>
+        </SplitButton>
+        <SplitButton size="md">
+          <SplitButtonItem>
+            <Icon name="star" />
+            Label
+          </SplitButtonItem>
+          <SplitButtonItem>
+            <Icon name="keyboard_arrow_down" />
+          </SplitButtonItem>
+        </SplitButton>
+        <SplitButton size="lg">
+          <SplitButtonItem>
+            <Icon name="star" />
+            Label
+          </SplitButtonItem>
+          <SplitButtonItem>
+            <Icon name="keyboard_arrow_down" />
+          </SplitButtonItem>
+        </SplitButton>
+        <SplitButton size="xl">
+          <SplitButtonItem>
+            <Icon name="star" />
+            Label
+          </SplitButtonItem>
+          <SplitButtonItem>
+            <Icon name="keyboard_arrow_down" />
+          </SplitButtonItem>
+        </SplitButton>
+      </section>
+
       <section
         style={{
           display: "flex",
