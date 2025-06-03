@@ -1,0 +1,119 @@
+[data-fab] {
+  cursor: pointer;
+  overflow: hidden;
+  width: fit-content;
+  position: relative;
+  border: none;
+  outline-offset: 1px;
+  outline: 10px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--fab-bg);
+  transition: var(--transition-standard-fast-effects);
+  box-shadow: var(--shadow-2);
+
+  &[data-fab="primary"] {
+    --fab-bg: var(--color-primary);
+
+    color: var(--color-on-primary);
+  }
+
+  &[data-fab="secondary"] {
+    --fab-bg: var(--color-secondary);
+
+    color: var(--color-on-secondary);
+  }
+
+  &[data-fab="tertiary"] {
+    --fab-bg: var(--color-tertiary);
+
+    color: var(--color-on-tertiary);
+  }
+
+  &[data-fab="soft-primary"] {
+    --fab-bg: var(--color-primary-container);
+
+    color: var(--color-primary-on-container);
+  }
+
+  &[data-fab="soft-secondary"] {
+    --fab-bg: var(--color-secondary-container);
+
+    color: var(--color-secondary-on-container);
+  }
+
+  &[data-fab="soft-tertiary"] {
+    --fab-bg: var(--color-tertiary-container);
+
+    color: var(--color-tertiary-on-container);
+  }
+
+  &[data-size="sm"] {
+    height: 56px;
+    gap: var(--spacing-8);
+    padding-inline: var(--spacing-16);
+    font: var(--font-label-lg);
+    border-radius: var(--radius-lg);
+
+    & > [data-icon] {
+      font-size: 24px;
+    }
+  }
+
+  &[data-size="md"] {
+    height: 80px;
+    gap: var(--spacing-12);
+    padding-inline: calc(var(--spacing-24) + var(--spacing-2));
+    font: var(--font-title-md);
+    border-radius: var(--radius-lg-inc);
+
+    & > [data-icon] {
+      font-size: 28px;
+    }
+  }
+
+  &[data-size="lg"] {
+    height: 96px;
+    padding-inline: var(--spacing-48);
+    gap: var(--spacing-12);
+    font: var(--font-headline-sm);
+    border-radius: var(--radius-xl);
+
+    & > [data-icon] {
+      font-size: 36px;
+    }
+  }
+
+  &::before {
+    inset: 0;
+    opacity: 0;
+    position: absolute;
+    background-color: color-mix(in srgb, currentColor 12%, transparent);
+  }
+
+  &:hover {
+    box-shadow: var(--shadow-3);
+    background-color: color-mix(in srgb, currentColor 8%, var(--fab-bg));
+  }
+
+  &:active::before {
+    content: "";
+    animation: ripple var(--transition-standard-default-effects) forwards;
+  }
+
+  &:focus-visible {
+    animation: focus var(--transition-standard-slow-spatial) forwards;
+  }
+
+  &:disabled {
+    box-shadow: none;
+    pointer-events: none;
+    color: color-mix(in srgb, var(--color-on-surface) 38%, transparent);
+    background-color: color-mix(
+      in srgb,
+      var(--color-on-surface) 10%,
+      transparent
+    );
+  }
+}

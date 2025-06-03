@@ -4,6 +4,7 @@ import { ButtonGroup, ButtonGroupItem } from "@/components/ui/button-group";
 import Checkbox from "@/components/ui/checkbox";
 import { Chips, ChipItem } from "@/components/ui/chips";
 import Divider from "@/components/ui/divider";
+import Fab from "@/components/ui/fab";
 import IconButton from "@/components/ui/icon-button";
 import {
   List,
@@ -62,12 +63,50 @@ const Home = () => {
         style={{
           display: "flex",
           flex: 2,
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <Fab disabled>
+          <Icon name="star" />
+        </Fab>
+        <Fab variant="soft-secondary">
+          <Icon name="star" />
+        </Fab>
+        <Fab variant="soft-tertiary">
+          <Icon name="star" />
+        </Fab>
+        <Fab variant="primary">
+          <Icon name="star" /> Button
+        </Fab>
+        <Fab variant="secondary">
+          <Icon name="star" /> Button
+        </Fab>
+        <Fab variant="tertiary">
+          <Icon name="star" /> Button
+        </Fab>
+        <Fab variant="primary">Button</Fab>
+        <Fab variant="secondary">Button</Fab>
+        <Fab variant="tertiary">Button</Fab>
+        <Fab variant="soft-primary">Button</Fab>
+        <Fab variant="soft-secondary">Button</Fab>
+        <Fab variant="soft-tertiary">Button</Fab>
+      </section>
+
+      <section
+        style={{
+          display: "flex",
+          flex: 2,
           gap: "50px",
           flexDirection: "column",
         }}>
         <Slider orientation="vertical" labeled LabelFormatter="%" size="xl" />
         <Slider min={50} max={500} step={50} labeled />
-        <Slider style={{ width: "300px" }} labeled LabelFormatter="%" size="md" />
+        <Slider
+          style={{ width: "300px" }}
+          labeled
+          LabelFormatter="%"
+          size="md"
+        />
         <Slider style={{ width: "300px" }} disabled defaultValue={40} />
         <Slider style={{ width: "300px" }} defaultValue={10} size="sm" />
         <Slider style={{ width: "300px" }} defaultValue={20} size="md" />
