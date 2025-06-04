@@ -20,6 +20,7 @@ import { SplitButton, SplitButtonItem } from "@/components/ui/split-button";
 import Switch from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import TextField from "@/components/ui/text-field";
+import Toolbar from "@/components/ui/toolbar";
 import {
   Tooltip,
   TooltipAction,
@@ -67,6 +68,100 @@ const Home = () => {
           flex: 2,
           gap: "10px",
           flexDirection: "column",
+          minWidth: "400px",
+        }}>
+        {["standard", "vibrant"].map((type, i) => (
+          <Toolbar key={i} type={type}>
+            <IconButton>
+              <Icon name="arrow_back" />
+            </IconButton>
+            <IconButton>
+              <Icon name="arrow_forward" />
+            </IconButton>
+            <IconButton variant="filled">
+              <Icon name="add" />
+            </IconButton>
+            <IconButton>
+              <Icon name="settings" />
+            </IconButton>
+            <IconButton>
+              <Icon name="more_vert" />
+            </IconButton>
+          </Toolbar>
+        ))}
+
+        {["standard", "vibrant"].map((type, i) => (
+          <Toolbar key={i} variant="floating" type={type}>
+            <IconButton>
+              <Icon name="videocam_off" />
+            </IconButton>
+            <IconButton>
+              <Icon name="mic" />
+            </IconButton>
+            <IconButton>
+              <Icon name="front_hand" />
+            </IconButton>
+            <IconButton>
+              <Icon name="more_vert" />
+            </IconButton>
+          </Toolbar>
+        ))}
+
+        {["horizontal", "vertical"].map((orientation, i) => (
+          <Toolbar
+            key={i}
+            orientation={orientation}
+            variant={i === 0 ? "docked" : "floating"}>
+            <IconButton>
+              <Icon name="archive" />
+            </IconButton>
+            <IconButton>
+              <Icon name="delete" />
+            </IconButton>
+            <IconButton>
+              <Icon name="mail" />
+            </IconButton>
+            <IconButton>
+              <Icon name="alarm" />
+            </IconButton>
+            <IconButton>
+              <Icon name="star" />
+            </IconButton>
+          </Toolbar>
+        ))}
+
+        <Toolbar>
+          <Button variant="text">Back</Button>
+          <Button>Next</Button>
+        </Toolbar>
+
+        <Toolbar alignment="center">
+          <SplitButton>
+            <SplitButtonItem>
+              <Icon name="videocam" />
+              Yes
+            </SplitButtonItem>
+            <SplitButtonItem>
+              <Icon name="keyboard_arrow_down" />
+            </SplitButtonItem>
+          </SplitButton>
+          <Button variant="outlined">Next</Button>
+          <Button variant="outlined">Maybe</Button>
+          <Tooltip>
+            <IconButton variant="outlined">
+              <Icon name="keyboard_arrow_down" />
+            </IconButton>
+            <TooltipContent>Open menu</TooltipContent>
+          </Tooltip>
+        </Toolbar>
+      </section>
+
+      <section
+        style={{
+          display: "flex",
+          flex: 2,
+          gap: "10px",
+          flexDirection: "column",
         }}>
         <Badge size="lg" label="999+">
           <Icon name="favorite" />
@@ -77,7 +172,10 @@ const Home = () => {
           </Badge>
         </IconButton>
         <IconButton width="wide">
-          <Badge size="lg" label="1+" style={{ display: "flex", alignItems: "center" }}>
+          <Badge
+            size="lg"
+            label="1+"
+            style={{ display: "flex", alignItems: "center" }}>
             <Icon name="favorite" />
           </Badge>
         </IconButton>
