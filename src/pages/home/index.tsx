@@ -4,6 +4,16 @@ import Button from "@/components/ui/button";
 import { ButtonGroup, ButtonGroupItem } from "@/components/ui/button-group";
 import Checkbox from "@/components/ui/checkbox";
 import { Chips, ChipItem } from "@/components/ui/chips";
+import {
+  Dialog,
+  DialogBody,
+  DialogClose,
+  DialogContent,
+  DialogHeader,
+  DialogHeadline,
+  DialogSupporting,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import Divider from "@/components/ui/divider";
 import Fab from "@/components/ui/fab";
 import IconButton from "@/components/ui/icon-button";
@@ -62,6 +72,55 @@ const Home = () => {
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section
+        style={{
+          display: "flex",
+          flex: 2,
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <Dialog>
+          <DialogTrigger>
+            <Button variant="outlined">Open</Button>
+          </DialogTrigger>
+          <DialogContent style={{ width: "300px" }}>
+            <DialogHeader showDivider>
+              <DialogHeadline>Dialog title</DialogHeadline>
+              <DialogSupporting>
+                This is a standard alert dialog. Alert dialogs interrupt users
+                with urgent information, details, or actions.
+              </DialogSupporting>
+            </DialogHeader>
+            <DialogBody style={{ display: "flex", gap: "10px" }}>
+              <DialogClose>
+                <Button variant="text">Cancel</Button>
+              </DialogClose>
+              <Button variant="text">Done</Button>
+            </DialogBody>
+          </DialogContent>
+        </Dialog>
+        <Dialog>
+          <DialogTrigger>
+            <Button variant="outlined">Open (with icon)</Button>
+          </DialogTrigger>
+          <DialogContent style={{ width: "500px" }}>
+            <DialogHeader icon="star">
+              <DialogHeadline>Dialog title</DialogHeadline>
+              <DialogSupporting>
+                This is a standard alert dialog. Alert dialogs interrupt users
+                with urgent information, details, or actions.
+              </DialogSupporting>
+            </DialogHeader>
+            <DialogBody style={{ display: "flex", gap: "10px" }}>
+              <DialogClose>
+                <Button variant="text">Cancel</Button>
+              </DialogClose>
+              <Button variant="text">Done</Button>
+            </DialogBody>
+          </DialogContent>
+        </Dialog>
+      </section>
+
       <section
         style={{
           display: "flex",

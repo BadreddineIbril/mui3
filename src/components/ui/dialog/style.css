@@ -1,0 +1,88 @@
+[data-dialog-content] {
+  z-index: 9999;
+  position: fixed;
+  left: 50%;
+  translate: -50% -50%;
+  border-radius: var(--radius-xl);
+  background-color: var(--color-surface-variant);
+  animation: var(--transition-expressive-slow-spatial) forwards;
+
+  &[data-closed="false"] {
+    animation-name: fade-in;
+  }
+
+  &[data-closed="true"] {
+    animation-name: fade-out;
+  }
+
+  [data-dialog-header] {
+    display: grid;
+    padding: var(--spacing-24);
+    padding-block-end: var(--spacing-0);
+
+    & > [data-icon] {
+      color: var(--color-secondary);
+    }
+
+    [data-dialog-headline] {
+      font: var(--font-headline-sm);
+      color: var(--color-on-surface);
+    }
+
+    [data-dialog-supporting] {
+      text-align: start;
+      font: var(--font-body-md);
+      color: var(--color-on-surface-variant);
+      padding-block-start: var(--spacing-24);
+    }
+
+    &[data-show-divider] {
+      border-block-end: 1px solid var(--color-outline-variant);
+
+      [data-dialog-supporting] {
+        padding-block-end: var(--spacing-8);
+      }
+    }
+
+    &:has(> [data-icon]) {
+      text-align: center;
+
+      [data-dialog-headline] {
+        padding-block-start: var(--spacing-16);
+      }
+    }
+  }
+
+  [data-dialog-body] {
+    padding: var(--spacing-24);
+  }
+}
+
+[data-dialog-overlay] {
+  inset: 0;
+  z-index: 9998;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    inset-block-start: 40%;
+  }
+  to {
+    opacity: 1;
+    inset-block-start: 50%;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    inset-block-start: 50%;
+  }
+  to {
+    opacity: 0;
+    inset-block-start: 40%;
+  }
+}
