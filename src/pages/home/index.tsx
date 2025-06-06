@@ -24,6 +24,7 @@ import {
   ListItemLeading,
   ListItemTrailing,
 } from "@/components/ui/list";
+import { Bar, BarItem } from "@/components/ui/naviagation/bar";
 import Radio from "@/components/ui/radio";
 import Slider from "@/components/ui/slider";
 import { SplitButton, SplitButtonItem } from "@/components/ui/split-button";
@@ -68,10 +69,37 @@ const Home = () => {
     { label: "Watermelon", isSelected: false },
   ]);
 
+  const [bar, setBar] = useState<number>(0);
+
   return (
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section
+        style={{
+          display: "flex",
+          flex: 2,
+          gap: "10px",
+          flexDirection: "column",
+        }}>
+        <Bar style={{ width: "300px" }}>
+          {[...Array(3)].map((_, i) => (
+            <BarItem
+              key={i}
+              icon="play_circle"
+              label="Label"
+              selected={i === bar}
+              onClick={() => setBar(i)}
+            />
+          ))}
+        </Bar>
+        <Bar style={{ width: "500px" }} orientation="vertical">
+          <BarItem icon="play_circle" label="Label" selected />
+          <BarItem icon="play_circle" label="Label" />
+          <BarItem icon="play_circle" label="Label" />
+        </Bar>
+      </section>
+
       <section
         style={{
           display: "flex",
