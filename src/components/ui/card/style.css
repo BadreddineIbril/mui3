@@ -1,0 +1,72 @@
+[data-card] {
+  color: var(--color-on-surface);
+  border-radius: var(--radius-md);
+  background-color: var(--card-bg);
+  transition: var(--transition-standard-fast-effects);
+
+  &[data-card="elevated"] {
+    --card-bg: var(--color-surface-container-low);
+
+    box-shadow: var(--shadow-2);
+  }
+
+  &[data-card="filled"] {
+    --card-bg: var(--color-surface-container-highest);
+  }
+
+  &[data-card="outlined"] {
+    --card-bg: var(--color-surface);
+
+    border: 1px solid var(--color-outline-variant);
+  }
+
+  [data-card-action-area] {
+    width: 100%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: inherit;
+    color: inherit;
+    background-color: transparent;
+    outline-offset: 1px;
+    outline: 10px solid transparent;
+    transition: inherit;
+
+    &::before {
+      inset: 0;
+      opacity: 0;
+      position: absolute;
+      border-radius: inherit;
+      outline: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+      background-color: color-mix(in srgb, currentColor 12%, transparent);
+    }
+
+    &:hover {
+      background-color: color-mix(in srgb, currentColor 8%, transparent);
+    }
+
+    &:active::before {
+      content: "";
+      animation: ripple var(--transition-standard-default-effects) forwards;
+    }
+
+    &:focus-visible {
+      animation: focus var(--transition-standard-slow-spatial) forwards;
+    }
+  }
+
+  &:has([data-card-action-area]:disabled) {
+    pointer-events: none;
+    color: color-mix(in srgb, currentColor 38%, transparent);
+
+    &[data-card="outlined"] {
+      background-color: transparent;
+    }
+
+    &[data-card="filled"],
+    &[data-card="elevated"] {
+      background-color: color-mix(in srgb, currentColor 10%, transparent);
+    }
+  }
+}

@@ -2,6 +2,7 @@ import Icon from "@/components/misc/icon";
 import Badge from "@/components/ui/badge";
 import Button from "@/components/ui/button";
 import { ButtonGroup, ButtonGroupItem } from "@/components/ui/button-group";
+import { Card, CardActionArea } from "@/components/ui/card";
 import Checkbox from "@/components/ui/checkbox";
 import { Chips, ChipItem } from "@/components/ui/chips";
 import {
@@ -83,6 +84,34 @@ const Home = () => {
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section style={{ display: "grid", gap: "10px" }}>
+        <Card style={{ padding: "2em" }}>Elevated</Card>
+        <Card variant="filled" style={{ padding: "2em" }}>
+          Filled
+        </Card>
+        <Card variant="outlined" style={{ padding: "2em" }}>
+          Outlined
+        </Card>
+        <Card>
+          <CardActionArea>Interactive</CardActionArea>
+        </Card>
+        <Card variant="filled">
+          <CardActionArea>Interactive</CardActionArea>
+        </Card>
+        <Card variant="outlined">
+          <CardActionArea>Interactive</CardActionArea>
+        </Card>
+        <Card>
+          <CardActionArea disabled>Interactive</CardActionArea>
+        </Card>
+        <Card variant="filled">
+          <CardActionArea disabled>Interactive</CardActionArea>
+        </Card>
+        <Card variant="outlined">
+          <CardActionArea disabled>Interactive</CardActionArea>
+        </Card>
+      </section>
+
       <section style={{ display: "flex", gap: "10px" }}>
         <Rail style={{ height: "800px" }}>
           <RailHeader>
