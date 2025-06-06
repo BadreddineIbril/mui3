@@ -1,7 +1,6 @@
 [data-button] {
   cursor: pointer;
-  overflow: hidden;
-  width: fit-content;
+  width: max-content;
   position: relative;
   border: 1px solid transparent;
   outline-offset: 1px;
@@ -108,6 +107,8 @@
     inset: 0;
     opacity: 0;
     position: absolute;
+    border-radius: inherit;
+    outline: 1px solid color-mix(in srgb, currentColor 12%, transparent);
     background-color: color-mix(in srgb, currentColor 12%, transparent);
   }
 
