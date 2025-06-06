@@ -25,6 +25,14 @@ import {
   ListItemTrailing,
 } from "@/components/ui/list";
 import { Bar, BarItem } from "@/components/ui/naviagation/bar";
+import {
+  Rail,
+  RailBody,
+  RailFab,
+  RailHeader,
+  RailItem,
+  RailMenu,
+} from "@/components/ui/naviagation/rail";
 import Radio from "@/components/ui/radio";
 import Slider from "@/components/ui/slider";
 import { SplitButton, SplitButtonItem } from "@/components/ui/split-button";
@@ -75,6 +83,39 @@ const Home = () => {
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section style={{ display: "flex", gap: "10px" }}>
+        <Rail style={{ height: "800px" }}>
+          <RailHeader>
+            <RailMenu>
+              <Icon name="menu" />
+            </RailMenu>
+            <RailFab>
+              <Icon name="edit" />
+            </RailFab>
+          </RailHeader>
+          <RailBody alignment="bottom">
+            <RailItem icon="star" label="Label" selected />
+            <RailItem icon="star" label="Label" />
+            <RailItem icon="star" label="Label" />
+          </RailBody>
+        </Rail>
+        <Rail style={{ height: "800px" }}>
+          <RailHeader>
+            <RailMenu>
+              <Icon name="menu" />
+            </RailMenu>
+            <RailFab>
+              <Icon name="edit" />
+            </RailFab>
+          </RailHeader>
+          <RailBody>
+            <RailItem icon="star" selected />
+            <RailItem icon="star" />
+            <RailItem icon="star" />
+          </RailBody>
+        </Rail>
+      </section>
+
       <section
         style={{
           display: "flex",
