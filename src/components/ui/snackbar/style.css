@@ -1,0 +1,84 @@
+[data-snackbar] {
+  --snackbar-offset: var(--spacing-24);
+
+  z-index: 9999;
+  position: fixed;
+  color: var(--color-inverse-on-surface);
+  background-color: var(--color-inverse-surface);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  justify-content: space-between;
+  border-radius: var(--radius-xs);
+  padding-inline: var(--spacing-16) var(--spacing-8);
+  transition: var(--transition-standard-slow-effects);
+
+  &[inert] {
+    scale: 0.9;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &[data-line="single"] {
+    height: 48px;
+    min-width: 350px;
+
+    [data-snackbar-message] {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &[data-line="multiple"] {
+    width: 350px;
+    min-height: 48px;
+    align-items: end;
+    flex-direction: column;
+    gap: var(--spacing-10);
+    padding-block: var(--spacing-10);
+
+    [data-snackbar-message] {
+      width: 100%;
+    }
+  }
+
+  &[data-snackbar*="top"] {
+    inset-block-start: var(--snackbar-offset);
+  }
+
+  &[data-snackbar*="bottom"] {
+    inset-block-end: var(--snackbar-offset);
+  }
+
+  &[data-snackbar*="start"] {
+    inset-inline-start: var(--snackbar-offset);
+  }
+
+  &[data-snackbar*="center"] {
+    inset-inline-start: 50%;
+    transform: translateX(-50%);
+  }
+
+  &[data-snackbar*="end"] {
+    inset-inline-end: var(--snackbar-offset);
+  }
+
+  [data-snackbar-message] {
+    flex: 2;
+    font: var(--font-body-md);
+  }
+
+  [data-snackbar-events] {
+    display: flex;
+    gap: var(--spacing-4);
+
+    [data-snackbar-action] {
+      color: var(--color-inverse-primary);
+    }
+
+    [data-snackbar-close] {
+      color: inherit;
+    }
+  }
+}

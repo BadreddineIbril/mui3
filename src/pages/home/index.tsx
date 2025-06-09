@@ -45,6 +45,7 @@ import {
   SideSheetTrigger,
 } from "@/components/ui/side-sheet";
 import Slider from "@/components/ui/slider";
+import Snackbar from "@/components/ui/snackbar";
 import { SplitButton, SplitButtonItem } from "@/components/ui/split-button";
 import Switch from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -88,12 +89,25 @@ const Home = () => {
   ]);
 
   const [bar, setBar] = useState<number>(0);
-  const [sheet, setSheet] = useState<boolean>(false);
+  const [snackbar, setSnackbar] = useState<boolean>(false);
 
   return (
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section style={{ display: "flex", gap: "10px" }}>
+        <Button variant="outlined" onClick={() => setSnackbar(true)}>
+          Open Snackbar
+        </Button>
+
+        <Snackbar
+          open={snackbar}
+          close
+          onClose={() => setSnackbar(false)}
+          message="Snackbar supporting text"
+        />
+      </section>
+
       <section style={{ display: "flex", gap: "10px" }}>
         {["standard", "modal"].map((type, i) => (
           <SideSheet variant={type} key={i}>
@@ -107,7 +121,9 @@ const Home = () => {
                 close={i !== 0}
               />
               <SideSheetBody>Hola Mola</SideSheetBody>
-              <SideSheetFooter style={{ display: "flex", gap: "12px" }} showDivider>
+              <SideSheetFooter
+                style={{ display: "flex", gap: "12px" }}
+                showDivider>
                 <Button>Save</Button>
                 <SideSheetClose>
                   <Button variant="outlined">Cancel</Button>
@@ -541,7 +557,7 @@ const Home = () => {
           <ListItem>
             <ListItemLeading
               type="video"
-              value="https://videos.pexels.com/video-files/5644248/5644248-uhd_1440_2732_25fps.mp4"
+              value="https://videos.pexels.com/video-files/5644ƒ8/5644ƒ8-uhd_1440_2732_25fps.mp4"
             />
             New products
           </ListItem>
@@ -573,7 +589,7 @@ const Home = () => {
           <ListItem>
             <ListItemLeading
               type="image"
-              value="https://www.realsimple.com/thmb/R7Kl1qBAa2LAT05n9ZVC2CyP5jQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-eat-kiwi-GettyImages-2147529648-024b80b6e2ef4d7181914c48bf536550.jpg"
+              value="https://www.realsimple.com/thmb/R7Kl1qBAa2LAT05n9ZVC2CyP5jQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-eat-kiwi-GettyImages-2147529648-0ƒb80b6e2ef4d7181914c48bf536550.jpg"
             />
             Kiwi
           </ListItem>
