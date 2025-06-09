@@ -35,6 +35,15 @@ import {
   RailMenu,
 } from "@/components/ui/naviagation/rail";
 import Radio from "@/components/ui/radio";
+import {
+  SideSheet,
+  SideSheetBody,
+  SideSheetClose,
+  SideSheetContent,
+  SideSheetFooter,
+  SideSheetHeader,
+  SideSheetTrigger,
+} from "@/components/ui/side-sheet";
 import Slider from "@/components/ui/slider";
 import { SplitButton, SplitButtonItem } from "@/components/ui/split-button";
 import Switch from "@/components/ui/switch";
@@ -79,11 +88,36 @@ const Home = () => {
   ]);
 
   const [bar, setBar] = useState<number>(0);
+  const [sheet, setSheet] = useState<boolean>(false);
 
   return (
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section style={{ display: "flex", gap: "10px" }}>
+        {["standard", "modal"].map((type, i) => (
+          <SideSheet variant={type} key={i}>
+            <SideSheetTrigger>
+              <Button variant="outlined">Open Sheet ({type})</Button>
+            </SideSheetTrigger>
+            <SideSheetContent>
+              <SideSheetHeader
+                headline="Title"
+                back={i === 0}
+                close={i !== 0}
+              />
+              <SideSheetBody>Hola Mola</SideSheetBody>
+              <SideSheetFooter style={{ display: "flex", gap: "12px" }} showDivider>
+                <Button>Save</Button>
+                <SideSheetClose>
+                  <Button variant="outlined">Cancel</Button>
+                </SideSheetClose>
+              </SideSheetFooter>
+            </SideSheetContent>
+          </SideSheet>
+        ))}
+      </section>
+
       <section style={{ display: "grid", gap: "10px" }}>
         <Card style={{ padding: "2em" }}>Elevated</Card>
         <Card variant="filled" style={{ padding: "2em" }}>
