@@ -35,6 +35,7 @@ import {
   RailMenu,
 } from "@/components/ui/naviagation/rail";
 import Radio from "@/components/ui/radio";
+import { Select, SelectOption } from "@/components/ui/select";
 import {
   SideSheet,
   SideSheetBody,
@@ -95,6 +96,21 @@ const Home = () => {
     <main
       data-page="home"
       style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+      <section style={{ display: "grid", gap: "10px", width: "300px" }}>
+        <Select disabled>
+          <SelectOption value="banana">Banana</SelectOption>
+          <SelectOption value="kiwi">Kiwi</SelectOption>
+          <SelectOption value="orange">Orange</SelectOption>
+        </Select>
+        <Select placeholder="Select a fruit..">
+          <SelectOption value="banana">Banana</SelectOption>
+          <SelectOption value="kiwi">Kiwi</SelectOption>
+          <SelectOption value="orange" disabled>
+            Orange
+          </SelectOption>
+        </Select>
+      </section>
+
       <section style={{ display: "flex", gap: "10px" }}>
         <Button variant="outlined" onClick={() => setSnackbar(true)}>
           Open Snackbar
