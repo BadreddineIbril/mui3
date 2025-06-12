@@ -23,9 +23,9 @@ const SideSheetDemo = () => {
             <SideSheetFooter
               style={{ display: "flex", gap: "12px" }}
               showDivider>
-              <Button>Save</Button>
+              <Button rounded>Save</Button>
               <SideSheetClose>
-                <Button variant="outlined">Cancel</Button>
+                <Button variant="outlined" rounded>Cancel</Button>
               </SideSheetClose>
             </SideSheetFooter>
           </SideSheetContent>

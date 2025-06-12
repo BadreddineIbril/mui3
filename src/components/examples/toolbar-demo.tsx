@@ -7,8 +7,10 @@ const ToolbarDemo = () => {
   return (
     <div className="demo column">
       <Toolbar style={{ width: "400px" }}>
-        <Button variant="text">Back</Button>
-        <Button>Next</Button>
+        <Button variant="text" rounded>
+          Back
+        </Button>
+        <Button rounded>Next</Button>
       </Toolbar>
       <Toolbar type="vibrant" style={{ width: "400px" }}>
         <IconButton>
@@ -17,7 +19,7 @@ const ToolbarDemo = () => {
         <IconButton>
           <Icon name="arrow_forward" />
         </IconButton>
-        <IconButton variant="filled">
+        <IconButton variant="filled" width="wide">
           <Icon name="add" />
         </IconButton>
         <IconButton>

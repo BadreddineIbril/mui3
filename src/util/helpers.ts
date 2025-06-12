@@ -13,7 +13,7 @@ import ListDemo from "@/components/examples/list-demo";
 import RadioDemo from "@/components/examples/radio-demo";
 import NavigationRailDemo from "@/components/examples/rail-demo";
 import SelectDemo from "@/components/examples/select-demo";
-import SideSheetDemo from "@/components/examples/side-sheet";
+import SideSheetDemo from "@/components/examples/side-sheet-demo";
 import SliderDemo from "@/components/examples/slider-demo";
 import SnackbarDemo from "@/components/examples/snackbar-demo";
 import SplitButtonDemo from "@/components/examples/split-button-demo";
