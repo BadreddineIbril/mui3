@@ -102,7 +102,11 @@ const DialogContent = ({ ...props }: DialogContentProps) => {
   const { isOpen, isClosed } = useDialogContext();
 
   return (
-    isOpen && <div data-dialog-content data-closed={isClosed} {...props} />
+    isOpen && (
+      <div data-dialog-portal data-closed={isClosed}>
+        <div data-dialog-content {...props} />
+      </div>
+    )
   );
 };
 

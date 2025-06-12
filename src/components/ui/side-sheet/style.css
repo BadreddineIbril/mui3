@@ -70,7 +70,7 @@
   opacity: 0;
   z-index: 9998;
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--color-overlay);
   animation: overlay-fade-in var(--transition-standard-fast-effects) forwards;
 }
 
