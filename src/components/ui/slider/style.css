@@ -71,6 +71,7 @@
   }
 
   &[data-orientation="vertical"] {
+    rotate: 180deg;
     height: fit-content;
     writing-mode: vertical-lr;
     width: var(--slider-height);
