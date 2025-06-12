@@ -140,6 +140,10 @@
     }
   }
 
+  &[data-rounded="true"] {
+    border-radius: var(--radius-rounded);
+  }
+
   &:active::before {
     content: "";
     animation: ripple var(--transition-standard-default-effects) forwards;

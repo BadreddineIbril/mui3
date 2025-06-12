@@ -4,6 +4,7 @@ import type { ComponentProps, HTMLAttributeAnchorTarget } from "react";
 type ButtonProps = ComponentProps<"button"> & {
   variant?: "elevated" | "filled" | "tonal" | "outlined" | "text";
   size?: "xs" | "sm" | "md" | "lg" | "xl";
+  rounded?: boolean;
   href?: string;
   target?: HTMLAttributeAnchorTarget;
 };
@@ -11,6 +12,7 @@ type ButtonProps = ComponentProps<"button"> & {
 const Button = ({
   variant = "filled",
   target = "_self",
+  rounded = false,
   size = "sm",
   onClick,
   href,
@@ -19,6 +21,7 @@ const Button = ({
   return (
     <button
       data-button={variant}
+      data-rounded={rounded}
       data-size={size}
       {...props}
       onClick={(e) => {
