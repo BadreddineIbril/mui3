@@ -1,4 +1,4 @@
-[data-chips] {
+[mui-chips] {
   display: flex;
   gap: var(--spacing-8);
 
@@ -10,7 +10,7 @@
     overflow-x: scroll;
   }
 
-  [data-chip-item] {
+  [mui-chip-item] {
     height: 32px;
     flex-shrink: 0;
     cursor: pointer;
@@ -105,8 +105,8 @@
     }
   }
 
-  &[data-chips="outlined"] {
-    [data-chip-item] {
+  &[mui-chips="outlined"] {
+    [mui-chip-item] {
       border-color: var(--color-outline-variant);
 
       &:disabled {
@@ -120,8 +120,8 @@
     }
   }
 
-  &[data-chips="elevated"] {
-    [data-chip-item] {
+  &[mui-chips="elevated"] {
+    [mui-chip-item] {
       box-shadow: var(--shadow-2);
 
       &:hover:not(:has(> [data-close]:hover), [aria-pressed="true"]) {

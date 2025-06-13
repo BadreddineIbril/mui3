@@ -7,7 +7,7 @@ type BadgeProps = ComponentProps<"span"> & {
 };
 
 const Badge = ({ size = "sm", label, ...props }: BadgeProps) => {
-  return <span data-badge={size} data-label={label} {...props} />;
+  return <span mui-badge={size} data-label={label} {...props} />;
 };
 
 export default Badge;

@@ -67,9 +67,7 @@ const Select = ({ disabled, placeholder, children, ...props }: SelectProps) => {
 
   function onKeyDown(e: KeyboardEvent<HTMLDivElement>) {
     const options = Array.from(
-      e.currentTarget.querySelectorAll<HTMLButtonElement>(
-        "[data-select-option]"
-      )
+      e.currentTarget.querySelectorAll<HTMLButtonElement>("[mui-select-option]")
     );
     const index = options.findIndex((opt) => opt === document.activeElement);
 
@@ -100,7 +98,7 @@ const Select = ({ disabled, placeholder, children, ...props }: SelectProps) => {
 
     const options =
       contentRef.current?.querySelectorAll<HTMLButtonElement>(
-        "[data-select-option]"
+        "[mui-select-option]"
       ) ?? [];
     const focusableOption =
       [...options].find((opt) => opt.value === selected) ?? options?.[0];
@@ -117,24 +115,26 @@ const Select = ({ disabled, placeholder, children, ...props }: SelectProps) => {
   return (
     <SelectContext.Provider
       value={{ isOpen, isClosed, open, close, selected, setSelected }}>
-      <div data-select {...props} aria-disabled={disabled}>
+      <div mui-select="" {...props} aria-disabled={disabled}>
         <button
           ref={triggerRef}
-          data-select-trigger
+          mui-select-trigger=""
           role="combobox"
           disabled={disabled}
           aria-expanded={isOpen}
           onClick={isOpen ? close : open}>
-          <span data-select-value>{getValue() ?? placeholder ?? "Select"}</span>
+          <span mui-select-value="">
+            {getValue() ?? placeholder ?? "Select"}
+          </span>
           <Icon name="arrow_drop_down" />
         </button>
         {isOpen && (
           <div
             role="listbox"
-            data-select-portal
+            mui-select-portal=""
             data-closed={isClosed}
             onKeyDown={onKeyDown}>
-            <div ref={contentRef} data-select-content>
+            <div ref={contentRef} mui-select-content="">
               {children}
             </div>
           </div>
@@ -156,7 +156,7 @@ const SelectOption = ({ ...props }: SelectOptionProps) => {
 
   return (
     <button
-      data-select-option
+      mui-select-option=""
       {...props}
       role="option"
       onClick={onSelect}

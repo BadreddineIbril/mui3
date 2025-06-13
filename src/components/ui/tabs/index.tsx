@@ -46,7 +46,7 @@ const Tabs = ({
 
   return (
     <TabsContext.Provider value={{ activeTab, setTab }}>
-      <div data-tabs={variant} data-inline-icon={inlineIcon} {...props} />
+      <div mui-tabs={variant} data-inline-icon={inlineIcon} {...props} />
     </TabsContext.Provider>
   );
 };
@@ -56,7 +56,7 @@ const TabsList = ({ ...props }: TabsListProps) => {
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     const tabs = Array.from(
-      e.currentTarget.querySelectorAll<HTMLButtonElement>("[data-tabs-trigger]")
+      e.currentTarget.querySelectorAll<HTMLButtonElement>("[mui-tabs-trigger]")
     );
     const index = tabs.findIndex((tab) => tab === document.activeElement);
 
@@ -67,7 +67,7 @@ const TabsList = ({ ...props }: TabsListProps) => {
 
   return (
     <div
-      data-tabs-list
+      mui-tabs-list=""
       {...props}
       role="tablist"
       style={
@@ -97,7 +97,7 @@ const TabsTrigger = ({ value, onClick, ...props }: TabsTriggerProps) => {
 
   return (
     <button
-      data-tabs-trigger
+      mui-tabs-trigger=""
       {...props}
       ref={ref}
       role="tab"
@@ -119,7 +119,7 @@ const TabsContent = ({ value, ...props }: TabsContentProps) => {
 
   return (
     <div
-      data-tabs-content={value}
+      mui-tabs-content={value}
       {...props}
       role="tabpanel"
       aria-hidden={activeTab.value !== value}

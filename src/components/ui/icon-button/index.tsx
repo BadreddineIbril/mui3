@@ -22,7 +22,7 @@ const IconButton = ({
 }: IconButtonProps) => {
   return (
     <button
-      data-icon-button={variant}
+      mui-icon-button={variant}
       data-width={width}
       data-size={size}
       data-flip-icon-in-rtl={flipIconInRtl || undefined}

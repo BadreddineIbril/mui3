@@ -28,7 +28,7 @@ const SnackbarDemo = () => {
       {Object.entries(snackbar).map((position, i) => (
         <Snackbar
           key={i}
-          position={position}
+          position={position[0]}
           open={snackbar[position[0]]}
           close
           onClose={() =>

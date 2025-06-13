@@ -21,15 +21,15 @@ type RailItemProps = Omit<
 };
 
 const Rail = ({ ...props }: RailProps) => {
-  return <div data-rail {...props} role="navigation" />;
+  return <div mui-rail="" {...props} role="navigation" />;
 };
 
 const RailHeader = ({ ...props }: RailHeaderProps) => {
-  return <div data-rail-header {...props} />;
+  return <div mui-rail-header="" {...props} />;
 };
 
 const RailMenu = ({ ...props }: RailMenuProps) => {
-  return <IconButton data-rail-menu {...props} size="md" />;
+  return <IconButton mui-rail-menu="" {...props} size="md" />;
 };
 
 const RailFab = ({ ...props }: RailFabProps) => {
@@ -37,7 +37,7 @@ const RailFab = ({ ...props }: RailFabProps) => {
 };
 
 const RailBody = ({ alignment = "top", ...props }: RailBodyProps) => {
-  return <div data-rail-body data-alignment={alignment} {...props} />;
+  return <div mui-rail-body="" data-alignment={alignment} {...props} />;
 };
 
 const RailItem = ({
@@ -47,11 +47,11 @@ const RailItem = ({
   ...props
 }: RailItemProps) => {
   return (
-    <div data-rail-item role="option" aria-selected={selected}>
+    <div mui-rail-item="" role="option" aria-selected={selected}>
       <IconButton {...props} size="md">
         <Icon name={icon} />
       </IconButton>
-      {label && <span data-rail-item-label>{label}</span>}
+      {label && <span mui-rail-item-label="">{label}</span>}
     </div>
   );
 };

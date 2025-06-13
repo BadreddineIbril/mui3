@@ -34,7 +34,7 @@ const SplitButton = ({
 }: SegmentedButtonsProps) => {
   return (
     <SplitButtonContext.Provider value={{ variant, size, disabled }}>
-      <div data-split-button {...props} />
+      <div mui-split-button="" {...props} />
     </SplitButtonContext.Provider>
   );
 };
@@ -44,7 +44,7 @@ const SplitButtonItem = ({ ...props }: SegmentedButtonProps) => {
 
   return (
     <Button
-      data-split-button-item
+      mui-split-button-item=""
       disabled={disabled}
       variant={variant}
       size={size}

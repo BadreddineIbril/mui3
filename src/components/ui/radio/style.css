@@ -1,4 +1,4 @@
-[data-radio] {
+[mui-radio] {
   --radio-size: 20px;
   --radio-offset: calc(var(--radio-size) / 4);
   --radio-dot-size: calc(var(--radio-size) * 0.5);

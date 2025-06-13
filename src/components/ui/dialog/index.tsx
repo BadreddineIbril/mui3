@@ -64,7 +64,7 @@ const Dialog = ({ children, quick, ...props }: DialogProps) => {
   return (
     <DialogContext.Provider value={{ isOpen, isClosed, open, close }}>
       {children}
-      {isOpen && <div data-dialog-overlay onClick={close} />}
+      {isOpen && <div mui-dialog-overlay="" onClick={close} />}
     </DialogContext.Provider>
   );
 };
@@ -83,7 +83,7 @@ const DialogHeader = ({
   ...props
 }: DialogHeaderProps) => {
   return (
-    <div data-dialog-header data-show-divider={showDivider} {...props}>
+    <div mui-dialog-header="" data-divider={showDivider} {...props}>
       {icon && <Icon name={icon} />}
       {children}
     </div>
@@ -91,11 +91,11 @@ const DialogHeader = ({
 };
 
 const DialogHeadline = ({ ...props }: DialogHeadlineProps) => {
-  return <h2 data-dialog-headline {...props} />;
+  return <h2 mui-dialog-headline="" {...props} />;
 };
 
 const DialogSupporting = ({ ...props }: DialogSupportingProps) => {
-  return <p data-dialog-supporting {...props} />;
+  return <p mui-dialog-supporting="" {...props} />;
 };
 
 const DialogContent = ({ ...props }: DialogContentProps) => {
@@ -103,15 +103,15 @@ const DialogContent = ({ ...props }: DialogContentProps) => {
 
   return (
     isOpen && (
-      <div data-dialog-portal data-closed={isClosed}>
-        <div data-dialog-content {...props} />
+      <div mui-dialog-portal="" data-closed={isClosed}>
+        <div mui-dialog-content="" {...props} />
       </div>
     )
   );
 };
 
 const DialogBody = ({ ...props }: DialogBodyProps) => {
-  return <div data-dialog-body {...props} />;
+  return <div mui-dialog-body="" {...props} />;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

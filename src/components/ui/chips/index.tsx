@@ -30,7 +30,7 @@ const Chips = ({
   layout = "wrap",
   ...props
 }: ChipsProps) => {
-  return <div data-chips={variant} data-layout={layout} {...props} />;
+  return <div mui-chips={variant} data-layout={layout} {...props} />;
 };
 
 const ChipItem = ({
@@ -45,7 +45,7 @@ const ChipItem = ({
 }: ChipItemProps) => {
   return (
     <button
-      data-chip-item={variant}
+      mui-chip-item={variant}
       aria-pressed={selected}
       {...props}
       onClick={(e) => {

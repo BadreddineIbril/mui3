@@ -1,4 +1,4 @@
-[data-button] {
+[mui-button] {
   cursor: pointer;
   width: max-content;
   position: relative;
@@ -11,7 +11,7 @@
   background-color: transparent;
   transition: var(--transition-standard-fast-effects);
 
-  &[data-button="elevated"] {
+  &[mui-button="elevated"] {
     color: var(--color-primary);
     background-color: var(--color-surface-container-low);
     box-shadow: var(--shadow-2);
@@ -21,7 +21,7 @@
     }
   }
 
-  &[data-button="filled"] {
+  &[mui-button="filled"] {
     color: var(--color-on-primary);
     background-color: var(--color-primary);
     box-shadow: var(--shadow-1);
@@ -36,7 +36,7 @@
     }
   }
 
-  &[data-button="tonal"] {
+  &[mui-button="tonal"] {
     color: var(--color-on-secondary-container);
     background-color: var(--color-secondary-container);
 
@@ -50,12 +50,12 @@
     }
   }
 
-  &[data-button="outlined"] {
+  &[mui-button="outlined"] {
     color: var(--color-on-surface-variant);
     border-color: var(--color-outline-variant);
   }
 
-  &[data-button="text"] {
+  &[mui-button="text"] {
     color: var(--color-primary);
   }
 
@@ -132,9 +132,9 @@
     border-radius: var(--radius-xl);
   }
 
-  &[data-button="text"],
-  &[data-button="outlined"],
-  &[data-button="elevated"] {
+  &[mui-button="text"],
+  &[mui-button="outlined"],
+  &[mui-button="elevated"] {
     &:hover {
       background-color: color-mix(in srgb, currentColor 8%, transparent);
     }

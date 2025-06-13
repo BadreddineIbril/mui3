@@ -38,7 +38,7 @@ const Bar = ({ orientation = "horizontal", style, ...props }: BarProps) => {
   return (
     <BarContext.Provider value={{ orientation }}>
       <div
-        data-bar
+        mui-bar=""
         aria-orientation={orientation}
         {...props}
         role="navigation"
@@ -57,13 +57,13 @@ const BarItem = ({ icon, label, selected = false, ...props }: BarItemProps) => {
   const { orientation } = useBarContext();
 
   return (
-    <div data-bar-item aria-selected={selected}>
+    <div mui-bar-item="" aria-selected={selected}>
       {orientation === "horizontal" ? (
         <>
           <IconButton {...props}>
             <Icon name={icon} />
           </IconButton>
-          {label && <span data-bar-item-label>{label}</span>}
+          {label && <span mui-bar-item-label="">{label}</span>}
         </>
       ) : (
         <Button variant="text" size="md" {...props}>

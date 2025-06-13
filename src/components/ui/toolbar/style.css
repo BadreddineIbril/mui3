@@ -1,4 +1,4 @@
-[data-toolbar] {
+[mui-toolbar] {
   display: flex;
   align-items: center;
 
@@ -11,7 +11,7 @@
     justify-content: space-between;
   }
 
-  &[data-toolbar="floating"] {
+  &[mui-toolbar="floating"] {
     width: fit-content;
     gap: var(--spacing-4);
     padding: var(--spacing-8);
@@ -30,7 +30,7 @@
   &[aria-orientation="horizontal"] {
     height: 64px;
 
-    &[data-toolbar="docked"] {
+    &[mui-toolbar="docked"] {
       padding-inline: var(--spacing-16);
     }
   }
@@ -39,7 +39,7 @@
     width: 64px;
     flex-direction: column;
 
-    &[data-toolbar="docked"] {
+    &[mui-toolbar="docked"] {
       padding-block: var(--spacing-16);
     }
   }

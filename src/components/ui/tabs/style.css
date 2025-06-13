@@ -1,5 +1,5 @@
-[data-tabs] {
-  [data-tabs-list] {
+[mui-tabs] {
+  [mui-tabs-list] {
     position: relative;
     display: grid;
     grid-template-columns: repeat(var(--length), 1fr);
@@ -15,7 +15,7 @@
       transition: var(--transition-standard-slow-effects);
     }
 
-    [data-tabs-trigger] {
+    [mui-tabs-trigger] {
       border: none;
       cursor: pointer;
       position: relative;
@@ -61,14 +61,14 @@
     }
   }
 
-  [data-tabs-content] {
+  [mui-tabs-content] {
     &[aria-hidden="true"] {
       display: none;
     }
   }
 
-  &[data-tabs="primary"] {
-    [data-tabs-list] {
+  &[mui-tabs="primary"] {
+    [mui-tabs-list] {
       &::before {
         height: 3px;
         width: calc(100% / var(--length) / 2);
@@ -76,7 +76,7 @@
         border-radius: var(--radius-rounded) var(--radius-rounded) 0 0;
       }
 
-      [data-tabs-trigger][aria-selected="true"] {
+      [mui-tabs-trigger][aria-selected="true"] {
         color: var(--color-primary);
 
         &:hover {
@@ -86,21 +86,21 @@
     }
   }
 
-  &[data-tabs="secondary"] {
-    [data-tabs-list] {
+  &[mui-tabs="secondary"] {
+    [mui-tabs-list] {
       &::before {
         height: 2px;
         width: calc(100% / var(--length));
       }
 
-      [data-tabs-trigger][aria-selected="true"] {
+      [mui-tabs-trigger][aria-selected="true"] {
         color: var(--color-on-surface);
       }
     }
   }
 
   &[data-inline-icon="true"] {
-    [data-tabs-list] [data-tabs-trigger] {
+    [mui-tabs-list] [mui-tabs-trigger] {
       display: flex;
       gap: var(--spacing-8);
     }

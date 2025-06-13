@@ -1,16 +1,16 @@
-[data-text-field] {
+[mui-text-field] {
   width: fit-content;
   position: relative;
   color: var(--color-on-surface);
 
-  &[data-text-field="outlined"] {
+  &[mui-text-field="outlined"] {
     outline: 3px solid transparent;
     outline-offset: -3px;
     border-radius: var(--radius-xs);
     border: 1px solid var(--color-outline);
   }
 
-  &[data-text-field="filled"] {
+  &[mui-text-field="filled"] {
     outline: none;
     border-radius: var(--radius-xs) var(--radius-xs) 0 0;
     border-block-end: 1px solid var(--color-outline);
@@ -20,19 +20,19 @@
   &:has([data-error="true"]) {
     border-color: var(--color-error);
 
-    [data-text-field-label],
-    [data-text-field-supporting] {
+    [mui-text-field-label],
+    [mui-text-field-supporting] {
       color: var(--color-error) !important;
     }
   }
 
-  &:has([data-text-field-input]:disabled) {
+  &:has([mui-text-field-input]:disabled) {
     color: color-mix(in srgb, currentColor 12%, transparent);
     border-color: color-mix(in srgb, var(--color-on-surface) 12%, transparent);
 
-    [data-text-field-label],
-    [data-text-field-prefix],
-    [data-text-field-suffix] {
+    [mui-text-field-label],
+    [mui-text-field-prefix],
+    [mui-text-field-suffix] {
       color: color-mix(
         in srgb,
         var(--color-on-surface) 12%,
@@ -41,27 +41,27 @@
     }
   }
 
-  &:has([data-text-field-input]:hover:not(:focus, :disabled)) {
+  &:has([mui-text-field-input]:hover:not(:focus, :disabled)) {
     border-color: inherit;
 
-    [data-text-field-label] {
+    [mui-text-field-label] {
       color: inherit;
     }
 
-    &[data-text-field="filled"] {
+    &[mui-text-field="filled"] {
       background-color: color-mix(in srgb, currentColor 8%, transparent);
     }
 
-    &:has([data-error="true"]) [data-text-field-label] {
+    &:has([data-error="true"]) [mui-text-field-label] {
       color: var(--color-on-error-container) !important;
     }
   }
 
-  &:has([data-text-field-input]:focus) {
+  &:has([mui-text-field-input]:focus) {
     border-color: transparent;
     outline-color: var(--color-primary);
 
-    &[data-text-field="filled"] {
+    &[mui-text-field="filled"] {
       &::before {
         content: "";
         width: 100%;
@@ -77,21 +77,21 @@
     }
   }
 
-  &:has([data-text-field-input]:focus),
-  &:has([data-text-field-input]:not(:placeholder-shown)) {
-    [data-text-field-suffix] {
+  &:has([mui-text-field-input]:focus),
+  &:has([mui-text-field-input]:not(:placeholder-shown)) {
+    [mui-text-field-suffix] {
       visibility: visible;
     }
 
-    &[data-text-field="filled"] {
-      [data-text-field-label] {
+    &[mui-text-field="filled"] {
+      [mui-text-field-label] {
         background-color: transparent;
         transform: translateY(calc(-100% - var(--spacing-8)));
       }
     }
   }
 
-  [data-text-field-input] {
+  [mui-text-field-input] {
     height: 56px;
     border: none;
     outline: none;
@@ -105,7 +105,7 @@
       color: var(--color-on-surface-variant);
     }
 
-    &:required + [data-text-field-label]:after {
+    &:required + [mui-text-field-label]:after {
       content: " *";
     }
 
@@ -117,7 +117,7 @@
 
     &:focus,
     &:not(:placeholder-shown) {
-      & + [data-text-field-label] {
+      & + [mui-text-field-label] {
         font: var(--font-body-sm);
         color: var(--color-primary);
         /* TODO: bg should be dynamic */
@@ -134,19 +134,19 @@
         visibility: hidden;
       }
 
-      & + [data-text-field-label] {
+      & + [mui-text-field-label] {
         color: var(--color-on-surface-variant);
       }
     }
   }
 
-  [data-text-field-icon],
-  [data-text-field-label],
-  [data-text-field-supporting] {
+  [mui-text-field-icon],
+  [mui-text-field-label],
+  [mui-text-field-supporting] {
     position: absolute;
   }
 
-  [data-text-field-icon] {
+  [mui-text-field-icon] {
     z-index: -1;
     width: 40px;
     height: 40px;
@@ -158,16 +158,16 @@
     inset-inline-start: var(--spacing-8);
     transform: translateY(-50%);
 
-    & + [data-text-field-input] {
+    & + [mui-text-field-input] {
       padding-inline-start: calc(40px + var(--spacing-8));
     }
 
-    & ~ [data-text-field-label] {
+    & ~ [mui-text-field-label] {
       inset-inline-start: calc(40px + var(--spacing-8));
     }
   }
 
-  [data-text-field-label] {
+  [mui-text-field-label] {
     font: var(--font-body-lg);
     padding-inline: var(--spacing-4);
     inset-inline-start: var(--spacing-12);
@@ -177,28 +177,28 @@
     transition: var(--transition-standard-default-effects);
   }
 
-  [data-text-field-prefix],
-  [data-text-field-suffix] {
+  [mui-text-field-prefix],
+  [mui-text-field-suffix] {
     visibility: hidden;
     font: var(--font-body-lg);
     padding-inline: var(--spacing-16) 0;
     color: var(--color-on-surface-variant);
 
-    &[data-text-field-suffix] {
+    &[mui-text-field-suffix] {
       padding-inline: 0 var(--spacing-16);
     }
 
-    & + [data-text-field-input] {
+    & + [mui-text-field-input] {
       padding-inline-start: var(--spacing-4);
     }
 
-    &:has(+ [data-text-field-input]:focus),
-    &:has(+ [data-text-field-input]:not(:placeholder-shown)) {
+    &:has(+ [mui-text-field-input]:focus),
+    &:has(+ [mui-text-field-input]:not(:placeholder-shown)) {
       visibility: visible;
     }
   }
 
-  [data-text-field-supporting] {
+  [mui-text-field-supporting] {
     width: fit-content;
     font: var(--font-body-sm);
     color: var(--color-on-surface-variant);

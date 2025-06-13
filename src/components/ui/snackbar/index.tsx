@@ -49,23 +49,23 @@ const Snackbar = ({
 
   return (
     <div
-      data-snackbar={position}
+      mui-snackbar={position}
       data-line={line}
       aria-live="polite"
       inert={!open || undefined}
       role={open ? "status" : undefined}
       {...props}>
-      <p data-snackbar-message>{message}</p>
+      <p mui-snackbar-message="">{message}</p>
       {(close || action) && (
-        <div data-snackbar-events>
+        <div mui-snackbar-events="">
           {action && (
-            <Button data-snackbar-action variant="text" {...action}>
+            <Button mui-snackbar-action="" variant="text" {...action}>
               {action.label}
             </Button>
           )}
           {close && (
             <IconButton
-              data-snackbar-close
+              mui-snackbar-close=""
               aria-label="close"
               onClick={onClose}>
               <Icon name="close" />

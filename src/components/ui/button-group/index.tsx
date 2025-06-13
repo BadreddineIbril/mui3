@@ -51,7 +51,7 @@ const ButtonGroup = ({
   return (
     <ButtonGroupContext.Provider
       value={{ variant, disabled, width, asIcon, size }}>
-      <div data-button-group={type} data-size={size} {...props} />
+      <div mui-button-group={type} data-size={size} {...props} />
     </ButtonGroupContext.Provider>
   );
 };
@@ -68,7 +68,7 @@ const ButtonGroupItem = ({
 
   return (
     <Component
-      data-button-group-item
+      mui-button-group-item=""
       variant={variant ?? ctx.variant}
       disabled={disabled ?? ctx.disabled}
       width={width ?? ctx.width}

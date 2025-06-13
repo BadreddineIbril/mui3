@@ -6,7 +6,7 @@ type DividerProps = ComponentProps<"hr"> & {
 };
 
 const Divider = ({ orientation = "horizontal", ...props }: DividerProps) => (
-  <hr data-divider={orientation} {...props} />
+  <hr mui-divider={orientation} {...props} />
 );
 
 export default Divider;

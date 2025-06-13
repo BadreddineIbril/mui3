@@ -48,7 +48,7 @@ const renderVariant = (type: string, value: string) =>
   }[type]);
 
 const List = ({ ...props }: ListProps) => (
-  <div data-list {...props} role="list" tabIndex={-1} />
+  <div mui-list="" {...props} role="list" tabIndex={-1} />
 );
 
 const ListItem = ({
@@ -60,34 +60,36 @@ const ListItem = ({
 }: ListItemProps) => {
   return (
     <button
-      data-list-item
+      mui-list-item=""
       {...props}
       tabIndex={props.onClick ? 0 : -1}
       role={props.onClick ? "button" : "listitem"}>
-      <div data-list-item-content>
-        {overline && <span data-list-item-overline>{overline}</span>}
-        <div data-list-item-label>
+      <div mui-list-item-content="">
+        {overline && <span mui-list-item-overline="">{overline}</span>}
+        <div mui-list-item-label="">
           {children}
           {supportingText && (
-            <span data-list-item-supporting>{supportingText}</span>
+            <span mui-list-item-supporting="">{supportingText}</span>
           )}
         </div>
       </div>
       {trailingSupportingText && (
-        <span data-list-item-trailing-supporting>{trailingSupportingText}</span>
+        <span mui-list-item-trailing-supporting="">
+          {trailingSupportingText}
+        </span>
       )}
     </button>
   );
 };
 
 const ListItemLeading = ({ type, value, ...props }: ListItemLeadingProps) => (
-  <div data-list-item-leading={type} {...props}>
+  <div mui-list-item-leading={type} {...props}>
     {renderVariant(type, value)}
   </div>
 );
 
 const ListItemTrailing = ({ type, value, ...props }: ListItemTrailingProps) => (
-  <div data-list-item-trailing={type} {...props}>
+  <div mui-list-item-trailing={type} {...props}>
     {renderVariant(type, value)}
   </div>
 );

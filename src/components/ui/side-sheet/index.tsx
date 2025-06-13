@@ -64,7 +64,7 @@ const SideSheet = ({
     <SideSheetContext.Provider value={{ isOpen, toggle, variant }}>
       {children}
       {isOpen && variant === "modal" && (
-        <div data-side-sheet-overlay onClick={() => toggle(false)} />
+        <div mui-side-sheet-overlay="" onClick={() => toggle(false)} />
       )}
     </SideSheetContext.Provider>
   );
@@ -81,7 +81,7 @@ const SideSheetContent = ({ ...props }: SideSheetContentProps) => {
   const { isOpen, variant } = useSideSheetContext();
 
   return (
-    <div data-side-sheet-content={variant} aria-hidden={!isOpen} {...props} />
+    <div mui-side-sheet-content={variant} aria-hidden={!isOpen} {...props} />
   );
 };
 
@@ -94,7 +94,7 @@ const SideSheetHeader = ({
   const { toggle } = useSideSheetContext();
 
   return (
-    <div data-side-sheet-header {...props}>
+    <div mui-side-sheet-header="" {...props}>
       {back && (
         <IconButton flipIconInRtl onClick={() => toggle(false)}>
           <Icon name="arrow_back" />
@@ -111,7 +111,7 @@ const SideSheetHeader = ({
 };
 
 const SideSheetBody = ({ ...props }: SideSheetBodyProps) => {
-  return <div data-side-sheet-body {...props} />;
+  return <div mui-side-sheet-body="" {...props} />;
 };
 
 const SideSheetFooter = ({
@@ -119,7 +119,7 @@ const SideSheetFooter = ({
   ...props
 }: SideSheetFooterProps) => {
   return (
-    <div data-side-sheet-footer data-show-divider={showDivider} {...props} />
+    <div mui-side-sheet-footer="" data-divider={showDivider} {...props} />
   );
 };
 

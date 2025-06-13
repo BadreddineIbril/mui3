@@ -1,10 +1,10 @@
-[data-split-button] {
+[mui-split-button] {
   --split-button-item-full-radius: var(--radius-xl);
 
   display: flex;
   gap: var(--spacing-2);
 
-  [data-split-button-item] {
+  [mui-split-button-item] {
     &:first-child {
       border-start-start-radius: var(--split-button-item-full-radius);
       border-end-start-radius: var(--split-button-item-full-radius);

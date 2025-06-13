@@ -10,27 +10,27 @@ type TooltipFooterProps = ComponentProps<"div">;
 type TooltipActionProps = ComponentProps<"button">;
 
 const Tooltip = ({ ...props }: TooltipProps) => {
-  return <div data-tooltip {...props} />;
+  return <div mui-tooltip="" {...props} />;
 };
 
 const TooltipContent = ({ ...props }: TooltipContentProps) => {
-  return <div data-tooltip-content {...props} role="tooltip" />;
+  return <div mui-tooltip-content="" {...props} role="tooltip" />;
 };
 
 const TooltipSubhead = ({ ...props }: TooltipSubheadProps) => (
-  <p data-tooltip-subhead {...props} />
+  <p mui-tooltip-subhead="" {...props} />
 );
 
 const TooltipSupporting = ({ ...props }: TooltipSupportingProps) => (
-  <p data-tooltip-supporting {...props} />
+  <p mui-tooltip-supporting="" {...props} />
 );
 
 const TooltipFooter = ({ ...props }: TooltipFooterProps) => (
-  <div data-tooltip-footer {...props} />
+  <div mui-tooltip-footer="" {...props} />
 );
 
 const TooltipAction = ({ ...props }: TooltipActionProps) => (
-  <Button {...props} variant="text" size="sm" />
+  <Button mui-tooltip-action="" {...props} variant="text" size="sm" />
 );
 
 export {

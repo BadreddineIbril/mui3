@@ -1,7 +1,7 @@
-[data-select] {
+[mui-select] {
   position: relative;
 
-  [data-select-trigger] {
+  [mui-select-trigger] {
     width: 100%;
     height: 56px;
     outline-offset: -3px;
@@ -16,7 +16,7 @@
     justify-content: space-between;
     transition: var(--transition-standard-default-effects);
 
-    [data-select-value] {
+    [mui-select-value] {
       font: var(--font-body-lg);
     }
 
@@ -39,7 +39,7 @@
     }
   }
 
-  [data-select-portal] {
+  [mui-select-portal] {
     width: 100%;
     z-index: 9999;
     position: absolute;
@@ -49,7 +49,7 @@
     &[data-closed="false"] {
       animation-name: select-fade-in;
 
-      [data-select-content] {
+      [mui-select-content] {
         padding-block: var(--spacing-8);
       }
     }
@@ -57,19 +57,19 @@
     &[data-closed="true"] {
       animation-name: select-fade-out;
 
-      [data-select-content] {
+      [mui-select-content] {
         padding-block: var(--spacing-0);
       }
     }
 
-    [data-select-content] {
+    [mui-select-content] {
       display: grid;
       overflow: hidden;
       border-radius: var(--radius-xs);
       background-color: var(--color-surface-container);
       transition: padding-block var(--transition-standard-slow-spatial);
 
-      [data-select-option] {
+      [mui-select-option] {
         border: none;
         height: 56px;
         cursor: pointer;

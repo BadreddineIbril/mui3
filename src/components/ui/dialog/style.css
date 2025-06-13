@@ -1,4 +1,4 @@
-[data-dialog-portal] {
+[mui-dialog-portal] {
   z-index: 9999;
   position: fixed;
   left: 50%;
@@ -16,10 +16,10 @@
     animation-name: dialog-fade-out;
   }
 
-  [data-dialog-content] {
+  [mui-dialog-content] {
     overflow: hidden;
 
-    [data-dialog-header] {
+    [mui-dialog-header] {
       display: grid;
       padding: var(--spacing-24);
       padding-block-end: var(--spacing-0);
@@ -28,22 +28,22 @@
         color: var(--color-secondary);
       }
 
-      [data-dialog-headline] {
+      [mui-dialog-headline] {
         font: var(--font-headline-sm);
         color: var(--color-on-surface);
       }
 
-      [data-dialog-supporting] {
+      [mui-dialog-supporting] {
         text-align: start;
         font: var(--font-body-md);
         color: var(--color-on-surface-variant);
         padding-block-start: var(--spacing-24);
       }
 
-      &[data-show-divider] {
+      &[data-divider] {
         border-block-end: 1px solid var(--color-outline-variant);
 
-        [data-dialog-supporting] {
+        [mui-dialog-supporting] {
           padding-block-end: var(--spacing-8);
         }
       }
@@ -51,19 +51,19 @@
       &:has(> [data-icon]) {
         text-align: center;
 
-        [data-dialog-headline] {
+        [mui-dialog-headline] {
           padding-block-start: var(--spacing-16);
         }
       }
     }
 
-    [data-dialog-body] {
+    [mui-dialog-body] {
       padding: var(--spacing-24);
     }
   }
 }
 
-[data-dialog-overlay] {
+[mui-dialog-overlay] {
   inset: 0;
   z-index: 9998;
   position: fixed;

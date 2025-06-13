@@ -30,13 +30,13 @@ const Slider = ({
 
   return (
     <div
-      data-slider
+      mui-slider=""
       data-size={size}
       data-orientation={orientation}
       data-labeled={labeled && `${value}${LabelFormatter}`}
       style={{ "--value": cssValue() } as CSSProperties}>
       <input
-        data-slider-track
+        mui-slider-track=""
         {...props}
         min={min}
         max={max}

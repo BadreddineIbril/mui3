@@ -1,4 +1,4 @@
-[data-icon-button] {
+[mui-icon-button] {
   cursor: pointer;
   position: relative;
   border: 1px solid transparent;
@@ -11,11 +11,11 @@
   border-radius: var(--radius-rounded);
   transition: var(--transition-standard-fast-effects);
 
-  &[data-icon-button="standard"] {
+  &[mui-icon-button="standard"] {
     color: var(--color-on-surface-variant);
   }
 
-  &[data-icon-button="filled"] {
+  &[mui-icon-button="filled"] {
     color: var(--color-on-primary);
     background-color: var(--color-primary);
 
@@ -28,7 +28,7 @@
     }
   }
 
-  &[data-icon-button="tonal"] {
+  &[mui-icon-button="tonal"] {
     color: var(--color-on-secondary-container);
     background-color: var(--color-secondary-container);
 
@@ -41,7 +41,7 @@
     }
   }
 
-  &[data-icon-button="outlined"] {
+  &[mui-icon-button="outlined"] {
     color: var(--color-on-surface-variant);
     border-color: var(--color-outline-variant);
   }
@@ -155,8 +155,8 @@
     background-color: color-mix(in srgb, currentColor 12%, transparent);
   }
 
-  &[data-icon-button="standard"],
-  &[data-icon-button="outlined"] {
+  &[mui-icon-button="standard"],
+  &[mui-icon-button="outlined"] {
     &:hover {
       background-color: color-mix(in srgb, currentColor 8%, transparent);
     }

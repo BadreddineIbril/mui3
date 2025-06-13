@@ -1,4 +1,4 @@
-[data-badge] {
+[mui-badge] {
   position: relative;
   width: fit-content;
 
@@ -8,7 +8,7 @@
     background-color: var(--color-error);
   }
 
-  &[data-badge="lg"][data-label]::before {
+  &[mui-badge="lg"][data-label]::before {
     content: attr(data-label);
     font: var(--font-label-sm);
     color: var(--color-on-error);

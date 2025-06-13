@@ -20,7 +20,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      data-button={variant}
+      mui-button={variant}
       data-rounded={rounded}
       data-size={size}
       {...props}

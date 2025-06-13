@@ -28,22 +28,22 @@ const TextField = ({
   ...props
 }: TextFieldProps) => {
   return (
-    <div data-text-field={variant}>
-      {icon && <Icon data-text-field-icon name={icon} />}
-      {prefix && <span data-text-field-prefix>{prefix}</span>}
+    <div mui-text-field={variant}>
+      {icon && <Icon mui-text-field-icon name={icon} />}
+      {prefix && <span mui-text-field-prefix>{prefix}</span>}
       <input
-        data-text-field-input
+        mui-text-field-input=""
         {...props}
         placeholder={props.placeholder || " "}
         data-no-spinner={noSpinner}
         data-error={error}
       />
-      <label data-text-field-label htmlFor={props.id}>
+      <label mui-text-field-label="" htmlFor={props.id}>
         {label}
       </label>
-      {suffix && <span data-text-field-suffix>{suffix}</span>}
+      {suffix && <span mui-text-field-suffix="">{suffix}</span>}
       {((error && errorText) || supporting) && (
-        <span data-text-field-supporting>
+        <span mui-text-field-supporting="">
           {error && errorText ? errorText : supporting}
         </span>
       )}

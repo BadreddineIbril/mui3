@@ -13,7 +13,7 @@ type FabProps = ComponentProps<"button"> & {
 };
 
 const Fab = ({ variant = "soft-primary", size = "sm", ...props }: FabProps) => {
-  return <button data-fab={variant} data-size={size} {...props} />;
+  return <button mui-fab={variant} data-size={size} {...props} />;
 };
 
 export default Fab;

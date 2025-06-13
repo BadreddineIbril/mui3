@@ -1,4 +1,4 @@
-[data-snackbar] {
+[mui-snackbar] {
   --snackbar-offset: var(--spacing-24);
 
   z-index: 9999;
@@ -23,7 +23,7 @@
     height: 48px;
     min-width: 350px;
 
-    [data-snackbar-message] {
+    [mui-snackbar-message] {
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -38,46 +38,46 @@
     gap: var(--spacing-10);
     padding-block: var(--spacing-10);
 
-    [data-snackbar-message] {
+    [mui-snackbar-message] {
       width: 100%;
     }
   }
 
-  &[data-snackbar*="top"] {
+  &[mui-snackbar*="top"] {
     inset-block-start: var(--snackbar-offset);
   }
 
-  &[data-snackbar*="bottom"] {
+  &[mui-snackbar*="bottom"] {
     inset-block-end: var(--snackbar-offset);
   }
 
-  &[data-snackbar*="start"] {
+  &[mui-snackbar*="start"] {
     inset-inline-start: var(--snackbar-offset);
   }
 
-  &[data-snackbar*="center"] {
+  &[mui-snackbar*="center"] {
     inset-inline-start: 50%;
     transform: translateX(-50%);
   }
 
-  &[data-snackbar*="end"] {
+  &[mui-snackbar*="end"] {
     inset-inline-end: var(--snackbar-offset);
   }
 
-  [data-snackbar-message] {
+  [mui-snackbar-message] {
     flex: 2;
     font: var(--font-body-md);
   }
 
-  [data-snackbar-events] {
+  [mui-snackbar-events] {
     display: flex;
     gap: var(--spacing-4);
 
-    [data-snackbar-action] {
+    [mui-snackbar-action] {
       color: var(--color-inverse-primary);
     }
 
-    [data-snackbar-close] {
+    [mui-snackbar-close] {
       color: inherit;
     }
   }

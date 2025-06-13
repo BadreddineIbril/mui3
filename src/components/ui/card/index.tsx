@@ -7,11 +7,11 @@ type CardProps = ComponentProps<"div"> & {
 type CardActionAreaProps = ComponentProps<"button">;
 
 const Card = ({ variant = "elevated", ...props }: CardProps) => {
-  return <div data-card={variant} {...props} />;
+  return <div mui-card={variant} {...props} />;
 };
 
 const CardActionArea = ({ ...props }: CardActionAreaProps) => {
-  return <button data-card-action-area {...props} />;
+  return <button mui-card-action-area="" {...props} />;
 };
 
 export { Card, CardActionArea };

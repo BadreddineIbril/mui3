@@ -1,4 +1,4 @@
-[data-checkbox] {
+[mui-checkbox] {
   --checkbox-size: 18px;
   --checkbox-offset: calc(var(--checkbox-size) / 3);
 

@@ -1,4 +1,4 @@
-[data-fab] {
+[mui-fab] {
   cursor: pointer;
   width: max-content;
   position: relative;
@@ -12,37 +12,37 @@
   transition: var(--transition-standard-fast-effects);
   box-shadow: var(--shadow-2);
 
-  &[data-fab="primary"] {
+  &[mui-fab="primary"] {
     --fab-bg: var(--color-primary);
 
     color: var(--color-on-primary);
   }
 
-  &[data-fab="secondary"] {
+  &[mui-fab="secondary"] {
     --fab-bg: var(--color-secondary);
 
     color: var(--color-on-secondary);
   }
 
-  &[data-fab="tertiary"] {
+  &[mui-fab="tertiary"] {
     --fab-bg: var(--color-tertiary);
 
     color: var(--color-on-tertiary);
   }
 
-  &[data-fab="soft-primary"] {
+  &[mui-fab="soft-primary"] {
     --fab-bg: var(--color-primary-container);
 
     color: var(--color-on-primary-container);
   }
 
-  &[data-fab="soft-secondary"] {
+  &[mui-fab="soft-secondary"] {
     --fab-bg: var(--color-secondary-container);
 
     color: var(--color-on-secondary-container);
   }
 
-  &[data-fab="soft-tertiary"] {
+  &[mui-fab="soft-tertiary"] {
     --fab-bg: var(--color-tertiary-container);
 
     color: var(--color-tertiary-on-container);

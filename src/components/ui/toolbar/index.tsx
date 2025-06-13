@@ -17,7 +17,7 @@ const Toolbar = ({
 }: ToolbarProps) => {
   return (
     <div
-      data-toolbar={variant}
+      mui-toolbar={variant}
       data-type={type}
       data-alignment={alignment}
       aria-orientation={orientation}
