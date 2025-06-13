@@ -76,6 +76,10 @@
         border-radius: var(--radius-rounded) var(--radius-rounded) 0 0;
       }
 
+      &:dir(rtl)::before {
+        transform: translateX(-50%);
+      }
+
       [mui-tabs-trigger][aria-selected="true"] {
         color: var(--color-primary);
 

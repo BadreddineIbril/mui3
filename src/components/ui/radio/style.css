@@ -22,8 +22,8 @@
     position: absolute;
     clip-path: circle();
     translate: -50% -50%;
+    left: 50%;
     inset-block-start: 50%;
-    inset-inline-start: 50%;
     width: var(--radio-dot-size);
     height: var(--radio-dot-size);
     background-color: var(--color-primary);

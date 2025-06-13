@@ -19,7 +19,8 @@
   }
 
   &[mui-side-sheet-content="modal"] {
-    border-radius: var(--radius-lg);
+    border-start-start-radius: var(--radius-lg);
+    border-end-start-radius: var(--radius-lg);
     border-inline-start: 1px solid var(--color-outline-variant);
   }
 

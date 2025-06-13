@@ -26,7 +26,7 @@
     color: var(--color-inverse-on-surface);
     background-color: var(--color-inverse-surface);
     translate: -50% var(--spacing-4);
-    inset-inline-start: 50%;
+    left: 50%;
     display: grid;
     align-items: center;
     transition: var(--transition-standard-slow-effects);

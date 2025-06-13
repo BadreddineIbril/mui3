@@ -20,11 +20,11 @@
     content: "";
     position: absolute;
     inset-block-start: 50%;
-    inset-inline-start: 50%;
+    left: 50%;
     width: calc(var(--checkbox-size) / 5);
     height: calc(var(--checkbox-size) / 4);
+    border-right: 2px solid transparent;
     border-block-end: 2px solid transparent;
-    border-inline-end: 2px solid transparent;
     transform: translate(-50%, -60%) rotate(45deg);
     transition: var(--transition-standard-slow-effects);
   }
