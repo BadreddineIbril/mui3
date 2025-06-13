@@ -53,7 +53,7 @@
     }
 
     &:has([data-error="true"]) [data-text-field-label] {
-      color: var(--color-error-on-container) !important;
+      color: var(--color-on-error-container) !important;
     }
   }
 

@@ -1,6 +1,6 @@
 [data-list] {
   padding-block: var(--spacing-8);
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container);
 
   [data-list-item] {
     width: 100%;

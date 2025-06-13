@@ -1,7 +1,7 @@
 [data-rail] {
   width: 80px;
   padding-block: 44px;
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container);
   display: flex;
   gap: 40px;
   align-items: center;
@@ -47,7 +47,7 @@
 
       &[aria-selected="true"] {
         [data-icon-button] {
-          color: var(--color-secondary-on-container);
+          color: var(--color-on-secondary-container);
           background-color: var(--color-secondary-container);
         }
 

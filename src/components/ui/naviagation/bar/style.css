@@ -16,7 +16,7 @@
     &[aria-selected="true"] {
       [data-button],
       [data-icon-button] {
-        color: var(--color-secondary-on-container) !important;
+        color: var(--color-on-secondary-container) !important;
         background-color: var(--color-secondary-container);
       }
 

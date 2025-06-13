@@ -1,5 +1,5 @@
-import { COMPONENTS_GROUP } from "@/util/helpers";
 import { useParams } from "react-router-dom";
+import COMPONENTS_GROUP from "@/data/components";
 
 const Preview = () => {
   const { id } = useParams();

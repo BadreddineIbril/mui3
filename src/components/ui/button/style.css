@@ -37,7 +37,7 @@
   }
 
   &[data-button="tonal"] {
-    color: var(--color-secondary-on-container);
+    color: var(--color-on-secondary-container);
     background-color: var(--color-secondary-container);
 
     &:hover {

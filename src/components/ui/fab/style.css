@@ -33,13 +33,13 @@
   &[data-fab="soft-primary"] {
     --fab-bg: var(--color-primary-container);
 
-    color: var(--color-primary-on-container);
+    color: var(--color-on-primary-container);
   }
 
   &[data-fab="soft-secondary"] {
     --fab-bg: var(--color-secondary-container);
 
-    color: var(--color-secondary-on-container);
+    color: var(--color-on-secondary-container);
   }
 
   &[data-fab="soft-tertiary"] {

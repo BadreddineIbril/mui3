@@ -6,7 +6,7 @@
   inset-inline-end: 0;
   inset-block-start: 0;
   color: var(--color-on-surface-variant);
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container);
   height: 100%;
   width: var(--side-sheet-width);
   display: flex;

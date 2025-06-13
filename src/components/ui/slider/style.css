@@ -126,7 +126,7 @@
     border-radius: var(--radius-circled);
     inset-block-start: 50%;
     inset-inline-end: calc(var(--spacing-8) - var(--spacing-2));
-    background-color: var(--color-secondary-on-container);
+    background-color: var(--color-on-secondary-container);
   }
 
   /* Label */
@@ -140,7 +140,7 @@
       border-radius: var(--radius-rounded);
       padding: var(--spacing-12) var(--spacing-16);
       color: var(--color-on-primary);
-      background-color: var(--color-secondary-on-container);
+      background-color: var(--color-on-secondary-container);
       inset-inline-start: calc(var(--value) * 1%);
       inset-block-end: calc(100% + var(--spacing-16));
       transition: opacity var(--transition-standard-fast-effects),
@@ -212,7 +212,7 @@
 
     &:focus-visible::-webkit-slider-thumb {
       outline-width: 3px;
-      outline-color: var(--color-secondary-on-container);
+      outline-color: var(--color-on-secondary-container);
     }
   }
 

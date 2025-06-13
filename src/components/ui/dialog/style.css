@@ -4,7 +4,7 @@
   left: 50%;
   translate: -50% -50%;
   border-radius: var(--radius-xl);
-  background-color: var(--color-surface-variant);
+  background-color: var(--color-surface-container-high);
   display: grid;
   animation: var(--transition-expressive-slow-spatial) forwards;
 

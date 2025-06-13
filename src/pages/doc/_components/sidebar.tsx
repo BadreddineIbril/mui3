@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { COMPONENTS_GROUP } from "@/util/helpers";
+import COMPONENTS_GROUP from "@/data/components";
 
 const Sidebar = () => {
   const { id } = useParams();

@@ -29,7 +29,7 @@
   }
 
   &[data-icon-button="tonal"] {
-    color: var(--color-secondary-on-container);
+    color: var(--color-on-secondary-container);
     background-color: var(--color-secondary-container);
 
     &:hover {
@@ -195,6 +195,6 @@
 @keyframes focus {
   to {
     outline-width: 3px;
-    outline-color: var(--color-secondary-on-container);
+    outline-color: var(--color-on-secondary-container);
   }
 }
