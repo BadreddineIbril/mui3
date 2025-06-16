@@ -18,6 +18,7 @@ type ButtonGroupProps = ComponentProps<"div"> & {
 type ButtonGroupItemProps = ComponentProps<"button"> & {
   variant?: Variant;
   width?: IconButtonProps["width"];
+  rounded?: ButtonProps["rounded"];
   asIcon?: boolean;
 };
 
@@ -60,6 +61,7 @@ const ButtonGroupItem = ({
   variant,
   disabled,
   width,
+  rounded,
   asIcon,
   ...props
 }: ButtonGroupItemProps) => {
@@ -73,6 +75,7 @@ const ButtonGroupItem = ({
       disabled={disabled ?? ctx.disabled}
       width={width ?? ctx.width}
       size={ctx.size}
+      rounded={rounded}
       {...props}
     />
   );

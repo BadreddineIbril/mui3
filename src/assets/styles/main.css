@@ -1,4 +1,6 @@
+@import url("./layout/navigation.css");
 @import url("./pages/doc.css");
+@import url("./pages/docs.css");
 
 * {
   margin: 0;
@@ -20,10 +22,10 @@ body {
 
   & > main {
     flex: 2;
-    padding-inline: 10%;
+    padding-inline: 7%;
   }
 
-  & > [data-layout] {
-    padding: 1.5em 10%;
+  & > [mui-layout] {
+    padding: 1.5em 7%;
   }
 }

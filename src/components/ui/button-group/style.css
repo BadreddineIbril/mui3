@@ -23,14 +23,14 @@
     gap: var(--spacing-2);
 
     &[data-size="xs"] {
-      [mui-button-group-item] {
+      [mui-button-group-item]:not([data-rounded="true"]) {
         border-radius: var(--spacing-4);
       }
     }
 
     &[data-size="sm"],
     &[data-size="md"] {
-      [mui-button-group-item] {
+      [mui-button-group-item]:not([data-rounded="true"]) {
         border-radius: var(--spacing-8);
       }
     }
@@ -38,7 +38,7 @@
     &[data-size="lg"] {
       --button-group-item-radius: var(--radius-xxl);
 
-      [mui-button-group-item] {
+      [mui-button-group-item]:not([data-rounded="true"]) {
         border-radius: var(--spacing-16);
       }
     }
@@ -46,12 +46,12 @@
     &[data-size="xl"] {
       --button-group-item-radius: calc(var(--radius-xxl) * 2);
 
-      [mui-button-group-item] {
+      [mui-button-group-item]:not([data-rounded="true"]) {
         border-radius: calc(var(--spacing-16) + var(--spacing-4));
       }
     }
 
-    [mui-button-group-item] {
+    [mui-button-group-item]:not([data-rounded="true"]) {
       &:first-child {
         border-end-start-radius: var(--button-group-item-radius);
         border-start-start-radius: var(--button-group-item-radius);

@@ -1,0 +1,9 @@
+[mui-layout="nav"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  position: sticky;
+  inset-block-start: 0;
+  background-color: var(--color-background);
+}

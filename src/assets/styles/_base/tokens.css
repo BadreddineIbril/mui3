@@ -1,6 +1,7 @@
 @layer tokens {
   :root {
-    color-scheme: light;
+    /* color-scheme: light; */
+    color-scheme: dark;
     --color-overlay: rgba(0, 0, 0, 0.3);
 
     --spacing-0: 0;

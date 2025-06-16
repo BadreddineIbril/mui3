@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "@/components/layout";
 import Home from "@/pages/home";
 import Doc from "@/pages/doc";
+import Docs from "@/pages/docs";
 
 export default function AppRouter() {
   const router = createBrowserRouter([
@@ -16,6 +17,7 @@ export default function AppRouter() {
         //   path: "/doc/:id?",
         //   element: <Doc />,
         // },
+        { path: "/", element: <Docs /> },
         { path: "/:id?", element: <Doc /> },
         {
           path: "/*",

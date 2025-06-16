@@ -14,7 +14,6 @@ const Button = ({
   target = "_self",
   rounded = false,
   size = "sm",
-  onClick,
   href,
   ...props
 }: ButtonProps) => {
@@ -25,7 +24,7 @@ const Button = ({
       data-size={size}
       {...props}
       onClick={(e) => {
-        onClick?.(e);
+        props.onClick?.(e);
         if (!e.defaultPrevented && href) open(href, target);
       }}
     />

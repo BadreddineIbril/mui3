@@ -1,5 +1,5 @@
 const Footer = () => {
-  return <footer data-layout="footer">Footer</footer>;
+  return <footer mui-layout="footer">Footer</footer>;
 };
 
 export default Footer;

@@ -1,5 +1,4 @@
 import type { ComponentProps } from "react";
-import "./style.css";
 
 type IconProps = ComponentProps<"span"> & {
   name: string;
