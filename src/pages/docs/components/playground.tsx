@@ -7,6 +7,7 @@ import SyntaxHighlighter from "@/components/misc/syntax-highlighter";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import BUTTON_DEMO from "@/components/examples/button";
 import ICON_BUTTON_DEMO from "@/components/examples/icon-button";
+import FAB_DEMO from "@/components/examples/fab";
 
 const Playground = () => {
   function toComponent(element: () => JSX.Element) {
@@ -25,7 +26,7 @@ const Playground = () => {
 
   return (
     <section className="playground">
-      {ICON_BUTTON_DEMO.content.map(({ id, label, preview, code }) => (
+      {FAB_DEMO.content.map(({ id, label, preview, code }) => (
         <div key={id} className="playground-box">
           {label && (
             <div className="heading">
