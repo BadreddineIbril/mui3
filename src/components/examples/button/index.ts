@@ -10,7 +10,7 @@ import ButtonSize from "./button.size";
 const BUTTON_DEMO: DemoDefinition = {
   id: "button",
   label: "Button",
-  description: "Displays a button or a component that looks like a button.",
+  description: "Buttons prompt most actions in a UI",
   content: [
     {
       id: "overview",
