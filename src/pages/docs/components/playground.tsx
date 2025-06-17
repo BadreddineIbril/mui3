@@ -13,6 +13,7 @@ import BUTTON_GROUP_DEMO from "@/components/examples/button-group";
 import CHECKBOX_DEMO from "@/components/examples/checkbox";
 import RADIO_DEMO from "@/components/examples/radio";
 import SWITCH_DEMO from "@/components/examples/switch";
+import SLIDER_DEMO from "@/components/examples/slider";
 
 const Playground = () => {
   function toComponent(element: () => JSX.Element) {
@@ -31,7 +32,7 @@ const Playground = () => {
 
   return (
     <section className="playground">
-      {SWITCH_DEMO.content.map(({ id, label, preview, code }) => (
+      {SLIDER_DEMO.content.map(({ id, label, preview, code }) => (
         <div key={id} className="playground-box">
           {label && (
             <div className="heading">
