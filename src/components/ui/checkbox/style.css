@@ -82,13 +82,18 @@
     pointer-events: none;
     border-color: color-mix(in srgb, var(--color-on-surface) 38%, transparent);
 
-    &:checked {
+    &:checked,
+    &:indeterminate {
       border-color: transparent;
       background-color: color-mix(
         in srgb,
         var(--color-on-surface) 38%,
         transparent
       );
+
+      &::before {
+        border-color: var(--color-surface);
+      }
     }
   }
 
