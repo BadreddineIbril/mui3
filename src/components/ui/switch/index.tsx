@@ -9,7 +9,7 @@ type SwitchProps = Omit<ComponentProps<"input">, "type"> & {
 const Switch = ({ icons, showOnlySelectedIcon, ...props }: SwitchProps) => {
   return (
     <input
-      data-switch
+      mui-switch=""
       data-icons={icons || undefined}
       data-show-only-selected-icon={showOnlySelectedIcon || undefined}
       {...props}

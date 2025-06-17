@@ -1,4 +1,4 @@
-[data-switch] {
+[mui-switch] {
   --switch-width: 52px;
   --switch-height: 32px;
   --switch-thumb-size: 16px;
@@ -103,7 +103,7 @@
       );
 
       &::before {
-        opacity: 0.38;
+        color: var(--color-surface-container-highest);
       }
     }
 
@@ -115,6 +115,7 @@
       );
 
       &::before {
+        background-color: var(--color-surface);
         color: color-mix(in srgb, var(--color-on-surface) 38%, transparent);
       }
     }

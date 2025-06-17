@@ -4,7 +4,7 @@ import RadioDisabled from "./radio-disabled";
 import RadioWithLabel from "./radio-with-label";
 
 const RADIO_DEMO: DemoDefinition = {
-  id: "Radio",
+  id: "radio",
   label: "Radio",
   description:
     "Radio buttons let people select one option from a set of options",
