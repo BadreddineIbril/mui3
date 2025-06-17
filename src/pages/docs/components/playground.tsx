@@ -11,6 +11,7 @@ import FAB_DEMO from "@/components/examples/fab";
 import SPLIT_BUTTON_DEMO from "@/components/examples/split-button";
 import BUTTON_GROUP_DEMO from "@/components/examples/button-group";
 import CHECKBOX_DEMO from "@/components/examples/checkbox";
+import RADIO_DEMO from "@/components/examples/radio";
 
 const Playground = () => {
   function toComponent(element: () => JSX.Element) {
@@ -29,7 +30,7 @@ const Playground = () => {
 
   return (
     <section className="playground">
-      {CHECKBOX_DEMO.content.map(({ id, label, preview, code }) => (
+      {RADIO_DEMO.content.map(({ id, label, preview, code }) => (
         <div key={id} className="playground-box">
           {label && (
             <div className="heading">
