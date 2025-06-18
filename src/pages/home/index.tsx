@@ -25,7 +25,7 @@ import {
   ListItemLeading,
   ListItemTrailing,
 } from "@/components/ui/list";
-import { Bar, BarItem } from "@/components/ui/naviagation/bar";
+import { Bar, BarItem } from "@/components/ui/navigation/bar";
 import {
   Rail,
   RailBody,
@@ -33,7 +33,7 @@ import {
   RailHeader,
   RailItem,
   RailMenu,
-} from "@/components/ui/naviagation/rail";
+} from "@/components/ui/navigation/rail";
 import Radio from "@/components/ui/radio";
 import { Select, SelectOption } from "@/components/ui/select";
 import {

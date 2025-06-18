@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Bar, BarItem } from "@/components/ui/naviagation/bar";
+import { Bar, BarItem } from "@/components/ui/navigation/bar";
 
 const NavigationBarDemo = () => {
   const [bar, setBar] = useState<number>(0);

@@ -6,7 +6,7 @@ import {
   RailBody,
   RailItem,
   RailFab,
-} from "@/components/ui/naviagation/rail";
+} from "@/components/ui/navigation/rail";
 
 const NavigationRailDemo = () => {
   return (

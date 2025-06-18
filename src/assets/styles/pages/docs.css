@@ -179,6 +179,16 @@
                 height: 200px;
               }
             }
+
+            & > [mui-bar] {
+              &[aria-orientation="horizontal"] {
+                width: 300px;
+              }
+
+              &[aria-orientation="vertical"] {
+                width: 500px;
+              }
+            }
           }
         }
       }

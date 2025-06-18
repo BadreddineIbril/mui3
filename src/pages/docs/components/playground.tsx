@@ -15,6 +15,7 @@ import RADIO_DEMO from "@/components/examples/radio";
 import SWITCH_DEMO from "@/components/examples/switch";
 import SLIDER_DEMO from "@/components/examples/slider";
 import CHIPS_DEMO from "@/components/examples/chips";
+import NAVIGATION_BAR_DEMO from "@/components/examples/navigation-bar";
 
 const Playground = () => {
   function toComponent(element: () => JSX.Element) {
@@ -33,7 +34,7 @@ const Playground = () => {
 
   return (
     <section className="playground">
-      {CHIPS_DEMO.content.map(({ id, label, preview, code }) => (
+      {NAVIGATION_BAR_DEMO.content.map(({ id, label, preview, code }) => (
         <div key={id} className="playground-box">
           {label && (
             <div className="heading">
