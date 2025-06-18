@@ -95,6 +95,8 @@
       &::before {
         height: 2px;
         width: calc(100% / var(--length));
+        transform: none;
+        border-radius: var(--radius-none);
       }
 
       [mui-tabs-trigger][aria-selected="true"] {

@@ -197,6 +197,10 @@
             & > [mui-rail] {
               height: 600px;
             }
+
+            & > [mui-tabs] {
+              width: 500px;
+            }
           }
         }
       }

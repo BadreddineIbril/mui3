@@ -17,7 +17,7 @@
     --spacing-48: 48px;
     --spacing-64: 64px;
 
-    --radius-none: none;
+    --radius-none: 0px;
     --radius-xs: 4px;
     --radius-sm: 8px;
     --radius-md: 12px;

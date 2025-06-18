@@ -17,6 +17,7 @@ import SLIDER_DEMO from "@/components/examples/slider";
 import CHIPS_DEMO from "@/components/examples/chips";
 import NAVIGATION_BAR_DEMO from "@/components/examples/navigation-bar";
 import NAVIGATION_RAIL_DEMO from "@/components/examples/navigation-rail";
+import TABS_DEMO from "@/components/examples/tabs";
 
 const Playground = () => {
   function toComponent(element: () => JSX.Element) {
@@ -35,7 +36,7 @@ const Playground = () => {
 
   return (
     <section className="playground">
-      {NAVIGATION_RAIL_DEMO.content.map(({ id, label, preview, code }) => (
+      {TABS_DEMO.content.map(({ id, label, preview, code }) => (
         <div key={id} className="playground-box">
           {label && (
             <div className="heading">
