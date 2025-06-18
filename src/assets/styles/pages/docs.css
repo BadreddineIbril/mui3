@@ -201,6 +201,12 @@
             & > [mui-tabs] {
               width: 500px;
             }
+
+            & > [mui-toolbar] {
+              &[aria-orientation="horizontal"] {
+                width: 400px;
+              }
+            }
           }
         }
       }
