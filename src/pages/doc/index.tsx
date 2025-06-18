@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 const Doc = () => {
   useEffect(() => {
-    useTheme("#00ffff");
+    useTheme("#ff9f1c");
   }, []);
 
   return (

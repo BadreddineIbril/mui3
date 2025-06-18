@@ -106,6 +106,10 @@
             transparent 1px
           );
         background-size: 50px 50px;
+
+        &:has([mui-rail]) {
+          height: 700px;
+        }
       }
 
       .code-content {
@@ -188,6 +192,10 @@
               &[aria-orientation="vertical"] {
                 width: 500px;
               }
+            }
+
+            & > [mui-rail] {
+              height: 600px;
             }
           }
         }
