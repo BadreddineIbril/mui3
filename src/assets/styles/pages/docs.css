@@ -207,6 +207,12 @@
                 width: 400px;
               }
             }
+
+            &:has([mui-snackbar]):has([mui-button]:nth-child(2)) {
+              & > [mui-button] {
+                text-transform: capitalize;
+              }
+            }
           }
         }
       }
