@@ -213,6 +213,14 @@
                 text-transform: capitalize;
               }
             }
+
+            & > [mui-divider="horizontal"] {
+              width: 300px;
+            }
+
+            & > [mui-divider="vertical"] {
+              height: 300px;
+            }
           }
         }
       }
