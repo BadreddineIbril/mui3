@@ -24,6 +24,7 @@ import DIALOG_DEMO from "@/components/examples/dialog";
 import SNACKBAR_DEMO from "@/components/examples/snackbar";
 import TOOLTIP_DEMO from "@/components/examples/tooltip";
 import BADGE_DEMO from "@/components/examples/badge";
+import CARD_DEMO from "@/components/examples/card";
 
 const Playground = () => {
   function toComponent(element: () => JSX.Element) {
@@ -42,7 +43,7 @@ const Playground = () => {
 
   return (
     <section className="playground">
-      {BADGE_DEMO.content.map(({ id, label, preview, code }) => (
+      {CARD_DEMO.content.map(({ id, label, preview, code }) => (
         <div key={id} className="playground-box">
           {label && (
             <div className="heading">
