@@ -20,6 +20,7 @@ import NAVIGATION_RAIL_DEMO from "@/components/examples/navigation-rail";
 import TABS_DEMO from "@/components/examples/tabs";
 import TOOLBAR_DEMO from "@/components/examples/toolbar";
 import SIDE_SHEET_DEMO from "@/components/examples/side-sheet";
+import DIALOG_DEMO from "@/components/examples/dialog";
 
 const Playground = () => {
   function toComponent(element: () => JSX.Element) {
@@ -38,7 +39,7 @@ const Playground = () => {
 
   return (
     <section className="playground">
-      {SIDE_SHEET_DEMO.content.map(({ id, label, preview, code }) => (
+      {DIALOG_DEMO.content.map(({ id, label, preview, code }) => (
         <div key={id} className="playground-box">
           {label && (
             <div className="heading">

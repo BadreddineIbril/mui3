@@ -6,7 +6,7 @@ import EndBar from "@/pages/docs/components/end-bar";
 
 const Docs = () => {
   useEffect(() => {
-    useTheme("#6750a4");
+    useTheme("#ecf39e");
   }, []);
 
   return (
