@@ -1,8 +1,8 @@
 import Button from "@/components/ui/button";
 
-const EndBar = () => {
+const OnThisPage = () => {
   return (
-    <aside className="end-bar">
+    <aside className="on-this-page-area">
       <div className="guide-box">
         <h3 className="title">On this page</h3>
         <div className="actions-list">
@@ -12,16 +12,10 @@ const EndBar = () => {
             ))}
           </div>
           <div className="actions">
-            <Button rounded>Overview</Button>
-            <Button variant="text" rounded>
-              Installation
-            </Button>
-            <Button variant="text" rounded>
-              Examples
-            </Button>
-            <Button variant="text" rounded>
-              API Reference
-            </Button>
+            <Button>Overview</Button>
+            <Button variant="text">Installation</Button>
+            <Button variant="text">Examples</Button>
+            <Button variant="text">API Reference</Button>
           </div>
         </div>
       </div>
@@ -29,4 +23,4 @@ const EndBar = () => {
   );
 };
 
-export default EndBar;
+export default OnThisPage;

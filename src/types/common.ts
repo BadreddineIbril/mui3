@@ -1,17 +1,13 @@
-import type { JSX } from "react";
+import type { DemoDefinition } from "@/types/demo";
 
-export interface ComponentsGroupDefinition {
-  group: GroupDefinition;
-  components: ComponentDefinition[];
-}
-
-export interface GroupDefinition {
+export interface ComponentGroupDefinition {
   id: string;
   label: string;
+  components: DemoDefinition[];
 }
 
-export interface ComponentDefinition {
+export interface GetStartedDefinition {
   id: string;
   label: string;
-  demo: () => JSX.Element;
+  links: { label: string; href: string }[];
 }

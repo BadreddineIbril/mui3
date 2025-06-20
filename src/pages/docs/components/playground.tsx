@@ -5,27 +5,8 @@ import Icon from "@/components/misc/icon";
 import Copy from "@/components/misc/copy";
 import SyntaxHighlighter from "@/components/misc/syntax-highlighter";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import BUTTON_DEMO from "@/components/examples/button";
-import ICON_BUTTON_DEMO from "@/components/examples/icon-button";
-import FAB_DEMO from "@/components/examples/fab";
-import SPLIT_BUTTON_DEMO from "@/components/examples/split-button";
-import BUTTON_GROUP_DEMO from "@/components/examples/button-group";
-import CHECKBOX_DEMO from "@/components/examples/checkbox";
-import RADIO_DEMO from "@/components/examples/radio";
-import SWITCH_DEMO from "@/components/examples/switch";
-import SLIDER_DEMO from "@/components/examples/slider";
-import CHIPS_DEMO from "@/components/examples/chips";
-import NAVIGATION_BAR_DEMO from "@/components/examples/navigation-bar";
-import NAVIGATION_RAIL_DEMO from "@/components/examples/navigation-rail";
-import TABS_DEMO from "@/components/examples/tabs";
-import TOOLBAR_DEMO from "@/components/examples/toolbar";
-import SIDE_SHEET_DEMO from "@/components/examples/side-sheet";
-import DIALOG_DEMO from "@/components/examples/dialog";
-import SNACKBAR_DEMO from "@/components/examples/snackbar";
-import TOOLTIP_DEMO from "@/components/examples/tooltip";
-import BADGE_DEMO from "@/components/examples/badge";
-import CARD_DEMO from "@/components/examples/card";
 import DIVIDER_DEMO from "@/components/examples/divider";
+import Button from "@/components/ui/button";
 
 const Playground = () => {
   function toComponent(element: () => JSX.Element) {
@@ -43,7 +24,7 @@ const Playground = () => {
   }
 
   return (
-    <section className="playground">
+    <section className="playground-area">
       {DIVIDER_DEMO.content.map(({ id, label, preview, code }) => (
         <div key={id} className="playground-box">
           {label && (
@@ -51,7 +32,10 @@ const Playground = () => {
               <h2 className="title">{label}</h2>
             </div>
           )}
-          <Tabs defaultTab={isInstallation(id) ? "tsx" : "preview"} inlineIcon>
+          <Tabs
+            className="selector"
+            defaultTab={isInstallation(id) ? "tsx" : "preview"}
+            inlineIcon>
             {isInstallation(id) ? (
               <TabsList>
                 <TabsTrigger value="tsx">
@@ -100,6 +84,16 @@ const Playground = () => {
           </Tabs>
         </div>
       ))}
+      <div className="playground-actions">
+        <Button variant="text">
+          <Icon name="arrow_left_alt" />
+          Button
+        </Button>
+        <Button variant="text">
+          Fab
+          <Icon name="arrow_right_alt" />
+        </Button>
+      </div>
     </section>
   );
 };

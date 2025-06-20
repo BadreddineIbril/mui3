@@ -21,9 +21,8 @@ import TabsDemo from "@/components/examples/tabs-demo";
 import TextFieldDemo from "@/components/examples/text-field-demo";
 import ToolbarDemo from "@/components/examples/toolbar-demo";
 import TooltipDemo from "@/components/examples/tooltip-demo";
-import type { ComponentsGroupDefinition } from "@/types/common";
 
-const COMPONENTS_GROUP: ComponentsGroupDefinition[] = [
+const COMPONENTS_GROUP = [
   {
     group: { id: "form", label: "Form" },
     components: [

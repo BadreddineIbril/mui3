@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useTheme } from "@/composables/use-theme";
-import StartBar from "@/pages/docs/components/start-bar";
+import Controls from "@/pages/docs/components/controls";
 import Preview from "@/pages/docs/components/playground";
-import EndBar from "@/pages/docs/components/end-bar";
+import OnThisPage from "@/pages/docs/components/on-this-page";
 
 const Docs = () => {
   useEffect(() => {
@@ -11,9 +11,9 @@ const Docs = () => {
 
   return (
     <main mui-page="docs">
-      <StartBar />
+      <Controls />
       <Preview />
-      <EndBar />
+      <OnThisPage />
     </main>
   );
 };
