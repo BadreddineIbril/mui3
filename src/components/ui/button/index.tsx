@@ -1,4 +1,5 @@
 import "./style.css";
+import { useNavigate } from "react-router-dom";
 import type { ComponentProps, HTMLAttributeAnchorTarget } from "react";
 
 type ButtonProps = ComponentProps<"button"> & {
@@ -17,6 +18,8 @@ const Button = ({
   href,
   ...props
 }: ButtonProps) => {
+  const navigate = useNavigate();
+
   return (
     <button
       mui-button={variant}
@@ -25,7 +28,13 @@ const Button = ({
       {...props}
       onClick={(e) => {
         props.onClick?.(e);
-        if (!e.defaultPrevented && href) open(href, target);
+        if (!e.defaultPrevented && href) {
+          if (target === "_blank") {
+            open(href, target, "noopener,noreferrer");
+          } else {
+            navigate(href);
+          }
+        }
       }}
     />
   );

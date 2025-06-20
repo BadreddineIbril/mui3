@@ -2,6 +2,7 @@
   cursor: pointer;
   width: max-content;
   position: relative;
+  text-decoration: none;
   border: 1px solid transparent;
   outline-offset: 1px;
   outline: 10px solid transparent;
