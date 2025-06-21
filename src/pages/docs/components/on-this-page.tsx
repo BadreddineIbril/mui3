@@ -17,19 +17,22 @@ const OnThisPage = () => {
       <div className="guide-box">
         <h3 className="title">On this page</h3>
         <div className="actions">
-          <ul className="main-links">
-            {content.slice(0, 2).map((item) => (
-              <li>
-                <a
-                  mui-button={isActiveLink(item.id) ? "filled" : "text"}
-                  data-size="sm"
-                  href={`#${item.id}`}>
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <div className="example-links">
+          <div className="links">
+            <h4 className="subtitle">Usage</h4>
+            <ul>
+              {content.slice(0, 2).map((item) => (
+                <li>
+                  <a
+                    mui-button={isActiveLink(item.id) ? "filled" : "text"}
+                    data-size="sm"
+                    href={`#${item.id}`}>
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="links">
             <h4 className="subtitle">Examples</h4>
             <ul>
               {content.slice(2).map((item) => (

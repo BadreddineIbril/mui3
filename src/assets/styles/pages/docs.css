@@ -247,9 +247,8 @@
   .on-this-page-area {
     .guide-box {
       display: grid;
-      gap: var(--spacing-16);
-      color: var(--color-secondary);
-      border-radius: var(--radius-lg);
+      gap: var(--spacing-24);
+      color: var(--color-on-surface-variant);
       position: sticky;
       inset-block-start: calc(82px + var(--spacing-12));
 
@@ -259,34 +258,27 @@
       }
 
       .actions,
-      .main-links,
-      .example-links {
+      .links {
         display: grid;
         gap: var(--spacing-16);
-
-        ul {
-          list-style: none;
-        }
 
         [mui-button] {
           width: 100%;
           justify-content: start;
         }
 
-        .main-links {
-          gap: var(--spacing-8);
-        }
-
-        .example-links {
+        .links {
           gap: var(--spacing-16);
 
           .subtitle {
             text-transform: uppercase;
             font: var(--font-label-md);
-            color: var(--color-on-surface-variant);
           }
 
           ul {
+            display: grid;
+            gap: var(--spacing-8);
+            list-style: none;
             padding-inline-start: var(--spacing-16);
             border-inline-start: 1px dashed var(--color-outline-variant);
           }
