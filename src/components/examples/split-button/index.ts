@@ -12,6 +12,7 @@ const SPLIT_BUTTON_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: SplitButtonDemo,
       code: 'import Icon from "@/components/misc/icon";\nimport { SplitButton, SplitButtonItem } from "@/components/ui/split-button";\n \nexport function SplitButtonDemo {\n    return (\n        <div className="demo">\n            <SplitButton>\n                <SplitButtonItem>\n                    <Icon name="edit" />\n                    Label\n                </SplitButtonItem>\n                <SplitButtonItem>\n                    <Icon name="keyboard_arrow_down" />\n                </SplitButtonItem>\n            </SplitButton>\n        </div>\n    );\n};',
     },

@@ -12,6 +12,7 @@ const CHECKBOX_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: CheckboxDemo,
       code: 'import Checkbox from "@/components/ui/checkbox";\n \nexport function CheckboxDemo() {\n    return (\n        <div className="demo">\n            <Checkbox />\n        </div>\n    );\n};',
     },

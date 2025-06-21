@@ -11,6 +11,7 @@ const RADIO_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: RadioDemo,
       code: 'import Radio from "@/components/ui/radio";\n \nexport function RadioDemo() {\n    return (\n        <div className="demo">\n            <Radio />\n        </div>\n    );\n};',
     },

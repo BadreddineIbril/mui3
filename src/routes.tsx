@@ -17,7 +17,8 @@ export default function AppRouter() {
         //   path: "/doc/:id?",
         //   element: <Doc />,
         // },
-        { path: "/", element: <Docs /> },
+        { path: "/", element: <>Home</> },
+        { path: "/docs/:section?/:component?", element: <Docs /> },
         { path: "/:id?", element: <Doc /> },
         {
           path: "/*",

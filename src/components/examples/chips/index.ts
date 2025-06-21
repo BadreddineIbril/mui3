@@ -16,6 +16,7 @@ const CHIPS_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: ChipsDemo,
       code: 'import { useState } from "react";\nimport { ChipItem, Chips } from "@/components/ui/chips";\n \nexport function ChipsDemo() {\n    const [isSelected, setSelected] = useState<boolean>(false);\n    const [isRemoved, setRemoved] = useState<boolean>(false);\n \n    return (\n        <div className="demo">\n            <Chips>\n                <ChipItem variant="assist">Assist</ChipItem>\n                <ChipItem\n                    variant="filter"\n                    selected={isSelected}\n                    onSelect={() => setSelected(!isSelected)}>\n                    Filter\n                </ChipItem>\n                {!isRemoved && (\n                    <ChipItem variant="input" removable onRemove={() => setRemoved(true)}>\n                        Input\n                    </ChipItem>\n                )}\n                <ChipItem variant="suggestion">Suggestion</ChipItem>\n            </Chips>\n        </div>\n    );\n};',
     },

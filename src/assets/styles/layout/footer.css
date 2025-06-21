@@ -1,0 +1,9 @@
+[mui-layout="footer"] {
+  text-align: center;
+  font: var(--font-label-lg);
+  color: var(--color-on-surface-variant);
+
+  & > a {
+    color: var(--color-primary);
+  }
+}

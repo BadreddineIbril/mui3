@@ -13,6 +13,7 @@ const TOOLBAR_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: ToolbarDemo,
       code: 'import Icon from "@/components/misc/icon";\nimport IconButton from "@/components/ui/icon-button";\nimport Toolbar from "@/components/ui/toolbar";\n \nexport function ToolbarDemo() {\n    return (\n        <div className="demo">\n            <Toolbar>\n                <IconButton>\n                    <Icon name="arrow_back" />\n                </IconButton>\n                <IconButton>\n                    <Icon name="arrow_forward" />\n                </IconButton>\n                <IconButton variant="filled" width="wide">\n                    <Icon name="add" />\n                </IconButton>\n                <IconButton>\n                    <Icon name="settings" />\n                </IconButton>\n                <IconButton>\n                    <Icon name="more_vert" />\n                </IconButton>\n            </Toolbar>\n        </div>\n    );\n};',
     },

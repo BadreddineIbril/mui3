@@ -11,6 +11,7 @@ const NAVIGATION_BAR_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: NavigationBarDemo,
       code: 'import { useState } from "react";\nimport { Bar, BarItem } from "@/components/ui/navigation/bar";\n \nexport function NavigationBarDemo() {\n    const [active, setActive] = useState<number>(0);\n    const OPTIONS = [\n        { label: "Home", icon: "home" },\n        { label: "Browser", icon: "explore" },\n        { label: "Radio", icon: "radio" },\n        { label: "library", icon: "library_music" },\n    ];\n \n    return (\n        <div className="demo">\n            <Bar>\n                {OPTIONS.map((opt, i) => (\n                    <BarItem\n                        key={i}\n                        label={opt.label}\n                        icon={opt.icon}\n                        selected={active === i}\n                        onClick={() => setActive(i)}\n                    />\n                ))}\n            </Bar>\n        </div>\n    );\n};',
     },

@@ -14,6 +14,7 @@ const FAB_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: FabDemo,
       code: `
 import Fab from "@/components/ui/fab";

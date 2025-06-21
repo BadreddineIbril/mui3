@@ -12,6 +12,7 @@ const SNACKBAR_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: SnackbarDemo,
       code: 'import { useState } from "react";\nimport Button from "@/components/ui/button";\nimport Snackbar from "@/components/ui/snackbar";\n \nexport function SnackbarDemo() {\n    const [isOpen, setIsOpen] = useState<boolean>(false);\n \n    return (\n        <div className="demo">\n            <Button onClick={() => setIsOpen(true)}>Click to open</Button>\n            <Snackbar\n                open={isOpen}\n                onClose={() => setIsOpen(false)}\n                message="Email achieved"\n            />\n        </div>\n    );\n};',
     },

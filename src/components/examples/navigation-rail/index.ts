@@ -10,6 +10,7 @@ const NAVIGATION_RAIL_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: NavigationRailDemo,
       code: 'import Icon from "@/components/misc/icon";\nimport {\n    Rail,\n    RailBody,\n    RailFab,\n    RailHeader,\n    RailItem,\n    RailMenu,\n} from "@/components/ui/navigation/rail";\n \nexport function NavigationRailDemo() {\n    return (\n        <div className="demo">\n            <Rail>\n                <RailHeader>\n                    <RailMenu>\n                        <Icon name="menu" />\n                    </RailMenu>\n                    <RailFab>\n                        <Icon name="hourglass_top" />\n                    </RailFab>\n                </RailHeader>\n                <RailBody alignment="bottom">\n                    <RailItem icon="schedule" label="Alarm" />\n                    <RailItem icon="star" label="Clock" />\n                    <RailItem icon="hourglass_top" label="Timer" selected />\n                    <RailItem icon="timer" label="Stopwatch" />\n                </RailBody>\n            </Rail>\n        </div>\n    );\n};',
     },

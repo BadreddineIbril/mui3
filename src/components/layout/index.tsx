@@ -1,13 +1,18 @@
-import { Outlet } from "react-router-dom";
+import { useLayoutEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import Navigation from "@/components/layout/navigation";
-import Footer from "@/components/layout/footer";
 
 const Layout = () => {
+  const location = useLocation();
+
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [location.pathname]);
+
   return (
     <>
       <Navigation />
       <Outlet />
-      {/* <Footer /> */}
     </>
   );
 };

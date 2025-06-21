@@ -4,7 +4,7 @@ import BUTTON_GROUP_DEMO from "@/components/examples/button-group";
 import CARD_DEMO from "@/components/examples/card";
 import CHECKBOX_DEMO from "@/components/examples/checkbox";
 import CHIPS_DEMO from "@/components/examples/chips";
-import DIALOG_DEMO from "@/components/examples/chips";
+import DIALOG_DEMO from "@/components/examples/dialog";
 import DIVIDER_DEMO from "@/components/examples/divider";
 import FAB_DEMO from "@/components/examples/fab";
 import ICON_BUTTON_DEMO from "@/components/examples/icon-button";

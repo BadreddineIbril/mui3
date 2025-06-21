@@ -10,6 +10,7 @@ const BADGE_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: BadgeDemo,
       code: 'import Icon from "@/components/misc/icon";\nimport IconButton from "@/components/ui/icon-button";\nimport Badge from "@/components/ui/badge";\n \nexport function BadgeDemo() {\n    return (\n        <div className="demo">\n            <IconButton>\n                <Badge>\n                    <Icon name="groups" />\n                </Badge>\n            </IconButton>\n        </div>\n    );\n};',
     },

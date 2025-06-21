@@ -10,6 +10,7 @@ const TABS_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: TabsDemo,
       code: 'import Icon from "@/components/misc/icon";\nimport { Tabs, TabsTrigger, TabsList, TabsContent } from "@/components/ui/tabs";\n \nexport function TabsDemo() {\n    return (\n        <div className="demo">\n            <Tabs defaultTab="flight">\n                <TabsList>\n                    <TabsTrigger value="flight">\n                        <Icon name="flight" /> Flight\n                    </TabsTrigger>\n                    <TabsTrigger value="trips">\n                        <Icon name="trip" /> Trips\n                    </TabsTrigger>\n                    <TabsTrigger value="explore">\n                        <Icon name="explore" /> Explore\n                    </TabsTrigger>\n                </TabsList>\n                <TabsContent value="flight">Flight content</TabsContent>\n                <TabsContent value="trips">Trips content</TabsContent>\n                <TabsContent value="explore">Explore content</TabsContent>\n            </Tabs>\n        </div>\n    );\n};',
     },

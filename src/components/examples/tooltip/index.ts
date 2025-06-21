@@ -9,6 +9,7 @@ const TOOLTIP_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: TooltipDemo,
       code: 'import Button from "@/components/ui/button";\nimport { Tooltip, TooltipContent } from "@/components/ui/tooltip";\n \nexport function TooltipDemo() {\n    return (\n        <div className="demo">\n            <Tooltip>\n                <Button variant="outlined">Hover or focus</Button>\n                <TooltipContent>Plain tooltip</TooltipContent>\n            </Tooltip>\n        </div>\n    );\n};',
     },

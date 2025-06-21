@@ -13,6 +13,7 @@ const ICON_BUTTON_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: IconButtonDemo,
       code: `
 import Icon from "@/components/misc/icon";
@@ -32,45 +33,7 @@ export function IconButtonDemo {
       id: "installation",
       label: "Installation",
       code: {
-        tsx: `
-import "./style.css";
-import type { ComponentProps, HTMLAttributeAnchorTarget } from "react";
- 
-type IconButtonProps = ComponentProps<"button"> & {
-    variant?: "standard" | "filled" | "tonal" | "outlined";
-    size?: "xs" | "sm" | "md" | "lg" | "xl";
-    width?: "default" | "narrow" | "wide";
-    href?: string;
-    target?: HTMLAttributeAnchorTarget;
-    flipIconInRtl?: boolean;
-};
- 
-const IconButton = ({
-    flipIconInRtl = false,
-    variant = "standard",
-    width = "default",
-    target = "_self",
-    size = "sm",
-    onClick,
-    href,
-  ...props
-}: IconButtonProps) => {
-    return (
-        <button
-            mui-icon-button={variant}
-            data-width={width}
-            data-size={size}
-            data-flip-icon-in-rtl={flipIconInRtl || undefined}
-            {...props}
-            onClick={(e) => {
-                onClick?.(e);
-                if (!e.defaultPrevented && href) open(href, target);
-            }}
-        />
-    );
-};
- 
-export default IconButton;`,
+        tsx: 'import "./style.css";\nimport { useNavigate } from "react-router-dom";\nimport type { ComponentProps, HTMLAttributeAnchorTarget } from "react";\n \ntype IconButtonProps = ComponentProps<"button"> & {\n    variant?: "standard" | "filled" | "tonal" | "outlined";\n    size?: "xs" | "sm" | "md" | "lg" | "xl";\n    width?: "default" | "narrow" | "wide";\n    href?: string;\n    target?: HTMLAttributeAnchorTarget;\n    flipIconInRtl?: boolean;\n};\n \nconst IconButton = ({\n    flipIconInRtl = false,\n    variant = "standard",\n    width = "default",\n    target = "_self",\n    size = "sm",\n    href,\n    ...props\n}: IconButtonProps) => {\n    const navigate = useNavigate();\n \n    return (\n        <button\n            mui-icon-button={variant}\n            data-width={width}\n            data-size={size}\n            data-flip-icon-in-rtl={flipIconInRtl || undefined}\n            {...props}\n            onClick={(e) => {\n                props.onClick?.(e);\n                if (!e.defaultPrevented && href) {\n                    if (target === "_blank") {\n                        open(href, target, "noopener,noreferrer");\n                    } else {\n                        navigate(href);\n                    }\n                }\n            }}\n        />\n    );\n};\n \nexport default IconButton;',
         css: `
 [mui-icon-button] {
     cursor: pointer;

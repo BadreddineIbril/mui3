@@ -1,4 +1,5 @@
 @import url("./layout/navigation.css");
+@import url("./layout/footer.css");
 @import url("./pages/doc.css");
 @import url("./pages/docs.css");
 
@@ -7,6 +8,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Inter, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-block: calc(82px + var(--spacing-12));
 }
 
 body {
@@ -25,7 +31,7 @@ body {
     padding-inline: 7%;
   }
 
-  & > [mui-layout] {
-    padding: 1.5em 7%;
+  [mui-layout] {
+    padding: var(--spacing-24) 7%;
   }
 }

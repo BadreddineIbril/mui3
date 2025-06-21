@@ -1,17 +1,29 @@
+import { useLocation, useParams } from "react-router-dom";
+import type { ComponentIdDefinition } from "@/types/demo";
+import GET_STARTED_LINKS from "@/data/get-started";
 import COMPONENT_GROUPS from "@/components/examples";
 import Icon from "@/components/misc/icon";
 import Button from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import GET_STARTED_LINKS from "@/data/get-started";
+import { findComponent } from "@/util/helpers";
 
 const Controls = () => {
+  const { component } = useParams();
+  const { pathname } = useLocation();
+
+  function isActiveLink(href: ComponentIdDefinition | (string & {})) {
+    return pathname.split("/").at(-1) === href;
+  }
+
+  const { label, description } = findComponent(
+    component as ComponentIdDefinition
+  );
+
   return (
     <aside className="controls-area">
       <div className="info-box">
-        <h2 className="title">Button</h2>
-        <p className="description">
-          Displays a button or a component that looks like a button.
-        </p>
+        <h2 className="title">{label}</h2>
+        <p className="description">{description}</p>
       </div>
       <div className="links-box">
         <Tabs defaultTab="get-started" inlineIcon>
@@ -32,7 +44,13 @@ const Controls = () => {
                     {item.links.map((link) => (
                       <li key={link.href}>
                         <Button
-                          variant={link.href === "intro" ? "filled" : "text"}>
+                          href={`/docs${link.href && "/"}${link.href}`}
+                          variant={
+                            isActiveLink(link.href) ||
+                            (pathname === "/docs" && link.href === "")
+                              ? "filled"
+                              : "text"
+                          }>
                           {link.label}
                         </Button>
                       </li>
@@ -50,11 +68,12 @@ const Controls = () => {
                     {group.label}
                   </li>
                   <ul className="components">
-                    {group.components.map((component) => (
-                      <li key={component.id}>
+                    {group.components.map((component, i) => (
+                      <li key={i}>
                         <Button
+                          href={`/docs/components/${component.id}`}
                           variant={
-                            component.id === "switch" ? "filled" : "text"
+                            isActiveLink(component.id) ? "filled" : "text"
                           }>
                           {component.label}
                         </Button>

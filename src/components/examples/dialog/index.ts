@@ -9,6 +9,7 @@ const DIALOG_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: DialogDemo,
       code: 'import Button from "@/components/ui/button";\nimport {\n    Dialog,\n    DialogBody,\n    DialogClose,\n    DialogContent,\n    DialogHeader,\n    DialogHeadline,\n    DialogSupporting,\n    DialogTrigger,\n} from "@/components/ui/dialog";\n \nexport function DialogDemo() {\n    return (\n        <div className="demo">\n            <Dialog>\n                <DialogTrigger>\n                    <Button variant="outlined">Open</Button>\n                </DialogTrigger>\n                <DialogContent style={{ width: "300px" }}>\n                    <DialogHeader showDivider>\n                        <DialogHeadline>Dialog title</DialogHeadline>\n                        <DialogSupporting>\n                            This is a standard alert dialog. Alert dialogs interrupt users\n                            with urgent information, details, or actions.\n                        </DialogSupporting>\n                    </DialogHeader>\n                    <DialogBody style={{ display: "flex", gap: "10px" }}>\n                        <DialogClose>\n                            <Button variant="text">Cancel</Button>\n                        </DialogClose>\n                        <Button variant="text">Done</Button>\n                    </DialogBody>\n                </DialogContent>\n            </Dialog>\n        </div>\n    );\n};',
     },

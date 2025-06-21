@@ -14,6 +14,7 @@ const BUTTON_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: ButtonDemo,
       code: `
 import Button from "@/components/ui/button";

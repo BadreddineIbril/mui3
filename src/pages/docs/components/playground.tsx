@@ -1,14 +1,19 @@
 import type { JSX } from "react";
+import type { ComponentIdDefinition } from "@/types/demo";
+import { useParams } from "react-router-dom";
+import { findComponent } from "@/util/helpers";
 import CssIcon from "@/assets/icons/css";
 import TypescriptIcon from "@/assets/icons/typescript";
 import Icon from "@/components/misc/icon";
 import Copy from "@/components/misc/copy";
+import Button from "@/components/ui/button";
+import Footer from "@/components/layout/footer";
 import SyntaxHighlighter from "@/components/misc/syntax-highlighter";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import DIVIDER_DEMO from "@/components/examples/divider";
-import Button from "@/components/ui/button";
 
 const Playground = () => {
+  const { component } = useParams();
+
   function toComponent(element: () => JSX.Element) {
     const Component = element;
 
@@ -23,10 +28,12 @@ const Playground = () => {
     return typeof code === "object";
   }
 
+  const { content } = findComponent(component as ComponentIdDefinition);
+
   return (
     <section className="playground-area">
-      {DIVIDER_DEMO.content.map(({ id, label, preview, code }) => (
-        <div key={id} className="playground-box">
+      {content.map(({ id, label, preview, code }) => (
+        <div key={id} className="playground-box" id={id}>
           {label && (
             <div className="heading">
               <h2 className="title">{label}</h2>
@@ -94,6 +101,7 @@ const Playground = () => {
           <Icon name="arrow_right_alt" />
         </Button>
       </div>
+      <Footer />
     </section>
   );
 };

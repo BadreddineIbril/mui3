@@ -5,7 +5,7 @@ const GET_STARTED_LINKS: GetStartedDefinition[] = [
     id: "overview",
     label: "Overview",
     links: [
-      { label: "Introduction", href: "intro" },
+      { label: "Introduction", href: "" },
       { label: "Installation", href: "installation" },
     ],
   },

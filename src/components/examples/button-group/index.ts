@@ -15,6 +15,7 @@ const BUTTON_GROUP_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: ButtonGroupDemo,
       code: 'import { ButtonGroup, ButtonGroupItem } from "@/components/ui/button-group";\n \nexport function ButtonGroupDemo() {\n    return (\n        <div className="demo">\n            <ButtonGroup>\n                <ButtonGroupItem>Start</ButtonGroupItem>\n                <ButtonGroupItem>Directions</ButtonGroupItem>\n                <ButtonGroupItem>Share</ButtonGroupItem>\n            </ButtonGroup>\n        </div>\n    );\n}',
     },

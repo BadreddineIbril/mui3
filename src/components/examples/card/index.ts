@@ -10,6 +10,7 @@ const CARD_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: CardDemo,
       code: 'import Button from "@/components/ui/button";\nimport { Card } from "@/components/ui/card";\n \nexport function CardDemo() {\n    return (\n        <div className="demo">\n            <Card>\n                <h2 className="title">Play relaxing songs</h2>\n                <p className="description">From your recent favorites</p>\n                <div className="actions">\n                    <Button rounded>Get started</Button>\n                </div>\n            </Card>\n        </div>\n    );\n};',
     },

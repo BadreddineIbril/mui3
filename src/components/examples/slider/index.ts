@@ -12,6 +12,7 @@ const SLIDER_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: SliderDemo,
       code: 'import Slider from "@/components/ui/slider";\n \nexport function SliderDemo() {\n    return (\n        <div className="demo">\n            <Slider defaultValue={50} />\n        </div>\n    );\n};',
     },

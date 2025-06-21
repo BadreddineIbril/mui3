@@ -10,6 +10,7 @@ const SIDE_SHEET_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: SideSheetDemo,
       code: 'import Button from "@/components/ui/button";\nimport {\n    SideSheet,\n    SideSheetBody,\n    SideSheetClose,\n    SideSheetContent,\n    SideSheetFooter,\n    SideSheetHeader,\n    SideSheetTrigger,\n} from "@/components/ui/side-sheet";\n \nexport function SideSheetDemo() {\n    return (\n        <div className="demo">\n            <SideSheet>\n                <SideSheetTrigger>\n                    <Button variant="outlined">Click to open</Button>\n                </SideSheetTrigger>\n                <SideSheetContent>\n                    <SideSheetHeader headline="Title" back />\n                    <SideSheetBody>My content</SideSheetBody>\n                    <SideSheetFooter style={{ display: "flex", gap: "12px" }} showDivider>\n                        <Button rounded>Save</Button>\n                        <SideSheetClose>\n                            <Button variant="outlined" rounded>\n                                Cancel\n                            </Button>\n                        </SideSheetClose>\n                    </SideSheetFooter>\n                </SideSheetContent>\n            </SideSheet>\n        </div>\n    );\n};',
     },

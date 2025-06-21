@@ -8,46 +8,38 @@ const Navigation = () => {
   const { pathname } = useLocation();
 
   const LINKS = [
-    { label: "Docs", href: "/docs" },
-    { label: "Components", href: "/components" },
-    { label: "Examples", href: "/examples" },
-    { label: "Colors", href: "/colors" },
+    { label: "Home", href: "" },
+    { label: "Docs", href: "docs" },
+    { label: "Components", href: "components" },
+    { label: "Examples", href: "examples" },
+    { label: "Colors", href: "colors" },
   ];
 
-  function isHome() {
-    return pathname === "/";
-  }
-
   function isActive(href: string) {
-    return pathname === href;
+    return pathname.split("/")[1] === href;
   }
 
   return (
     <nav mui-layout="nav">
       <ButtonGroup variant="tonal" type="connected" size="sm">
-        <ButtonGroupItem
-          variant={isHome() ? "filled" : "tonal"}
-          rounded={isHome()}>
-          <Icon name="nest_eco_leaf" />
-          Home
-        </ButtonGroupItem>
         {LINKS.map((link) => (
           <ButtonGroupItem
             key={link.label}
+            href={`/${link.href}`}
             variant={isActive(link.href) ? "filled" : "tonal"}
             rounded={isActive(link.href)}>
             {link.label}
           </ButtonGroupItem>
         ))}
       </ButtonGroup>
-      <ButtonGroup type="connected" variant="outlined" size="sm" asIcon>
-        <ButtonGroupItem variant="tonal" width="wide">
+      <ButtonGroup variant="outlined" size="sm" asIcon>
+        <ButtonGroupItem aria-label="theme">
           <Icon name="light_mode" />
         </ButtonGroupItem>
-        <ButtonGroupItem>
+        <ButtonGroupItem aria-label="github">
           <GithubIcon />
         </ButtonGroupItem>
-        <ButtonGroupItem>
+        <ButtonGroupItem aria-label="X">
           <XIcon />
         </ButtonGroupItem>
       </ButtonGroup>

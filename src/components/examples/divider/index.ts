@@ -10,6 +10,7 @@ const DIVIDER_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: DividerDemo,
       code: 'import Divider from "@/components/ui/divider";\n \nconst DividerDemo = () => {\n    return (\n        <div className="demo">\n            <Divider />\n        </div>\n    );\n};\n \nexport default DividerDemo;',
     },

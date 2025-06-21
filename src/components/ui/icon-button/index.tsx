@@ -1,4 +1,5 @@
 import "./style.css";
+import { useNavigate } from "react-router-dom";
 import type { ComponentProps, HTMLAttributeAnchorTarget } from "react";
 
 type IconButtonProps = ComponentProps<"button"> & {
@@ -16,10 +17,11 @@ const IconButton = ({
   width = "default",
   target = "_self",
   size = "sm",
-  onClick,
   href,
   ...props
 }: IconButtonProps) => {
+  const navigate = useNavigate();
+
   return (
     <button
       mui-icon-button={variant}
@@ -28,8 +30,14 @@ const IconButton = ({
       data-flip-icon-in-rtl={flipIconInRtl || undefined}
       {...props}
       onClick={(e) => {
-        onClick?.(e);
-        if (!e.defaultPrevented && href) open(href, target);
+        props.onClick?.(e);
+        if (!e.defaultPrevented && href) {
+          if (target === "_blank") {
+            open(href, target, "noopener,noreferrer");
+          } else {
+            navigate(href);
+          }
+        }
       }}
     />
   );

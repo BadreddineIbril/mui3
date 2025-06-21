@@ -11,6 +11,7 @@ const SWITCH_DEMO: DemoDefinition = {
   content: [
     {
       id: "overview",
+      label: "Overview",
       preview: SwitchDemo,
       code: 'import Switch from "@/components/ui/switch";\n \nexport function SwitchDemo() {\n    return (\n        <div className="demo">\n            <Switch />\n        </div>\n    );\n};',
     },
