@@ -1,11 +1,13 @@
 import { useLocation } from "react-router-dom";
+import { useTheme } from "@/contexts";
 import Icon from "@/components/misc/icon";
 import XIcon from "@/assets/icons/x";
 import GithubIcon from "@/assets/icons/github";
-import { ButtonGroup, ButtonGroupItem } from "../ui/button-group";
+import { ButtonGroup, ButtonGroupItem } from "@/components/ui/button-group";
 
 const Navigation = () => {
   const { pathname } = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   const LINKS = [
     { label: "Home", href: "" },
@@ -33,8 +35,8 @@ const Navigation = () => {
         ))}
       </ButtonGroup>
       <ButtonGroup variant="outlined" size="sm" asIcon>
-        <ButtonGroupItem aria-label="theme">
-          <Icon name="light_mode" />
+        <ButtonGroupItem aria-label="theme" onClick={toggleTheme} width="wide">
+          <Icon name={theme === "light" ? "dark_mode" : "light_mode"} />
         </ButtonGroupItem>
         <ButtonGroupItem aria-label="github">
           <GithubIcon />

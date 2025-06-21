@@ -24,3 +24,13 @@ export function findComponent(id: ComponentIdDefinition) {
     ) || COMPONENT_GROUPS[0].components[0]
   );
 }
+
+export function paginatedComponents(id: ComponentIdDefinition) {
+  const components = COMPONENT_GROUPS.flatMap((group) => group.components);
+  const index = components.findIndex((comp) => comp.id === id);
+
+  return {
+    previous: components[index - 1] || null,
+    next: components[index + 1] || null,
+  };
+}

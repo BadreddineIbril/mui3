@@ -30,8 +30,4 @@ body {
     flex: 2;
     padding-inline: 7%;
   }
-
-  [mui-layout] {
-    padding: var(--spacing-24) 7%;
-  }
 }

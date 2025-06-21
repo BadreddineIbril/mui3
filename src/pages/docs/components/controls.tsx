@@ -1,4 +1,4 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import type { ComponentIdDefinition } from "@/types/demo";
 import GET_STARTED_LINKS from "@/data/get-started";
 import COMPONENT_GROUPS from "@/components/examples";
@@ -8,8 +8,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { findComponent } from "@/util/helpers";
 
 const Controls = () => {
-  const { component } = useParams();
+  const navigate = useNavigate();
   const { pathname } = useLocation();
+  const { component } = useParams();
 
   function isActiveLink(href: ComponentIdDefinition | (string & {})) {
     return pathname.split("/").at(-1) === href;
@@ -26,12 +27,14 @@ const Controls = () => {
         <p className="description">{description}</p>
       </div>
       <div className="links-box">
-        <Tabs defaultTab="get-started" inlineIcon>
+        <Tabs defaultTab={component ? "components" : "get-started"} inlineIcon>
           <TabsList>
-            <TabsTrigger value="get-started">
+            <TabsTrigger value="get-started" onClick={() => navigate("/docs")}>
               <Icon name="explore" /> Get Started
             </TabsTrigger>
-            <TabsTrigger value="components">
+            <TabsTrigger
+              value="components"
+              onClick={() => navigate("/docs/components/button")}>
               <Icon name="category" /> Components
             </TabsTrigger>
           </TabsList>

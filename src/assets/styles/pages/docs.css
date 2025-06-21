@@ -240,10 +240,14 @@
     .playground-actions {
       display: flex;
       justify-content: space-between;
+
+      &:not(:has([aria-label="previous"])) {
+        justify-content: end;
+      }
     }
   }
 
-  /* On thi page */
+  /* On this page */
   .on-this-page-area {
     .guide-box {
       display: grid;
@@ -282,6 +286,51 @@
             padding-inline-start: var(--spacing-16);
             border-inline-start: 1px dashed var(--color-outline-variant);
           }
+        }
+      }
+    }
+  }
+
+  /* Theme generator */
+  .theme-generator {
+    left: 50%;
+    z-index: 100000;
+    position: fixed;
+    transform: translateX(-28%);
+    inset-block-end: var(--spacing-24);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-12);
+
+    [mui-toolbar] {
+      gap: var(--spacing-16);
+
+      & > input[type="color"] {
+        cursor: pointer;
+        appearance: none;
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: var(--radius-circled);
+
+        &::-webkit-color-swatch-wrapper {
+          padding: 0;
+        }
+
+        &::-webkit-color-swatch {
+          border: none;
+          outline: none;
+        }
+      }
+
+      .info {
+        span {
+          font: var(--font-label-lg);
+        }
+
+        p {
+          font: var(--font-label-md);
+          color: var(--color-on-surface-variant);
         }
       }
     }

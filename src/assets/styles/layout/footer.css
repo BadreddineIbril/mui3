@@ -2,6 +2,7 @@
   text-align: center;
   font: var(--font-label-lg);
   color: var(--color-on-surface-variant);
+  padding-block-end: calc(var(--spacing-48) * 2);
 
   & > a {
     color: var(--color-primary);

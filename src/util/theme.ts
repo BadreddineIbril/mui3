@@ -5,6 +5,7 @@ import {
   themeFromSourceColor,
   Scheme,
 } from "@material/material-color-utilities";
+import type { HexColor, Theme } from "@/types/context";
 
 const SCHEME_KEYS: (keyof Scheme)[] = [
   "background",
@@ -44,11 +45,11 @@ const SURFACE_TONES: Record<string, { light: number; dark: number }> = {
   "surface-container-highest": { light: 90, dark: 22 },
 };
 
-export function useTheme(primaryHex: string): void {
+function applyTheme(color: HexColor, theme: Theme = getTheme()): void {
   const {
     schemes: { light, dark },
     palettes: { neutral },
-  } = themeFromSourceColor(argbFromHex(primaryHex));
+  } = themeFromSourceColor(argbFromHex(color));
 
   const variables = [
     ...SCHEME_KEYS.map(
@@ -67,14 +68,26 @@ export function useTheme(primaryHex: string): void {
     ),
   ];
 
-  const style = document.querySelector('style[data-vite-dev-id*="colors.css"]');
+  const style = getColorScheme();
   if (!style) return;
 
-  style.textContent = `:root { ${variables.join(" ")} }`;
-
-  document.head.appendChild(
-    Object.assign(document.createElement("style"), {
-      textContent: `:root { ${variables.join(" ")} }`,
-    })
-  );
+  style.textContent = `:root { color-scheme: ${theme}; ${variables.join(
+    " "
+  )} }`;
+  localStorage.setItem("mui-primary", color);
+  localStorage.setItem("mui-theme", theme);
 }
+
+function getPrimary() {
+  return (localStorage.getItem("mui-primary") || "#121212") as HexColor;
+}
+
+function getTheme() {
+  return (localStorage.getItem("mui-theme") || "dark") as Theme;
+}
+
+function getColorScheme() {
+  return document.querySelector('style[data-vite-dev-id*="colors.css"]');
+}
+
+export { applyTheme, getTheme, getPrimary, getColorScheme };

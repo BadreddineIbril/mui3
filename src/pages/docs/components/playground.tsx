@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 import type { ComponentIdDefinition } from "@/types/demo";
 import { useParams } from "react-router-dom";
-import { findComponent } from "@/util/helpers";
+import { findComponent, paginatedComponents } from "@/util/helpers";
 import CssIcon from "@/assets/icons/css";
 import TypescriptIcon from "@/assets/icons/typescript";
 import Icon from "@/components/misc/icon";
@@ -29,6 +29,9 @@ const Playground = () => {
   }
 
   const { content } = findComponent(component as ComponentIdDefinition);
+  const { previous, next } = paginatedComponents(
+    component as ComponentIdDefinition
+  );
 
   return (
     <section className="playground-area">
@@ -92,14 +95,24 @@ const Playground = () => {
         </div>
       ))}
       <div className="playground-actions">
-        <Button variant="text">
-          <Icon name="arrow_left_alt" />
-          Button
-        </Button>
-        <Button variant="text">
-          Fab
-          <Icon name="arrow_right_alt" />
-        </Button>
+        {previous && (
+          <Button
+            variant="text"
+            href={`/docs/components/${previous.id}`}
+            aria-label="previous">
+            <Icon name="arrow_left_alt" />
+            {previous.label}
+          </Button>
+        )}
+        {next && (
+          <Button
+            variant="text"
+            href={`/docs/components/${next.id}`}
+            aria-label="next">
+            {next.label}
+            <Icon name="arrow_right_alt" />
+          </Button>
+        )}
       </div>
       <Footer />
     </section>
