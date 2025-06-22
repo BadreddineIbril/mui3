@@ -1,19 +1,16 @@
 import { useParams } from "react-router-dom";
 import { findGetStartedLink } from "@/util/helpers";
 import type { GetStartedLinkId } from "@/types/common";
+import InvokeComponent from "@/components/misc/invoke-component";
 
 const GetStartedPlayground = () => {
   const { section } = useParams();
 
-  const { label } = findGetStartedLink(section as GetStartedLinkId);
+  const { content } = findGetStartedLink(section as GetStartedLinkId);
 
   return (
     <>
-      <div className="playground-box">
-        <div className="heading">
-          <h2 className="title">{label}</h2>
-        </div>
-      </div>
+      <div className="playground-box">{InvokeComponent(content)}</div>
     </>
   );
 };

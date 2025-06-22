@@ -235,6 +235,24 @@
           }
         }
       }
+
+      [mui-get-started="typography"] {
+        .variant {
+          display: grid;
+          gap: var(--spacing-12);
+          padding-block: var(--spacing-48);
+          border-block-end: 1px dashed var(--color-outline-variant);
+
+          .type {
+            font: var(--font-body-md);
+            color: var(--color-on-surface-variant);
+          }
+
+          .preview {
+            font: var(--variant-font);
+          }
+        }
+      }
     }
 
     .playground-actions {
