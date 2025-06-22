@@ -4,13 +4,14 @@ import Icon from "@/components/misc/icon";
 import XIcon from "@/assets/icons/x";
 import GithubIcon from "@/assets/icons/github";
 import { ButtonGroup, ButtonGroupItem } from "@/components/ui/button-group";
+import MaterialDesignIcon from "@/assets/icons/material-design";
 
 const Navigation = () => {
   const { pathname } = useLocation();
   const { theme, toggleTheme } = useTheme();
 
   const LINKS = [
-    { label: "Home", href: "" },
+    { icon: <MaterialDesignIcon />, href: "" },
     { label: "Docs", href: "docs" },
     { label: "Components", href: "components" },
     { label: "Examples", href: "examples" },
@@ -30,7 +31,7 @@ const Navigation = () => {
             href={`/${link.href}`}
             variant={isActive(link.href) ? "filled" : "tonal"}
             rounded={isActive(link.href)}>
-            {link.label}
+            {link.icon || link.label}
           </ButtonGroupItem>
         ))}
       </ButtonGroup>
