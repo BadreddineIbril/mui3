@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 import type { DemoDefinition } from "@/types/demo";
 
 export interface ComponentGroupDefinition {
@@ -7,7 +8,15 @@ export interface ComponentGroupDefinition {
 }
 
 export interface GetStartedDefinition {
-  id: string;
+  id: GetStartedId;
   label: string;
-  links: { label: string; href: string }[];
+  links: {
+    id: GetStartedLinkId;
+    label: string;
+    description: string;
+    content: () => JSX.Element;
+  }[];
 }
+
+export type GetStartedId = "overview" | "foundations";
+export type GetStartedLinkId = "" | "installation" | "colors" | "typography";

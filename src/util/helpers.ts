@@ -1,4 +1,6 @@
 import COMPONENT_GROUPS from "@/components/examples";
+import GET_STARTED_LINKS from "@/components/get-started";
+import type { GetStartedLinkId } from "@/types/common";
 import type { ComponentIdDefinition } from "@/types/demo";
 
 export function toKebab(str: string) {
@@ -33,4 +35,12 @@ export function paginatedComponents(id: ComponentIdDefinition) {
     previous: components[index - 1] || null,
     next: components[index + 1] || null,
   };
+}
+
+export function findGetStartedLink(id: GetStartedLinkId) {
+  return (
+    GET_STARTED_LINKS.flatMap((group) => group.links).find(
+      (link) => link.id === id
+    ) || GET_STARTED_LINKS[0].links[0]
+  );
 }

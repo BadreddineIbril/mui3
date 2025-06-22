@@ -1,7 +1,5 @@
 @layer tokens {
   :root {
-    /* color-scheme: light; */
-    /* color-scheme: dark; */
     --color-overlay: rgba(0, 0, 0, 0.3);
 
     --spacing-0: 0;
@@ -35,27 +33,27 @@
     --shadow-4: 0px 2px 3px rgba(0, 0, 0, 0.3), 0px 6px 10px rgba(0, 0, 0, 0.15);
     --shadow-5: 0px 4px 4px rgba(0, 0, 0, 0.3), 0px 8px 12px rgba(0, 0, 0, 0.15);
 
-    --font-family: Inter;
+    --font-family: Inter, sans-serif;
 
-    --font-display-lg: 400 57px/64px var(--font-family), sans-serif;
-    --font-display-md: 400 45px/52px var(--font-family), sans-serif;
-    --font-display-sm: 400 36px/44px var(--font-family), sans-serif;
+    --font-display-lg: 400 57px/64px var(--font-family);
+    --font-display-md: 400 45px/52px var(--font-family);
+    --font-display-sm: 400 36px/44px var(--font-family);
 
-    --font-headline-lg: 400 32px/40px var(--font-family), sans-serif;
-    --font-headline-md: 400 28px/36px var(--font-family), sans-serif;
-    --font-headline-sm: 400 24px/32px var(--font-family), sans-serif;
+    --font-headline-lg: 400 32px/40px var(--font-family);
+    --font-headline-md: 400 28px/36px var(--font-family);
+    --font-headline-sm: 400 24px/32px var(--font-family);
 
-    --font-title-lg: 400 22px/28px var(--font-family), sans-serif;
-    --font-title-md: 500 16px/24px var(--font-family), sans-serif;
-    --font-title-sm: 500 14px/20px var(--font-family), sans-serif;
+    --font-title-lg: 400 22px/28px var(--font-family);
+    --font-title-md: 500 16px/24px var(--font-family);
+    --font-title-sm: 500 14px/20px var(--font-family);
 
-    --font-body-lg: 400 16px/24px var(--font-family), sans-serif;
-    --font-body-md: 400 14px/20px var(--font-family), sans-serif;
-    --font-body-sm: 400 12px/16px var(--font-family), sans-serif;
+    --font-body-lg: 400 16px/24px var(--font-family);
+    --font-body-md: 400 14px/20px var(--font-family);
+    --font-body-sm: 400 12px/16px var(--font-family);
 
-    --font-label-lg: 400 14px/20px var(--font-family), sans-serif;
-    --font-label-md: 400 12px/16px var(--font-family), sans-serif;
-    --font-label-sm: 500 11px/16px var(--font-family), sans-serif;
+    --font-label-lg: 400 14px/20px var(--font-family);
+    --font-label-md: 400 12px/16px var(--font-family);
+    --font-label-sm: 500 11px/16px var(--font-family);
 
     --transition-expressive-fast-spatial: 350ms
       cubic-bezier(0.42, 1.67, 0.21, 0.9);

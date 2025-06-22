@@ -1,30 +1,32 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import type { GetStartedLinkId } from "@/types/common";
 import type { ComponentIdDefinition } from "@/types/demo";
-import GET_STARTED_LINKS from "@/data/get-started";
+import GET_STARTED_LINKS from "@/components/get-started";
 import COMPONENT_GROUPS from "@/components/examples";
 import Icon from "@/components/misc/icon";
 import Button from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { findComponent } from "@/util/helpers";
+import { findComponent, findGetStartedLink } from "@/util/helpers";
 
 const Controls = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const { component } = useParams();
+  const { section, component } = useParams();
 
   function isActiveLink(href: ComponentIdDefinition | (string & {})) {
     return pathname.split("/").at(-1) === href;
   }
 
-  const { label, description } = findComponent(
-    component as ComponentIdDefinition
-  );
+  const info = {
+    component: findComponent(component as ComponentIdDefinition),
+    getStarted: findGetStartedLink(section as GetStartedLinkId),
+  };
 
   return (
     <aside className="controls-area">
       <div className="info-box">
-        <h2 className="title">{label}</h2>
-        <p className="description">{description}</p>
+        <h2 className="title">{info[component ? "component" : "getStarted"].label}</h2>
+        <p className="description">{info[component ? "component" : "getStarted"].description}</p>
       </div>
       <div className="links-box">
         <Tabs defaultTab={component ? "components" : "get-started"} inlineIcon>
@@ -45,12 +47,12 @@ const Controls = () => {
                   <li className="title">{item.label}</li>
                   <ul className="components">
                     {item.links.map((link) => (
-                      <li key={link.href}>
+                      <li key={link.id}>
                         <Button
-                          href={`/docs${link.href && "/"}${link.href}`}
+                          href={`/docs${link.id && "/"}${link.id}`}
                           variant={
-                            isActiveLink(link.href) ||
-                            (pathname === "/docs" && link.href === "")
+                            isActiveLink(link.id) ||
+                            (pathname === "/docs" && link.id === "")
                               ? "filled"
                               : "text"
                           }>
