@@ -24,7 +24,7 @@
       padding: var(--spacing-24);
       padding-block-end: var(--spacing-0);
 
-      & > [data-icon] {
+      & > [mui-icon] {
         color: var(--color-secondary);
       }
 
@@ -48,7 +48,7 @@
         }
       }
 
-      &:has(> [data-icon]) {
+      &:has(> [mui-icon]) {
         text-align: center;
 
         [mui-dialog-headline] {

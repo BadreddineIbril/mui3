@@ -77,7 +77,7 @@
     font: var(--font-title-md);
     border-radius: var(--radius-lg);
 
-    & > [data-icon] {
+    & > [mui-icon] {
       font-size: 24px;
     }
   }
@@ -88,7 +88,7 @@
     gap: var(--spacing-12);
     font: var(--font-headline-sm);
 
-    & > [data-icon] {
+    & > [mui-icon] {
       font-size: 32px;
     }
   }
@@ -99,7 +99,7 @@
     gap: var(--spacing-16);
     font: var(--font-headline-lg);
 
-    & > [data-icon] {
+    & > [mui-icon] {
       font-size: 40px;
     }
   }
@@ -118,7 +118,7 @@
     font: var(--font-label-lg);
     border-radius: var(--radius-md);
 
-    & > [data-icon] {
+    & > [mui-icon] {
       font-size: 20px;
     }
   }

@@ -110,7 +110,7 @@ export default Fab;
         font: var(--font-label-lg);
         border-radius: var(--radius-lg);
  
-        & > [data-icon] {
+        & > [mui-icon] {
             font-size: 24px;
         }
     }
@@ -122,7 +122,7 @@ export default Fab;
         font: var(--font-title-md);
         border-radius: var(--radius-lg-inc);
  
-        & > [data-icon] {
+        & > [mui-icon] {
             font-size: 28px;
         }
     }
@@ -134,7 +134,7 @@ export default Fab;
         font: var(--font-headline-sm);
         border-radius: var(--radius-xl);
  
-        & > [data-icon] {
+        & > [mui-icon] {
             font-size: 36px;
         }
     }

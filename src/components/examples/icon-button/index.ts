@@ -86,7 +86,7 @@ export function IconButtonDemo {
     &[data-size="xs"] {
         height: 32px;
  
-        & > [data-icon] {
+        & > [mui-icon] {
             font-size: 20px;
         }
  
@@ -106,7 +106,7 @@ export function IconButtonDemo {
     &[data-size="sm"] {
         height: 40px;
  
-        & > [data-icon] {
+        & > [mui-icon] {
             font-size: 24px;
         }
  
@@ -126,7 +126,7 @@ export function IconButtonDemo {
     &[data-size="md"] {
         height: 56px;
  
-        & > [data-icon] {
+        & > [mui-icon] {
             font-size: 24px;
         }
  
@@ -146,7 +146,7 @@ export function IconButtonDemo {
     &[data-size="lg"] {
         height: 96px;
  
-        & > [data-icon] {
+        & > [mui-icon] {
             font-size: 32px;
         }
  
@@ -166,7 +166,7 @@ export function IconButtonDemo {
     &[data-size="xl"] {
         height: 136px;
  
-        & > [data-icon] {
+        & > [mui-icon] {
             font-size: 40px;
         }
  
@@ -199,7 +199,7 @@ export function IconButtonDemo {
         }
     }
  
-    &[data-flip-icon-in-rtl] > [data-icon]:dir(rtl) {
+    &[data-flip-icon-in-rtl] > [mui-icon]:dir(rtl) {
         rotate: 180deg;
     }
  

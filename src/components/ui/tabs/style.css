@@ -41,7 +41,7 @@
         background-color: color-mix(in srgb, currentColor 12%, transparent);
       }
 
-      & > [data-icon] {
+      & > [mui-icon] {
         font-size: 24px;
       }
 

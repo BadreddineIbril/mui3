@@ -8,7 +8,7 @@ type IconProps = ComponentProps<"span"> & {
 const Icon = ({ name, fill = false, className, ...props }: IconProps) => {
   return (
     <span
-      data-icon
+      mui-icon=""
       data-fill={fill}
       className={className + " material-symbols-outlined"}
       {...props}>

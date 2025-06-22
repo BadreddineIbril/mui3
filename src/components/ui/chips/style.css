@@ -52,15 +52,15 @@
       }
     }
 
-    &:has([data-icon][data-close]) {
+    &:has([mui-icon][data-close]) {
       padding-inline-end: var(--spacing-8);
     }
 
-    &:has([data-icon]:not([data-close])) {
+    &:has([mui-icon]:not([data-close])) {
       padding-inline-start: var(--spacing-8);
     }
 
-    & > [data-icon][data-close] {
+    & > [mui-icon][data-close] {
       z-index: 2;
       width: 24px;
       height: 24px;
@@ -75,7 +75,7 @@
       }
     }
 
-    & > [data-icon]:not([data-close]) {
+    & > [mui-icon]:not([data-close]) {
       order: -1;
       font-size: 18px;
       position: relative;
