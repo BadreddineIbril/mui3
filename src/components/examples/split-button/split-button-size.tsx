@@ -11,7 +11,7 @@ const SplitButtonSize = () => {
   ];
 
   return (
-    <div className="demo">
+    <div className="demo column">
       {sizes.map((size) => (
         <SplitButton size={size}>
           <SplitButtonItem>

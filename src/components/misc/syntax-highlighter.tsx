@@ -52,7 +52,7 @@ const SyntaxHighlighter = ({ code }: SyntaxHighlighterProps) => {
   return (
     <pre>
       {code.split("\n").map((line, i) => (
-        <div data-line={i} key={i}>
+        <div data-line={i+1} key={i}>
           {highlight(line)}
         </div>
       ))}

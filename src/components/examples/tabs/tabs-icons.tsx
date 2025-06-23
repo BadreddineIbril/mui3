@@ -3,7 +3,7 @@ import { Tabs, TabsTrigger, TabsList } from "@/components/ui/tabs";
 
 const TabsIcons = () => {
   return (
-    <div className="demo">
+    <div className="demo column">
       {[...Array(2)].map((_, i) => (
         <Tabs key={i} defaultTab="flight" inlineIcon={i === 1}>
           <TabsList>

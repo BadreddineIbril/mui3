@@ -3,7 +3,7 @@ import { ChipItem, Chips } from "@/components/ui/chips";
 
 const ChipsAssist = () => {
   return (
-    <div className="demo">
+    <div className="demo column">
       <Chips>
         <ChipItem variant="assist">Assist 1</ChipItem>
         <ChipItem variant="assist">

@@ -2,7 +2,7 @@ import Fab from "@/components/ui/fab";
 
 const FabVariant = () => {
   return (
-    <div className="demo">
+    <div className="demo wrap">
       <Fab variant="primary">Primary</Fab>
       <Fab variant="secondary">Secondary</Fab>
       <Fab variant="tertiary">Tertiary</Fab>

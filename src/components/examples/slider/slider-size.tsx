@@ -10,7 +10,7 @@ const SliderSize = () => {
   ];
 
   return (
-    <div className="demo">
+    <div className="demo wrap">
       {sizes.map((size) => (
         <Slider key={size} size={size} defaultValue={50} />
       ))}

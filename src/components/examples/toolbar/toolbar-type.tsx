@@ -5,7 +5,7 @@ const ToolbarType = () => {
   const types: Array<"standard" | "vibrant"> = ["standard", "vibrant"];
 
   return (
-    <div className="demo">
+    <div className="demo column">
       {types.map((type) => (
         <Toolbar key={type} type={type}>
           <Button variant="text" rounded>

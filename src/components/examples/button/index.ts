@@ -5,7 +5,7 @@ import ButtonLink from "./button-link";
 import ButtonRounded from "./button-rounded";
 import ButtonVariant from "./button-variant";
 import ButtonWithIcon from "./button-with-icon";
-import ButtonSize from "./button.size";
+import ButtonSize from "./button-size";
 
 const BUTTON_DEMO: DemoDefinition = {
   id: "button",

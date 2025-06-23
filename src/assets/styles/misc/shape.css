@@ -1,0 +1,40 @@
+[mui-shape] {
+  width: 20px;
+  height: 20px;
+  background-color: currentColor;
+
+  &[mui-shape="circle"] {
+    border-radius: var(--radius-circled);
+  }
+
+  &[mui-shape="square"] {
+    border-radius: var(--radius-xs);
+  }
+
+  &[mui-shape="diamond"] {
+    border-radius: var(--radius-xs);
+    transform: rotate(90deg) rotateX(45deg) rotateZ(45deg);
+  }
+
+  &[mui-shape="oval"] {
+    height: 30px;
+    rotate: 45deg;
+    border-radius: var(--radius-circled);
+  }
+
+  &[mui-shape="fan"] {
+    border-radius: var(--radius-xs) var(--radius-lg) var(--radius-xs)
+      var(--radius-xs);
+  }
+
+  &[mui-shape="semicircle"] {
+    height: 15px;
+    border-radius: var(--radius-md) var(--radius-md) var(--radius-xs)
+      var(--radius-xs);
+  }
+
+  &[mui-shape="arch"] {
+    border-radius: var(--radius-lg) var(--radius-lg) var(--radius-xs)
+      var(--radius-xs);
+  }
+}

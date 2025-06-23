@@ -16,7 +16,7 @@ const NavigationBarOrientation = () => {
   ];
 
   return (
-    <div className="demo">
+    <div className="demo column">
       {orientations.map((orientation) => (
         <Bar key={orientation} orientation={orientation}>
           {OPTIONS.map((opt, i) => (

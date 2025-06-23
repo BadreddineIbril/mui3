@@ -2,7 +2,7 @@ import Button from "@/components/ui/button";
 
 const ButtonSize = () => {
   return (
-    <div className="demo">
+    <div className="demo column">
       <Button size="xs" variant="tonal">
         Extra small
       </Button>

@@ -11,7 +11,7 @@ const ButtonGroupSize = () => {
   ];
 
   return (
-    <div className="demo">
+    <div className="demo column">
       {sizes.map((size) => (
         <ButtonGroup size={size}>
           <ButtonGroupItem>

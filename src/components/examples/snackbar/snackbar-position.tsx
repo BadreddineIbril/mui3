@@ -23,7 +23,7 @@ const SnackbarPosition = () => {
   });
 
   return (
-    <div className="demo">
+    <div className="demo wrap">
       {Object.entries(snackbar).map(([position]) => (
         <Button
           key={position}

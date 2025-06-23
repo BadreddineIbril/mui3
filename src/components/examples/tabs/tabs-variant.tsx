@@ -3,7 +3,7 @@ import { Tabs, TabsTrigger, TabsList, TabsContent } from "@/components/ui/tabs";
 
 const TabsVariant = () => {
   return (
-    <div className="demo">
+    <div className="demo column">
       <Tabs variant="primary" defaultTab="flight">
         <TabsList>
           <TabsTrigger value="flight">

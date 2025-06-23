@@ -5,7 +5,7 @@ const ButtonGroupType = () => {
   const types: Array<"standard" | "connected"> = ["standard", "connected"];
 
   return (
-    <div className="demo">
+    <div className="demo column">
       {types.map((type) => (
         <ButtonGroup type={type}>
           <ButtonGroupItem>

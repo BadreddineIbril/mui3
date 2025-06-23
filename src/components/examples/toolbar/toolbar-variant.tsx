@@ -6,7 +6,7 @@ const ToolbarVariant = () => {
   const variants: Array<"docked" | "floating"> = ["docked", "floating"];
 
   return (
-    <div className="demo">
+    <div className="demo column">
       {variants.map((variant) => (
         <Toolbar key={variant} variant={variant}>
           <IconButton>

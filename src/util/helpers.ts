@@ -1,6 +1,6 @@
 import COMPONENT_GROUPS from "@/components/examples";
 import GET_STARTED_LINKS from "@/components/get-started";
-import type { GetStartedLinkId } from "@/types/common";
+import type { GetStartedId, GetStartedLinkId } from "@/types/common";
 import type { ComponentIdDefinition } from "@/types/demo";
 
 export function toKebab(str: string) {
@@ -27,13 +27,41 @@ export function findComponent(id: ComponentIdDefinition) {
   );
 }
 
-export function paginatedComponents(id: ComponentIdDefinition) {
-  const components = COMPONENT_GROUPS.flatMap((group) => group.components);
-  const index = components.findIndex((comp) => comp.id === id);
+export function paginatedComponents(
+  section: GetStartedId | "components",
+  component: ComponentIdDefinition
+) {
+  const isComponent = section === "components";
+  const items = isComponent
+    ? COMPONENT_GROUPS.flatMap((g) => g.components)
+    : GET_STARTED_LINKS.flatMap((g) => g.links);
+
+  const id = isComponent ? component : section || "";
+  const index = items.findIndex((item) => item.id === id);
+
+  const navigation = (item: (typeof items)[number] | null) =>
+    item
+      ? {
+          label: item.label,
+          href: `${
+            COMPONENT_GROUPS.some((group) =>
+              group.components.some((c) => c.id === item.id)
+            )
+              ? "/docs/components"
+              : "/docs"
+          }/${item.id}`,
+        }
+      : null;
 
   return {
-    previous: components[index - 1] || null,
-    next: components[index + 1] || null,
+    previous: navigation(
+      items[index - 1] ??
+        (isComponent ? GET_STARTED_LINKS.at(-1)?.links.at(-1) : null)
+    ),
+    next: navigation(
+      items[index + 1] ??
+        (!isComponent ? COMPONENT_GROUPS[0]?.components[0] : null)
+    ),
   };
 }
 

@@ -6,7 +6,7 @@ import Toolbar from "@/components/ui/toolbar";
 
 const ToolbarAlignment = () => {
   return (
-    <div className="demo">
+    <div className="demo column">
       <Toolbar alignment="spread">
         <Button variant="text" rounded>
           Back

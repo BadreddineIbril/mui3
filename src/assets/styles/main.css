@@ -2,6 +2,7 @@
 @import url("./layout/footer.css");
 @import url("./pages/doc.css");
 @import url("./pages/docs.css");
+@import url("./misc/shape.css");
 
 * {
   margin: 0;

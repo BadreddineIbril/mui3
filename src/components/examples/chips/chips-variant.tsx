@@ -8,7 +8,7 @@ const ChipsVariant = () => {
   const [isRemoved, setRemoved] = useState<boolean>(false);
 
   return (
-    <div className="demo">
+    <div className="demo column">
       {variants.map((variant) => (
         <Chips key={variant} variant={variant}>
           <ChipItem variant="assist">Assist</ChipItem>

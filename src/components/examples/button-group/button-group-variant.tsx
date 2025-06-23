@@ -10,7 +10,7 @@ const ButtonGroupVariant = () => {
   ];
 
   return (
-    <div className="demo">
+    <div className="demo column">
       {variants.map((variant) => (
         <ButtonGroup variant={variant}>
           <ButtonGroupItem>

@@ -94,8 +94,17 @@
       gap: var(--spacing-48);
 
       .heading {
+        display: grid;
+        gap: var(--spacing-12);
+
         .title {
           font: var(--font-display-sm);
+        }
+
+        .description {
+          text-wrap: balance;
+          font-size: var(--font-body-md);
+          color: var(--color-on-surface-variant);
         }
       }
 
@@ -149,6 +158,20 @@
           padding: var(--spacing-24);
 
           [data-line] {
+            &:empty {
+              display: none;
+            }
+
+            &::before {
+              content: attr(data-line);
+              text-align: end;
+              display: inline-block;
+              font-family: monospace;
+              width: var(--spacing-12);
+              margin-inline-end: var(--spacing-24);
+              color: var(--color-tertiary);
+            }
+
             span {
               font-family: monospace;
 
@@ -174,10 +197,25 @@
           align-items: center;
           justify-content: center;
 
+          &:has(.column) {
+            height: auto;
+            min-height: 400px;
+            padding-block: var(--spacing-48);
+          }
+
           .demo {
             display: flex;
             align-items: center;
             gap: var(--spacing-24);
+            justify-content: center;
+
+            &.column {
+              flex-direction: column;
+            }
+
+            &.wrap {
+              flex-wrap: wrap;
+            }
 
             & > label {
               display: flex;
@@ -250,6 +288,42 @@
 
           .preview {
             font: var(--variant-font);
+          }
+        }
+      }
+
+      [mui-get-started="colors"] {
+        display: grid;
+        gap: var(--spacing-48);
+
+        .colors-box {
+          display: grid;
+          gap: var(--spacing-48);
+        }
+
+        .preview {
+          display: grid;
+          gap: var(--spacing-16);
+          grid-template-columns: 60% auto;
+
+          .variant {
+            overflow: hidden;
+            height: 100px;
+            font: var(--font-title-sm);
+            padding: var(--spacing-24);
+            border-radius: var(--radius-lg);
+            color: var(--variant-text-color);
+            background-color: var(--variant-bg-color);
+
+            .info {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              [mui-shape] {
+                background-color: var(--variant-text-color);
+              }
+            }
           }
         }
       }

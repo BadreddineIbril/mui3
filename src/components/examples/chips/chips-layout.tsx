@@ -5,7 +5,7 @@ const ChipsLayout = () => {
   const layouts: Array<"wrap" | "scroll"> = ["wrap", "scroll"];
 
   return (
-    <div className="demo">
+    <div className="demo column">
       {layouts.map((layout) => (
         <Chips key={layout} layout={layout}>
           <ChipItem variant="assist">Assist 1</ChipItem>

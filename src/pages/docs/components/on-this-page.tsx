@@ -1,52 +1,60 @@
 import { useLocation, useParams } from "react-router-dom";
-import { findComponent } from "@/util/helpers";
+import { findComponent, findGetStartedLink } from "@/util/helpers";
+import type { GetStartedLinkId } from "@/types/common";
 import type { ComponentIdDefinition } from "@/types/demo";
 
 const OnThisPage = () => {
-  const { component } = useParams();
+  const { section, component } = useParams();
   const { hash } = useLocation();
 
   function isActiveLink(id: string) {
     return hash === `#${id}` || (!hash && id === "overview");
   }
 
-  const { content } = findComponent(component as ComponentIdDefinition);
+  const info = {
+    component: findComponent(component as ComponentIdDefinition),
+    getStarted: findGetStartedLink(section as GetStartedLinkId),
+  };
 
   return (
     <aside className="on-this-page-area">
       <div className="guide-box">
         <h3 className="title">On this page</h3>
         <div className="actions">
-          <div className="links">
-            <h4 className="subtitle">Usage</h4>
-            <ul>
-              {content.slice(0, 2).map((item) => (
-                <li>
-                  <a
-                    mui-button={isActiveLink(item.id) ? "filled" : "text"}
-                    data-size="sm"
-                    href={`#${item.id}`}>
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="links">
-            <h4 className="subtitle">Examples</h4>
-            <ul>
-              {content.slice(2).map((item) => (
-                <li>
-                  <a
-                    mui-button={isActiveLink(item.id) ? "filled" : "text"}
-                    data-size="sm"
-                    href={`#${item.id}`}>
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {component && (
+            <div className="links">
+              <h4 className="subtitle">Usage</h4>
+              <ul>
+                {info.component.content.slice(0, 2).map((item) => (
+                  <li>
+                    <a
+                      mui-button={isActiveLink(item.id) ? "filled" : "text"}
+                      data-size="sm"
+                      href={`#${item.id}`}>
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {component && (
+            <div className="links">
+              <h4 className="subtitle">Examples</h4>
+              <ul>
+                {info.component.content.slice(2).map((item) => (
+                  <li>
+                    <a
+                      mui-button={isActiveLink(item.id) ? "filled" : "text"}
+                      data-size="sm"
+                      href={`#${item.id}`}>
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </aside>
