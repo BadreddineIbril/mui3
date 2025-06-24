@@ -33,7 +33,7 @@
     --shadow-4: 0px 2px 3px rgba(0, 0, 0, 0.3), 0px 6px 10px rgba(0, 0, 0, 0.15);
     --shadow-5: 0px 4px 4px rgba(0, 0, 0, 0.3), 0px 8px 12px rgba(0, 0, 0, 0.15);
 
-    --font-family: Inter, sans-serif;
+    --font-family: Roboto, sans-serif;
 
     --font-display-lg: 400 57px/64px var(--font-family);
     --font-display-md: 400 45px/52px var(--font-family);
