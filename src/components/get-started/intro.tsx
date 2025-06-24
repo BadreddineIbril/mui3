@@ -82,6 +82,10 @@ const Intro = () => {
             spot anything, or have ideas for improvements, feel free to open an
             issue.
           </p>
+          <p>
+            Not every Material Design 3 component is here yet. I'm adding them bit by
+            bit, depending on how hard they are, and how loud you ask for them.
+          </p>
         </article>
       </div>
     </div>

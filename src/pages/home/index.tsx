@@ -1,5 +1,11 @@
+import Hero from "@/pages/home/components/hero";
+
 const Home = () => {
-  return <div mui-page="home">Home</div>;
+  return (
+    <main mui-page="home">
+      <Hero />
+    </main>
+  );
 };
 
 export default Home;

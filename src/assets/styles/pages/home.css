@@ -1,2 +1,79 @@
 [mui-page="home"] {
+  .hero-area {
+    display: flex;
+    gap: var(--spacing-48);
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+    background-image: linear-gradient(
+        var(--color-surface-container-highest) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to right,
+        var(--color-surface-container-high) 1px,
+        transparent 1px
+      );
+    background-size: 100px 100px;
+
+    .content {
+      width: 50%;
+      display: grid;
+      gap: var(--spacing-24);
+      text-align: center;
+
+      .title {
+        display: ruby;
+        font: var(--font-display-lg);
+
+        & > .tag {
+          width: fit-content;
+          position: relative;
+          padding-inline: var(--spacing-16);
+          color: var(--color-primary);
+          border: 2px solid var(--color-primary);
+
+          span {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            background-color: var(--color-background);
+            border: 2px solid var(--color-primary);
+
+            &:first-child {
+              inset-block-start: -5px;
+              inset-inline-start: -5px;
+            }
+
+            &:nth-child(2) {
+              inset-block-end: -5px;
+              inset-inline-start: -5px;
+            }
+
+            &:nth-child(3) {
+              inset-block-start: -5px;
+              inset-inline-end: -5px;
+            }
+
+            &:nth-child(4) {
+              inset-block-end: -5px;
+              inset-inline-end: -5px;
+            }
+          }
+        }
+      }
+
+      .subtitle {
+        text-wrap: balance;
+        font: var(--font-title-lg);
+        color: var(--color-on-surface-variant);
+      }
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+    }
+  }
 }

@@ -13,7 +13,7 @@ const Navigation = () => {
   const LINKS = [
     { icon: <MaterialDesignIcon />, href: "" },
     { label: "Docs", href: "docs" },
-    { label: "Components", href: "components" },
+    { label: "Components", href: "docs/components/button" },
     { label: "Examples", href: "examples" },
     { label: "Colors", href: "colors" },
   ];
