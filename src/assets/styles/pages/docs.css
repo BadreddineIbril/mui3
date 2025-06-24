@@ -111,6 +111,12 @@
       .selector {
         overflow: hidden;
         border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+
+        &.min {
+          .output {
+            height: 100px;
+          }
+        }
       }
 
       .output {
@@ -328,11 +334,13 @@
         }
       }
 
-      [mui-get-started="intro"] {
+      [mui-get-started="intro"],
+      [mui-get-started="installation"] {
         display: grid;
         gap: var(--spacing-48);
 
-        .intro-box {
+        .intro-box,
+        .installation-box {
           display: grid;
           gap: var(--spacing-12);
 

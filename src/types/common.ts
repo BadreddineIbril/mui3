@@ -19,4 +19,4 @@ export interface GetStartedDefinition {
 }
 
 export type GetStartedId = "overview" | "foundations";
-export type GetStartedLinkId = "" | "prerequisite" | "colors" | "typography";
+export type GetStartedLinkId = "" | "installation" | "colors" | "typography";

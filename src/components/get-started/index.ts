@@ -1,5 +1,5 @@
 import Intro from "@/components/get-started/intro";
-import Prerequisite from "@/components/get-started/prerequisite";
+import Installation from "@/components/get-started/installation";
 import Colors from "@/components/get-started/colors";
 import Typography from "@/components/get-started/typography";
 import type { GetStartedDefinition } from "@/types/common";
@@ -11,10 +11,10 @@ const GET_STARTED_LINKS: GetStartedDefinition[] = [
     links: [
       { id: "", label: "Introduction", description: "Material 3", content: Intro },
       {
-        id: "prerequisite",
-        label: "Prerequisite",
+        id: "installation",
+        label: "Installation",
         description: "How to install dependencies and structure your app.",
-        content: Prerequisite,
+        content: Installation,
       },
     ],
   },

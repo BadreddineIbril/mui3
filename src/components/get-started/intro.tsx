@@ -29,7 +29,7 @@ const Intro = () => {
       </div>
       <div className="intro-box">
         <div className="heading">
-          <div className="title">Open source</div>
+          <h2 className="title">Open source</h2>
         </div>
         <article className="content">
           <p>
@@ -50,7 +50,7 @@ const Intro = () => {
       </div>
       <div className="intro-box">
         <div className="heading">
-          <div className="title">Syntax</div>
+          <h2 className="title">Syntax</h2>
         </div>
         <article className="content">
           <p>
@@ -74,7 +74,7 @@ const Intro = () => {
       </div>
       <div className="intro-box">
         <div className="heading">
-          <div className="title">Beta</div>
+          <h2 className="title">Beta</h2>
         </div>
         <article className="content">
           <p>
@@ -83,8 +83,9 @@ const Intro = () => {
             issue.
           </p>
           <p>
-            Not every Material Design 3 component is here yet. I'm adding them bit by
-            bit, depending on how hard they are, and how loud you ask for them.
+            Not every Material Design 3 component is here yet. I'm adding them
+            bit by bit, depending on how hard they are, and how loud you ask for
+            them.
           </p>
         </article>
       </div>

@@ -6,7 +6,7 @@ interface SyntaxHighlighterProps {
 
 const SyntaxHighlighter = ({ code }: SyntaxHighlighterProps) => {
   const patterns: [RegExp, string][] = [
-    [/\b(import|from|export|function|const|let|return|default|type)\b/g, "keyword"],
+    [/\b(import|from|export|function|const|let|return|default|type|pnpm|npm|bun|yarn)\b/g, "keyword"],
     [/(['"`])(?:\\.|[^\\])*?\1/g, "string"],
     [/<\/\w+>/g, "tag"],
     [/<\w+/, "tag"],
