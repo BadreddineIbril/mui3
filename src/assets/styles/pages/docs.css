@@ -327,6 +327,41 @@
           }
         }
       }
+
+      [mui-get-started="intro"] {
+        display: grid;
+        gap: var(--spacing-48);
+
+        .intro-box {
+          display: grid;
+          gap: var(--spacing-12);
+
+          .content {
+            display: grid;
+            text-align: justify;
+            gap: var(--spacing-8);
+            font: var(--font-body-md);
+            color: var(--color-on-surface-variant);
+
+            a {
+              text-decoration: none;
+              color: var(--color-primary);
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+
+            small {
+              font: var(--font-body-sm);
+              border-radius: var(--radius-sm);
+              padding: var(--spacing-4) var(--spacing-8);
+              color: var(--color-on-primary-container);
+              background-color: var(--color-primary-container);
+            }
+          }
+        }
+      }
     }
 
     .playground-actions {

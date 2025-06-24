@@ -9,14 +9,10 @@ export default function AppRouter() {
     {
       element: <Layout />,
       children: [
-        // {
-        //   path: "/",
-        //   element: <Home />,
-        // },
-        // {
-        //   path: "/doc/:id?",
-        //   element: <Doc />,
-        // },
+        {
+          path: "/",
+          element: <Home />,
+        },
         { path: "/", element: <>Home</> },
         { path: "/docs/:section?/:component?", element: <Docs /> },
         { path: "/:id?", element: <Doc /> },
