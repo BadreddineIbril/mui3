@@ -11,24 +11,24 @@ const Navigation = () => {
   const { theme, toggleTheme } = useTheme();
 
   const LINKS = [
-    { icon: <MaterialDesignIcon />, href: "" },
-    { label: "Docs", href: "docs" },
-    { label: "Components", href: "docs/components/button" },
-    { label: "Examples", href: "examples" },
-    { label: "Colors", href: "colors" },
+    { icon: <MaterialDesignIcon />, href: "/" },
+    { label: "Docs", href: "/docs" },
+    { label: "Components", href: "/docs/components/button" },
+    { label: "Examples", href: "/examples" },
+    { label: "Colors", href: "/docs/colors" },
   ];
 
   function isActive(href: string) {
-    return pathname.split("/")[1] === href;
+    return pathname === href;
   }
 
   return (
     <nav mui-layout="nav">
       <ButtonGroup variant="tonal" type="connected" size="sm">
-        {LINKS.map((link) => (
+        {LINKS.map((link, i) => (
           <ButtonGroupItem
-            key={link.label}
-            href={`/${link.href}`}
+            key={i}
+            href={link.href}
             variant={isActive(link.href) ? "filled" : "tonal"}
             rounded={isActive(link.href)}>
             {link.icon || link.label}
@@ -36,6 +36,7 @@ const Navigation = () => {
         ))}
       </ButtonGroup>
       <ButtonGroup variant="outlined" size="sm" asIcon>
+        <span className="beta-badge">BETA</span>
         <ButtonGroupItem aria-label="theme" onClick={toggleTheme} width="wide">
           <Icon name={theme === "light" ? "dark_mode" : "light_mode"} />
         </ButtonGroupItem>

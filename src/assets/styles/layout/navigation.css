@@ -7,4 +7,18 @@
   inset-block-start: 0;
   padding: var(--spacing-24) 7%;
   background-color: var(--color-background);
+
+  & > [mui-button-group]:last-child {
+    align-items: center;
+
+    .beta-badge {
+      display: flex;
+      align-items: center;
+      font: var(--font-label-sm);
+      padding: var(--spacing-2) var(--spacing-8);
+      color: var(--color-on-error-container);
+      background-color: var(--color-error-container);
+      border-radius: var(--radius-xs);
+    }
+  }
 }
