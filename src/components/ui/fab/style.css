@@ -8,44 +8,41 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--fab-color);
   background-color: var(--fab-bg);
   transition: var(--transition-standard-fast-effects);
   box-shadow: var(--shadow-2);
+  background-repeat: no-repeat;
+  background-position: center;
 
   &[mui-fab="primary"] {
     --fab-bg: var(--color-primary);
-
-    color: var(--color-on-primary);
+    --fab-color: var(--color-on-primary);
   }
 
   &[mui-fab="secondary"] {
     --fab-bg: var(--color-secondary);
-
-    color: var(--color-on-secondary);
+    --fab-color: var(--color-on-secondary);
   }
 
   &[mui-fab="tertiary"] {
     --fab-bg: var(--color-tertiary);
-
-    color: var(--color-on-tertiary);
+    --fab-color: var(--color-on-tertiary);
   }
 
   &[mui-fab="soft-primary"] {
     --fab-bg: var(--color-primary-container);
-
-    color: var(--color-on-primary-container);
+    --fab-color: var(--color-on-primary-container);
   }
 
   &[mui-fab="soft-secondary"] {
     --fab-bg: var(--color-secondary-container);
-
-    color: var(--color-on-secondary-container);
+    --fab-color: var(--color-on-secondary-container);
   }
 
   &[mui-fab="soft-tertiary"] {
     --fab-bg: var(--color-tertiary-container);
-
-    color: var(--color-tertiary-on-container);
+    --fab-color: var(--color-tertiary-on-container);
   }
 
   &[data-size="sm"] {
@@ -84,23 +81,15 @@
     }
   }
 
-  &::before {
-    inset: 0;
-    opacity: 0;
-    position: absolute;
-    border-radius: inherit;
-    outline: 1px solid color-mix(in srgb, currentColor 12%, transparent);
-    background-color: color-mix(in srgb, currentColor 12%, transparent);
-  }
-
   &:hover {
     box-shadow: var(--shadow-3);
     background-color: color-mix(in srgb, currentColor 8%, var(--fab-bg));
   }
 
-  &:active::before {
-    content: "";
-    animation: ripple var(--transition-standard-default-effects) forwards;
+  &:active {
+    background-image: var(--ripple-circle);
+    animation: button-ripple var(--transition-expressive-default-spatial)
+      forwards;
   }
 
   &:focus-visible {
@@ -108,13 +97,9 @@
   }
 
   &:disabled {
+    --fab-bg: color-mix(in srgb, var(--color-on-surface) 10%, transparent);
+    --fab-color: color-mix(in srgb, var(--color-on-surface) 38%, transparent);
     box-shadow: none;
     pointer-events: none;
-    color: color-mix(in srgb, var(--color-on-surface) 38%, transparent);
-    background-color: color-mix(
-      in srgb,
-      var(--color-on-surface) 10%,
-      transparent
-    );
   }
 }

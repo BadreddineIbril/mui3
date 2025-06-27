@@ -49,7 +49,7 @@
   &:active,
   &:hover:not(:disabled)::after {
     content: "";
-    animation: ripple var(--transition-standard-default-effects) forwards;
+    animation: input-ripple var(--transition-standard-default-effects) forwards;
 
     &:active::after {
       background-color: color-mix(

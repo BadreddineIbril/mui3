@@ -10,7 +10,8 @@
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  transition: var(--transition-standard-fast-effects);
+  background-repeat: no-repeat;
+  background-position: center;
 
   &[mui-button="elevated"] {
     color: var(--color-primary);
@@ -104,15 +105,6 @@
     }
   }
 
-  &::before {
-    inset: 0;
-    opacity: 0;
-    position: absolute;
-    border-radius: inherit;
-    outline: 1px solid color-mix(in srgb, currentColor 12%, transparent);
-    background-color: color-mix(in srgb, currentColor 12%, transparent);
-  }
-
   &[data-size="xs"],
   &[data-size="sm"] {
     font: var(--font-label-lg);
@@ -145,9 +137,13 @@
     border-radius: var(--radius-rounded);
   }
 
-  &:active::before {
-    content: "";
-    animation: ripple var(--transition-standard-default-effects) forwards;
+  &:hover {
+    background-size: 250%;
+  }
+
+  &:active {
+    background-image: var(--ripple-circle);
+    animation: button-ripple var(--transition-expressive-default-spatial) forwards;
   }
 
   &:focus-visible {

@@ -23,12 +23,16 @@
       outline: 10px solid transparent;
       font: var(--font-title-sm);
       background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 240%;
       color: var(--color-on-surface-variant);
       display: grid;
       gap: var(--spacing-2);
       align-items: center;
       justify-content: center;
       padding-block: var(--spacing-16);
+      transition: var(--transition-expressive-default-spatial);
 
       &[aria-selected="true"] {
         outline-offset: calc(var(--spacing-8) * -1);
@@ -50,9 +54,9 @@
         background-color: color-mix(in srgb, currentColor 8%, transparent);
       }
 
-      &:active::before {
-        content: "";
-        animation: ripple var(--transition-standard-default-effects) forwards;
+      &:active {
+        background-size: 250%;
+        background-image: var(--ripple-circle);
       }
 
       &:focus-visible {

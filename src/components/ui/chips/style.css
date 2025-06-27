@@ -22,21 +22,14 @@
     gap: var(--spacing-8);
     color: var(--color-on-surface-variant);
     background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
     font: var(--font-label-lg);
     border-radius: var(--radius-sm);
     border: 1px solid transparent;
     outline-offset: 1px;
     outline: 10px solid transparent;
     transition: var(--transition-standard-fast-effects);
-
-    &::before {
-      inset: 0;
-      opacity: 0;
-      position: absolute;
-      border-radius: var(--radius-sm);
-      outline: 1px solid color-mix(in srgb, currentColor 12%, transparent);
-      background-color: color-mix(in srgb, currentColor 12%, transparent);
-    }
 
     &[aria-pressed="true"] {
       border-color: transparent !important;
@@ -90,9 +83,9 @@
       background-color: color-mix(in srgb, currentColor 8%, transparent);
     }
 
-    &:active::before {
-      content: "";
-      animation: ripple var(--transition-standard-default-effects) forwards;
+    &:active {
+      background-image: var(--ripple-circle);
+      animation: button-ripple var(--transition-expressive-default-spatial) forwards;
     }
 
     &:focus-visible {

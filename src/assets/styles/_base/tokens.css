@@ -78,9 +78,29 @@
     --transition-standard-default-effects: 200ms
       cubic-bezier(0.34, 0.8, 0.34, 1);
     --transition-standard-slow-effects: 300ms cubic-bezier(0.34, 0.88, 0.34, 1);
+
+    --ripple-circle: radial-gradient(
+      circle,
+      color-mix(in srgb, currentColor 12%, transparent) 40%,
+      transparent 41%
+    );
+    --ripple-full: radial-gradient(
+      circle,
+      color-mix(in srgb, currentColor 12%, transparent) 100%,
+      transparent 41%
+    );
   }
 
-  @keyframes ripple {
+  @keyframes button-ripple {
+    from {
+      background-size: 150%;
+    }
+    to {
+      background-size: 250%;
+    }
+  }
+
+  @keyframes input-ripple {
     to {
       opacity: 1;
     }
