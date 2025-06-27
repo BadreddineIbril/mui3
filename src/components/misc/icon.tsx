@@ -2,15 +2,15 @@ import type { ComponentProps } from "react";
 
 type IconProps = ComponentProps<"span"> & {
   name: string;
-  fill?: boolean;
+  filled?: boolean;
 };
 
-const Icon = ({ name, fill = false, className, ...props }: IconProps) => {
+const Icon = ({ name, filled = false, ...props }: IconProps) => {
   return (
     <span
       mui-icon=""
-      data-fill={fill}
-      className={className + " material-symbols-outlined"}
+      data-filled={filled}
+      className={`material-symbols-outlined ${props.className || ""}`.trim()}
       {...props}>
       {name}
     </span>

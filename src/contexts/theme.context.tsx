@@ -1,5 +1,5 @@
 import { createContext, useState, type ReactNode } from "react";
-import { applyTheme, getColorScheme, getPrimary, getTheme } from "@/util/theme";
+import { applyTheme, getColorScheme, getPrimary, getTheme, getTokens } from "@/util/theme";
 import type { HexColor, Theme, ThemeContextDefinition } from "@/types/context";
 
 const ThemeContext = createContext<ThemeContextDefinition | null>(null);
@@ -28,6 +28,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
         primary,
         theme,
         scheme: getColorScheme()?.textContent || "",
+        tokens: getTokens(),
         setPrimary: updatePrimary,
         toggleTheme,
       }}>

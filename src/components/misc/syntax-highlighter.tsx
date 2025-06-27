@@ -6,7 +6,10 @@ interface SyntaxHighlighterProps {
 
 const SyntaxHighlighter = ({ code }: SyntaxHighlighterProps) => {
   const patterns: [RegExp, string][] = [
-    [/\b(import|from|export|function|const|let|return|default|type|pnpm|npm|bun|yarn)\b/g, "keyword"],
+    [
+      /\b(import|from|export|function|const|let|return|default|type|pnpm|npm|bun|yarn)\b/g,
+      "keyword",
+    ],
     [/(['"`])(?:\\.|[^\\])*?\1/g, "string"],
     [/<\/\w+>/g, "tag"],
     [/<\w+/, "tag"],
@@ -15,6 +18,7 @@ const SyntaxHighlighter = ({ code }: SyntaxHighlighterProps) => {
     [/[{}]/g, "string"],
     [/&/g, "string"],
     [/\b[\w-]+(?=\s*:)/g, "tag"],
+    [/\blight-dark\b/g, "string"],
   ];
 
   function highlight(text: string) {
@@ -52,7 +56,7 @@ const SyntaxHighlighter = ({ code }: SyntaxHighlighterProps) => {
   return (
     <pre>
       {code.split("\n").map((line, i) => (
-        <div data-line={i+1} key={i}>
+        <div data-line={i + 1} key={i}>
           {highlight(line)}
         </div>
       ))}

@@ -351,6 +351,12 @@
             font: var(--font-body-md);
             color: var(--color-on-surface-variant);
 
+            .guide {
+              display: grid;
+              gap: var(--spacing-24);
+              margin-block-start: var(--spacing-24);
+            }
+
             a {
               text-decoration: none;
               color: var(--color-primary);
@@ -364,8 +370,8 @@
               font: var(--font-body-sm);
               border-radius: var(--radius-sm);
               padding: var(--spacing-4) var(--spacing-8);
-              color: var(--color-on-primary-container);
-              background-color: var(--color-primary-container);
+              color: var(--color-on-secondary-container);
+              background-color: var(--color-secondary-container);
             }
           }
         }

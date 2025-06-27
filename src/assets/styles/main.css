@@ -1,9 +1,11 @@
+@import url("./_base/tokens.css");
 @import url("./layout/navigation.css");
 @import url("./layout/footer.css");
 @import url("./pages/doc.css");
 @import url("./pages/docs.css");
 @import url("./pages/home.css");
 @import url("./misc/shape.css");
+@import url("./misc/code.css");
 
 * {
   margin: 0;
@@ -31,5 +33,11 @@ body {
   & > main {
     flex: 2;
     padding-inline: 7%;
+  }
+}
+
+[mui-icon] {
+  &[data-filled="true"] {
+    font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
   }
 }

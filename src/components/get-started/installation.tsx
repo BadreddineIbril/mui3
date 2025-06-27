@@ -1,8 +1,10 @@
-import Copy from "@/components/misc/copy";
-import SyntaxHighlighter from "@/components/misc/syntax-highlighter";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useTheme } from "@/contexts";
+import CodeBlock from "@/components/misc/code/code-block";
+import MultiCodeBlock from "@/components/misc/code/multi-code-block";
 
 const Installation = () => {
+  const { tokens } = useTheme();
+
   return (
     <div mui-get-started="installation">
       <div className="installation-box">
@@ -23,35 +25,16 @@ const Installation = () => {
         </div>
         <article className="content">
           <p>Create a new Vite project with the React + TypeScript template.</p>
-          <Tabs defaultTab="pnpm" inlineIcon className="selector min">
-            <TabsList>
-              <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-              <TabsTrigger value="npm">npm</TabsTrigger>
-              <TabsTrigger value="yarn">yarn</TabsTrigger>
-              <TabsTrigger value="bun">bun</TabsTrigger>
-            </TabsList>
-            <TabsContent value="pnpm" className="code-content">
-              <div className="output">
-                <SyntaxHighlighter code="pnpm create vite@latest" />
-              </div>
-              <Copy content="pnpm" />
-            </TabsContent>
-            <TabsContent value="npm" className="code-content">
-              <div className="output">
-                <SyntaxHighlighter code="npm create vite@latest" />
-              </div>
-            </TabsContent>
-            <TabsContent value="yarn" className="code-content">
-              <div className="output">
-                <SyntaxHighlighter code="yarn create vite@latest" />
-              </div>
-            </TabsContent>
-            <TabsContent value="bun" className="code-content">
-              <div className="output">
-                <SyntaxHighlighter code="bun create vite@latest" />
-              </div>
-            </TabsContent>
-          </Tabs>
+          <div className="guide">
+            <MultiCodeBlock
+              options={[
+                { id: "pnpm", label: "pnpm", code: "pnpm create vite@latest" },
+                { id: "npm", label: "npm", code: "npm create vite@latest" },
+                { id: "yarn", label: "yarn", code: "yarn create vite@latest" },
+                { id: "bun", label: "bun", code: "bun create vite@latest" },
+              ]}
+            />
+          </div>
         </article>
       </div>
       <div className="installation-box">
@@ -65,42 +48,34 @@ const Installation = () => {
             <small>baseUrl</small> and <small>paths</small> inside
             compilerOptions.
           </p>
-          // CODE <br />
-          // CODE
+          <div className="guide">
+            <CodeBlock
+              label="tsconfig.json"
+              code={`{\n    "files": [],\n    "references": [\n        {\n            "path": "./tsconfig.app.json"\n        },\n        {\n            "path": "./tsconfig.node.json"\n        }\n    ],\n    "compilerOptions": {\n        "baseUrl": ".",\n        "paths": {\n            "@/*": ["./src/*"]\n        }\n    }\n}`}
+            />
+            <CodeBlock
+              label="tsconfig.app.json"
+              code={`{\n    "compilerOptions": {\n        // ...\n        "baseUrl": ".",\n        "paths": {\n            "@/*": [\n                "./src/*"\n            ]\n        }\n        // ...\n    }\n}`}
+            />
+          </div>
           <p>
             To make sure your app resolves custom paths properly, drop this
             snippet into <small>vite.config.ts</small>.
           </p>
-          <Tabs defaultTab="pnpm" inlineIcon className="selector min">
-            <TabsList>
-              <TabsTrigger value="pnpm">pnpm</TabsTrigger>
-              <TabsTrigger value="npm">npm</TabsTrigger>
-              <TabsTrigger value="yarn">yarn</TabsTrigger>
-              <TabsTrigger value="bun">bun</TabsTrigger>
-            </TabsList>
-            <TabsContent value="pnpm" className="code-content">
-              <div className="output">
-                <SyntaxHighlighter code="pnpm add -D @types/node" />
-              </div>
-              <Copy content="pnpm" />
-            </TabsContent>
-            <TabsContent value="npm" className="code-content">
-              <div className="output">
-                <SyntaxHighlighter code="npm install -D @types/node" />
-              </div>
-            </TabsContent>
-            <TabsContent value="yarn" className="code-content">
-              <div className="output">
-                <SyntaxHighlighter code="yarn add -D @types/node" />
-              </div>
-            </TabsContent>
-            <TabsContent value="bun" className="code-content">
-              <div className="output">
-                <SyntaxHighlighter code="bun add -D @types/node" />
-              </div>
-            </TabsContent>
-          </Tabs>
-          // CODE
+          <div className="guide">
+            <MultiCodeBlock
+              options={[
+                { id: "pnpm", label: "pnpm", code: "pnpm add -D @types/node" },
+                { id: "npm", label: "npm", code: "npm install -D @types/node" },
+                { id: "yarn", label: "yarn", code: "yarn add -D @types/node" },
+                { id: "bun", label: "bun", code: "bun add -D @types/node" },
+              ]}
+            />
+            <CodeBlock
+              label="vite.config.ts"
+              code={`import path from "path";\nimport react from "@vitejs/plugin-react";\nimport { defineConfig } from "vite"\n \n// https://vite.dev/config/\nexport default defineConfig({\n    plugins: [react()],\n    resolve: {\n        alias: {\n            "@": path.resolve(__dirname, "./src"),\n        },\n    },\n})`}
+            />
+          </div>
         </article>
       </div>
       <div className="installation-box">
@@ -109,10 +84,32 @@ const Installation = () => {
         </div>
         <article className="content">
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi,
-            expedita.
+            We'll use{" "}
+            <a href="https://fonts.google.com/icons" target="_blank">
+              Google Icons
+            </a>
+            , just a single import in <small>index.html</small>. Then create a
+            little helper component with a few props to make working with icons
+            smoother in your components.
           </p>
-          // Import icons from  Google Material Icons Present the Icon component
+          <div className="guide">
+            <CodeBlock
+              label="index.html"
+              code={`<head>\n    ...\n    <link\n        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0"\n        rel="stylesheet" />\n    ...\n</head>`}
+              lang="html"
+            />
+            <CodeBlock
+              label="components/misc/icon.tsx"
+              code={
+                'import type { ComponentProps } from "react";\n \ntype IconProps = ComponentProps<"span"> & {\n    name: string;\n    filled?: boolean;\n};\n \nconst Icon = ({ name, filled = false, ...props }: IconProps) => {\n    return (\n        <span\n            mui-icon=""\n            data-filled={filled}\n            className={`material-symbols-outlined ${props.className || ""}`.trim()}\n            {...props}>\n            {name}\n        </span>\n    );\n};\n \nexport default Icon;'
+              }
+            />
+            <CodeBlock
+              label="app/globals.css"
+              code={`[mui-icon] {\n    &[data-filled="true"] {\n        font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;\n    }\n}`}
+              lang="css"
+            />
+          </div>
         </article>
       </div>
       <div className="installation-box">
@@ -121,10 +118,19 @@ const Installation = () => {
         </div>
         <article className="content">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perspiciatis, tempora!
+            Include <small>Roboto</small> font from{" "}
+            <a href="https://fonts.google.com" target="_blank">
+              Google Fonts
+            </a>
+            .
           </p>
-          // Font integration
+          <div className="guide">
+            <CodeBlock
+              label="index.html"
+              code={`<head>\n    ...\n    <link rel="preconnect" href="https://fonts.googleapis.com" />\n    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />\n    <link\n        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"\n        rel="stylesheet" />\n    ...\n</head>`}
+              lang="html"
+            />
+          </div>
         </article>
       </div>
       <div className="installation-box">
@@ -133,10 +139,12 @@ const Installation = () => {
         </div>
         <article className="content">
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi,
-            expedita.
+            These are the variables behind the components. You can use them too
+            to customize things even more to your style.
           </p>
-          // CSS VARIABLES (COLORS + TOKENS)
+          <div className="guide">
+            <CodeBlock label="tokens.css" code={tokens} lang="css" />
+          </div>
         </article>
       </div>
     </div>

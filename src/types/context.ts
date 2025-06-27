@@ -4,6 +4,7 @@ export interface ThemeContextDefinition {
   theme: Theme;
   toggleTheme: () => void;
   scheme: string;
+  tokens: string
 }
 
 export type HexColor = `#${string}`;
