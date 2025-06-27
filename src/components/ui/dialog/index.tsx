@@ -6,6 +6,7 @@ import {
   useEffect,
   useState,
   type ComponentProps,
+  type MouseEventHandler,
   type ReactElement,
   type ReactNode,
 } from "react";
@@ -31,7 +32,7 @@ const DialogContext = createContext<{
 const useDialogContext = () => {
   const ctx = useContext(DialogContext);
   if (!ctx)
-    throw new Error("Dialog component must be used within a Dialog provider");
+    throw new Error("DialogTrigger must be used within a Dialog component");
 
   return ctx;
 };
@@ -69,8 +70,11 @@ const Dialog = ({ children, quick, ...props }: DialogProps) => {
   );
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const DialogTrigger = ({ children }: { children: ReactElement<any> }) => {
+const DialogTrigger = ({
+  children,
+}: {
+  children: ReactElement<{ onClick?: MouseEventHandler }>;
+}) => {
   const { open } = useDialogContext();
 
   return cloneElement(children, { onClick: open });
@@ -114,8 +118,11 @@ const DialogBody = ({ ...props }: DialogBodyProps) => {
   return <div mui-dialog-body="" {...props} />;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const DialogClose = ({ children }: { children: ReactElement<any> }) => {
+const DialogClose = ({
+  children,
+}: {
+  children: ReactElement<{ onClick?: MouseEventHandler }>;
+}) => {
   const { close } = useDialogContext();
 
   return cloneElement(children, { onClick: close });

@@ -36,7 +36,7 @@ const useBarContext = () => {
 
 const Bar = ({ orientation = "horizontal", style, ...props }: BarProps) => {
   return (
-    <BarContext.Provider value={{ orientation }}>
+    <BarContext value={{ orientation }}>
       <div
         mui-bar=""
         aria-orientation={orientation}
@@ -49,7 +49,7 @@ const Bar = ({ orientation = "horizontal", style, ...props }: BarProps) => {
           } as CSSProperties
         }
       />
-    </BarContext.Provider>
+    </BarContext>
   );
 };
 

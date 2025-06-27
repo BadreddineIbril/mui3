@@ -7,23 +7,13 @@ type ChipsProps = ComponentProps<"div"> & {
   variant?: "outlined" | "elevated";
 };
 
-type BaseProps = ComponentProps<"button"> & {
-  variant?: "assist" | "suggestion";
+type ChipItemProps = ComponentProps<"button"> & {
+  variant?: "assist" | "suggestion" | "filter" | "input";
+  selected?: boolean;
+  onSelect?: () => void;
+  removable?: boolean;
+  onRemove?: () => void;
 };
-
-type FilterProps = ComponentProps<"button"> & {
-  variant: "filter";
-  selected: boolean;
-  onSelect: () => void;
-};
-
-type InputProps = ComponentProps<"button"> & {
-  variant: "input";
-  removable: boolean;
-  onRemove: () => void;
-};
-
-type ChipItemProps = BaseProps | FilterProps | InputProps;
 
 const Chips = ({
   variant = "outlined",
@@ -36,25 +26,26 @@ const Chips = ({
 const ChipItem = ({
   variant = "assist",
   selected,
-  removable,
-  children,
-  onClick,
-  onRemove,
   onSelect,
+  removable,
+  onRemove,
+  children,
   ...props
 }: ChipItemProps) => {
   return (
     <button
       mui-chip-item={variant}
-      aria-pressed={selected}
+      aria-selected={variant === "filter" && selected}
       {...props}
       onClick={(e) => {
-        onClick?.(e);
+        props.onClick?.(e);
         onSelect?.(e);
       }}>
-      {selected && <Icon data-select name="check" />}
+      {variant === "filter" && selected && <Icon data-select name="check" />}
       {children}
-      {removable && <Icon data-close name="close" onClick={onRemove} />}
+      {variant === "input" && removable && (
+        <Icon data-close name="close" onClick={onRemove} />
+      )}
     </button>
   );
 };

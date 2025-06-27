@@ -32,7 +32,7 @@ const Slider = ({
     <div
       mui-slider=""
       data-size={size}
-      data-orientation={orientation}
+      aria-orientation={orientation}
       data-labeled={labeled && `${value}${LabelFormatter}`}
       style={{ "--value": cssValue() } as CSSProperties}>
       <input

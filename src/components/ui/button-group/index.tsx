@@ -36,7 +36,7 @@ const useButtonGroupContext = () => {
   const ctx = useContext(ButtonGroupContext);
   if (!ctx)
     throw new Error(
-      "Button Group component must be used within a Button Group provider"
+      "ButtonGroupItem must be used within a ButtonGroup component"
     );
 
   return ctx;
@@ -52,10 +52,9 @@ const ButtonGroup = ({
   ...props
 }: ButtonGroupProps) => {
   return (
-    <ButtonGroupContext.Provider
-      value={{ variant, disabled, width, asIcon, size }}>
+    <ButtonGroupContext value={{ variant, disabled, width, asIcon, size }}>
       <div mui-button-group={type} data-size={size} {...props} />
-    </ButtonGroupContext.Provider>
+    </ButtonGroupContext>
   );
 };
 
@@ -68,14 +67,25 @@ const ButtonGroupItem = ({
   ...props
 }: ButtonGroupItemProps) => {
   const ctx = useButtonGroupContext();
-  const Component = asIcon || ctx.asIcon ? IconButton : Button;
+
+  if (ctx.asIcon || asIcon) {
+    return (
+      <IconButton
+        mui-button-group-item=""
+        variant={(variant ?? ctx.variant) as IconButtonProps["variant"]}
+        disabled={disabled ?? ctx.disabled}
+        width={width ?? ctx.width}
+        size={ctx.size}
+        {...props}
+      />
+    );
+  }
 
   return (
-    <Component
+    <Button
       mui-button-group-item=""
-      variant={variant ?? ctx.variant}
+      variant={(variant ?? ctx.variant) as ButtonProps["variant"]}
       disabled={disabled ?? ctx.disabled}
-      width={width ?? ctx.width}
       size={ctx.size}
       target={target}
       {...props}

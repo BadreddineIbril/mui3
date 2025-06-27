@@ -7,6 +7,7 @@ import {
   createContext,
   type ComponentProps,
   type ReactElement,
+  type MouseEventHandler,
 } from "react";
 import Icon from "@/components/misc/icon";
 import IconButton from "@/components/ui/icon-button";
@@ -33,9 +34,7 @@ const SideSheetContext = createContext<{
 const useSideSheetContext = () => {
   const ctx = useContext(SideSheetContext);
   if (!ctx)
-    throw new Error(
-      "SideSheet component must be used within a SideSheet provider"
-    );
+    throw new Error("SideSheetItem must be used within a SideSheet component");
 
   return ctx;
 };
@@ -61,17 +60,20 @@ const SideSheet = ({
   }, [isOpen]);
 
   return (
-    <SideSheetContext.Provider value={{ isOpen, toggle, variant }}>
+    <SideSheetContext value={{ isOpen, toggle, variant }}>
       {children}
       {isOpen && variant === "modal" && (
         <div mui-side-sheet-overlay="" onClick={() => toggle(false)} />
       )}
-    </SideSheetContext.Provider>
+    </SideSheetContext>
   );
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const SideSheetTrigger = ({ children }: { children: ReactElement<any> }) => {
+const SideSheetTrigger = ({
+  children,
+}: {
+  children: ReactElement<{ onClick?: MouseEventHandler }>;
+}) => {
   const { isOpen, toggle } = useSideSheetContext();
 
   return cloneElement(children, { onClick: () => toggle(!isOpen) });
@@ -118,13 +120,14 @@ const SideSheetFooter = ({
   showDivider = false,
   ...props
 }: SideSheetFooterProps) => {
-  return (
-    <div mui-side-sheet-footer="" data-divider={showDivider} {...props} />
-  );
+  return <div mui-side-sheet-footer="" data-divider={showDivider} {...props} />;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const SideSheetClose = ({ children }: { children: ReactElement<any> }) => {
+const SideSheetClose = ({
+  children,
+}: {
+  children: ReactElement<{ onClick?: MouseEventHandler }>;
+}) => {
   const { toggle } = useSideSheetContext();
 
   return cloneElement(children, { onClick: () => toggle(false) });

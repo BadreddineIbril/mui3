@@ -27,8 +27,7 @@ const TabsContext = createContext<{
 
 const useTabsContext = () => {
   const ctx = useContext(TabsContext);
-  if (!ctx)
-    throw new Error("Tabs component must be used within a Tabs provider");
+  if (!ctx) throw new Error("TabsList must be used within a Tabs component");
 
   return ctx;
 };
@@ -45,9 +44,9 @@ const Tabs = ({
   });
 
   return (
-    <TabsContext.Provider value={{ activeTab, setTab }}>
+    <TabsContext value={{ activeTab, setTab }}>
       <div mui-tabs={variant} data-inline-icon={inlineIcon} {...props} />
-    </TabsContext.Provider>
+    </TabsContext>
   );
 };
 
@@ -93,7 +92,7 @@ const TabsTrigger = ({ value, onClick, ...props }: TabsTriggerProps) => {
     if (ref.current && activeTab.value === value) {
       setTab({ value, index: getTabIndex(ref.current) });
     }
-  }, [activeTab.value]);
+  }, []);
 
   return (
     <button

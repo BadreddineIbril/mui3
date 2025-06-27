@@ -3,12 +3,12 @@ import { createContext, useContext, type ComponentProps } from "react";
 import Button from "@/components/ui/button";
 
 type ButtonProps = ComponentProps<typeof Button>;
-type SegmentedButtonsProps = ComponentProps<"div"> & {
+type SplitButtonProps = ComponentProps<"div"> & {
   variant?: Exclude<ButtonProps["variant"], "text">;
   size?: ButtonProps["size"];
   disabled?: ButtonProps["disabled"];
 };
-type SegmentedButtonProps = ComponentProps<"button">;
+type SplitButtonItemProps = ComponentProps<"button">;
 
 const SplitButtonContext = createContext<{
   variant: Exclude<ButtonProps["variant"], "text">;
@@ -20,7 +20,7 @@ const useSplitButtonContext = () => {
   const ctx = useContext(SplitButtonContext);
   if (!ctx)
     throw new Error(
-      "Split Group component must be used within a Split Group provider"
+      "SplitButtonItem must be used within a SplitButton component"
     );
 
   return ctx;
@@ -31,15 +31,15 @@ const SplitButton = ({
   size = "xs",
   disabled,
   ...props
-}: SegmentedButtonsProps) => {
+}: SplitButtonProps) => {
   return (
-    <SplitButtonContext.Provider value={{ variant, size, disabled }}>
+    <SplitButtonContext value={{ variant, size, disabled }}>
       <div mui-split-button="" {...props} />
-    </SplitButtonContext.Provider>
+    </SplitButtonContext>
   );
 };
 
-const SplitButtonItem = ({ ...props }: SegmentedButtonProps) => {
+const SplitButtonItem = ({ ...props }: SplitButtonItemProps) => {
   const { variant, size, disabled } = useSplitButtonContext();
 
   return (

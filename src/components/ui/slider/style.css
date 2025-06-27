@@ -32,7 +32,7 @@
     --slider-radius: var(--radius-xl);
   }
 
-  &[data-orientation="horizontal"] {
+  &[aria-orientation="horizontal"] {
     width: fit-content;
 
     &::before {
@@ -70,7 +70,7 @@
     }
   }
 
-  &[data-orientation="vertical"] {
+  &[aria-orientation="vertical"] {
     rotate: 180deg;
     height: fit-content;
     writing-mode: vertical-lr;

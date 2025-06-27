@@ -1,7 +1,6 @@
 @import url("./_base/tokens.css");
 @import url("./layout/navigation.css");
 @import url("./layout/footer.css");
-@import url("./pages/doc.css");
 @import url("./pages/docs.css");
 @import url("./pages/home.css");
 @import url("./misc/shape.css");

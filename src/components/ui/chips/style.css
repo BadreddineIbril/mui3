@@ -31,7 +31,7 @@
     outline: 10px solid transparent;
     transition: var(--transition-standard-fast-effects);
 
-    &[aria-pressed="true"] {
+    &[aria-selected="true"] {
       border-color: transparent !important;
       color: var(--color-on-secondary-container);
       background-color: var(--color-secondary-container);
@@ -79,13 +79,14 @@
       }
     }
 
-    &:hover:not(:has(> [data-close]:hover), [aria-pressed="true"]) {
+    &:hover:not(:has(> [data-close]:hover), [aria-selected="true"]) {
       background-color: color-mix(in srgb, currentColor 8%, transparent);
     }
 
     &:active {
       background-image: var(--ripple-circle);
-      animation: button-ripple var(--transition-expressive-default-spatial) forwards;
+      animation: button-ripple var(--transition-expressive-default-spatial)
+        forwards;
     }
 
     &:focus-visible {
@@ -117,7 +118,7 @@
     [mui-chip-item] {
       box-shadow: var(--shadow-2);
 
-      &:hover:not(:has(> [data-close]:hover), [aria-pressed="true"]) {
+      &:hover:not(:has(> [data-close]:hover), [aria-selected="true"]) {
         box-shadow: var(--shadow-3);
       }
 
