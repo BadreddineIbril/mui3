@@ -20,6 +20,7 @@ import TABS_DEMO from "@/components/examples/tabs";
 import TOOLBAR_DEMO from "@/components/examples/toolbar";
 import TOOLTIP_DEMO from "@/components/examples/tooltip";
 import type { ComponentGroupDefinition } from "@/types/common";
+import SELECT_DEMO from "./select";
 
 const COMPONENT_GROUPS: ComponentGroupDefinition[] = [
   {
@@ -36,6 +37,7 @@ const COMPONENT_GROUPS: ComponentGroupDefinition[] = [
       SWITCH_DEMO,
       SLIDER_DEMO,
       CHIPS_DEMO,
+      SELECT_DEMO,
     ],
   },
   {

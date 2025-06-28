@@ -7,9 +7,7 @@
     outline-offset: -3px;
     outline: 3px solid transparent;
     color: var(--color-on-surface);
-    background-color: transparent;
     border-radius: var(--radius-xs);
-    border: 1px solid var(--color-outline);
     padding: var(--spacing-4) var(--spacing-16);
     display: flex;
     align-items: center;
@@ -20,13 +18,11 @@
       font: var(--font-body-lg);
     }
 
-    &:hover {
-      border-color: inherit;
-    }
-
-    &:focus {
-      border-color: transparent;
-      outline-color: var(--color-primary);
+    &[aria-expanded="true"] {
+      & > [mui-icon] {
+        rotate: 180deg;
+        color: var(--color-primary);
+      }
     }
 
     &:disabled {
@@ -35,7 +31,7 @@
         in srgb,
         var(--color-on-surface) 12%,
         transparent
-      );
+      ) !important;
     }
   }
 
@@ -67,6 +63,7 @@
       overflow: hidden;
       border-radius: var(--radius-xs);
       background-color: var(--color-surface-container);
+      box-shadow: var(--shadow-2);
       transition: padding-block var(--transition-standard-slow-spatial);
 
       [mui-select-option] {
@@ -100,6 +97,42 @@
           pointer-events: none;
           color: color-mix(in srgb, currentColor 12%, transparent);
         }
+      }
+    }
+  }
+
+  &[mui-select="outlined"] {
+    [mui-select-trigger] {
+      background-color: transparent;
+      border: 1px solid var(--color-outline);
+
+      &:hover {
+        border-color: inherit;
+      }
+
+      &:focus {
+        border-color: transparent;
+        outline-color: var(--color-primary);
+      }
+    }
+  }
+
+  &[mui-select="filled"] {
+    [mui-select-trigger] {
+      border: none;
+      border-end-end-radius: var(--spacing-0);
+      border-end-start-radius: var(--spacing-0);
+      border-block-end: 1px solid var(--color-outline);
+      background-color: var(--color-surface-container-high);
+
+      &:hover {
+        border-color: inherit;
+        background-color: var(--color-surface-container-highest);
+      }
+
+      &:focus {
+        border-color: var(--color-primary);
+        box-shadow: inset 0 -2px 0 0 var(--color-primary);
       }
     }
   }

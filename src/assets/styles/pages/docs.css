@@ -276,6 +276,10 @@
             & > [mui-divider="vertical"] {
               height: 300px;
             }
+
+            & > [mui-select] {
+              width: 300px;
+            }
           }
         }
       }

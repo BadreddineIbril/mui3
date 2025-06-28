@@ -7,11 +7,14 @@ import {
   useEffect,
   useContext,
   createContext,
+  isValidElement,
+  type ReactElement,
   type KeyboardEvent,
   type ComponentProps,
 } from "react";
 
 type SelectProps = ComponentProps<"div"> & {
+  variant?: "outlined" | "filled";
   disabled?: boolean;
   placeholder?: string;
 };
@@ -38,7 +41,13 @@ const useSelectContext = () => {
   return ctx;
 };
 
-const Select = ({ disabled, placeholder, children, ...props }: SelectProps) => {
+const Select = ({
+  variant = "outlined",
+  disabled,
+  placeholder,
+  children,
+  ...props
+}: SelectProps) => {
   const CLOSE_DELAY = 350;
   const ESC_KEY = "Escape";
   const ARROW_UP = "ArrowUp";
@@ -61,8 +70,10 @@ const Select = ({ disabled, placeholder, children, ...props }: SelectProps) => {
   }
 
   function getValue() {
-    return Children.toArray(children).find((c) => c.props.value === selected)
-      ?.props.children;
+    return Children.toArray(children).find(
+      (c): c is ReactElement<SelectOptionProps> =>
+        isValidElement<SelectOptionProps>(c) && c.props.value === selected
+    )?.props.children;
   }
 
   function onKeyDown(e: KeyboardEvent<HTMLDivElement>) {
@@ -107,15 +118,18 @@ const Select = ({ disabled, placeholder, children, ...props }: SelectProps) => {
   }, [selected, isOpen]);
 
   useEffect(() => {
-    const isDefault = Children.toArray(children).find((c) => c.props.selected);
+    const isDefault = Children.toArray(children).find(
+      (c): c is ReactElement<SelectOptionProps> =>
+        isValidElement<SelectOptionProps>(c) && Boolean(c.props.selected)
+    );
 
     if (isDefault) setSelected(isDefault.props.value);
   }, [children]);
 
   return (
-    <SelectContext.Provider
+    <SelectContext
       value={{ isOpen, isClosed, open, close, selected, setSelected }}>
-      <div mui-select="" {...props} aria-disabled={disabled}>
+      <div mui-select={variant} {...props} aria-disabled={disabled}>
         <button
           ref={triggerRef}
           mui-select-trigger=""
@@ -140,17 +154,17 @@ const Select = ({ disabled, placeholder, children, ...props }: SelectProps) => {
           </div>
         )}
       </div>
-    </SelectContext.Provider>
+    </SelectContext>
   );
 };
 
-const SelectOption = ({ ...props }: SelectOptionProps) => {
+const SelectOption = ({ value, ...props }: SelectOptionProps) => {
   const { selected, setSelected, close } = useSelectContext();
 
   function onSelect() {
-    if (selected === props.value) return;
+    if (selected === value) return;
 
-    setSelected(props.value);
+    setSelected(value);
     close();
   }
 
@@ -160,7 +174,7 @@ const SelectOption = ({ ...props }: SelectOptionProps) => {
       {...props}
       role="option"
       onClick={onSelect}
-      aria-selected={selected === props.value}
+      aria-selected={selected === value}
     />
   );
 };
