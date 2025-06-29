@@ -22,26 +22,28 @@ const TextField = ({
   suffix,
   supporting,
   variant = "outlined",
-  error,
+  error = false,
   errorText,
-  noSpinner,
+  noSpinner = false,
+  placeholder,
   ...props
 }: TextFieldProps) => {
   return (
-    <div mui-text-field={variant}>
-      {icon && <Icon mui-text-field-icon name={icon} />}
-      {prefix && <span mui-text-field-prefix>{prefix}</span>}
-      <input
-        mui-text-field-input=""
-        {...props}
-        placeholder={props.placeholder || " "}
-        data-no-spinner={noSpinner}
-        data-error={error}
-      />
-      <label mui-text-field-label="" htmlFor={props.id}>
-        {label}
+    <div mui-text-field-wrapper="">
+      <label mui-text-field={variant} data-error={error}>
+        {icon && <Icon mui-text-field-icon="" name={icon} />}
+        {prefix && <span mui-text-field-prefix="">{prefix}</span>}
+        <span mui-text-field-label="">
+          <span>{label}</span>
+        </span>
+        <input
+          mui-text-field-input=""
+          data-no-spinner={noSpinner}
+          {...props}
+          placeholder={placeholder || " "}
+        />
+        {suffix && <span mui-text-field-suffix="">{suffix}</span>}
       </label>
-      {suffix && <span mui-text-field-suffix="">{suffix}</span>}
       {((error && errorText) || supporting) && (
         <span mui-text-field-supporting="">
           {error && errorText ? errorText : supporting}

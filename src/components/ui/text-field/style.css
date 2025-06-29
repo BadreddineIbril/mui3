@@ -1,208 +1,272 @@
-[mui-text-field] {
+[mui-text-field-wrapper] {
+  --text-field-height: 56px;
+  --text-field-primary-color: var(--color-primary);
+  --text-field-border-color: var(--color-outline);
+
+  display: flex;
+  gap: var(--spacing-4);
+  flex-direction: column;
   width: fit-content;
-  position: relative;
-  color: var(--color-on-surface);
 
-  &[mui-text-field="outlined"] {
-    outline: 3px solid transparent;
-    outline-offset: -3px;
-    border-radius: var(--radius-xs);
-    border: 1px solid var(--color-outline);
-  }
+  [mui-text-field] {
+    z-index: 2;
+    display: flex;
+    position: relative;
+    height: var(--text-field-height);
+    padding-inline: var(--spacing-16);
 
-  &[mui-text-field="filled"] {
-    outline: none;
-    border-radius: var(--radius-xs) var(--radius-xs) 0 0;
-    border-block-end: 1px solid var(--color-outline);
-    background-color: var(--color-surface-container-highest);
-  }
+    &[data-error="true"] {
+      --text-field-primary-color: var(--color-error);
+      --text-field-border-color: var(--color-error);
 
-  &:has([data-error="true"]) {
-    border-color: var(--color-error);
+      [mui-text-field-label] {
+        color: var(--color-error);
+      }
 
-    [mui-text-field-label],
-    [mui-text-field-supporting] {
-      color: var(--color-error) !important;
-    }
-  }
-
-  &:has([mui-text-field-input]:disabled) {
-    color: color-mix(in srgb, currentColor 12%, transparent);
-    border-color: color-mix(in srgb, var(--color-on-surface) 12%, transparent);
-
-    [mui-text-field-label],
-    [mui-text-field-prefix],
-    [mui-text-field-suffix] {
-      color: color-mix(
-        in srgb,
-        var(--color-on-surface) 12%,
-        transparent
-      ) !important;
-    }
-  }
-
-  &:has([mui-text-field-input]:hover:not(:focus, :disabled)) {
-    border-color: inherit;
-
-    [mui-text-field-label] {
-      color: inherit;
+      & + [mui-text-field-supporting] {
+        color: var(--color-error);
+      }
     }
 
-    &[mui-text-field="filled"] {
-      background-color: color-mix(in srgb, currentColor 8%, transparent);
-    }
+    &[mui-text-field="outlined"] {
+      overflow: hidden;
+      border-radius: var(--radius-xs);
+      border: 1px solid var(--text-field-border-color);
+      border-block-start: none;
 
-    &:has([data-error="true"]) [mui-text-field-label] {
-      color: var(--color-on-error-container) !important;
-    }
-  }
-
-  &:has([mui-text-field-input]:focus) {
-    border-color: transparent;
-    outline-color: var(--color-primary);
-
-    &[mui-text-field="filled"] {
       &::before {
         content: "";
         width: 100%;
-        height: 3px;
         position: absolute;
-        inset-block-end: 0;
-        background-color: var(--color-primary);
+        border-block-start: 1px solid var(--text-field-border-color);
+        border-radius: var(--radius-xs) var(--radius-xs) 0 0;
       }
-    }
 
-    &:has([data-error="true"]) {
-      outline-color: var(--color-error);
-    }
-  }
+      [mui-text-field-label] {
+        inset: 0;
+        width: 100%;
+        display: flex;
+        align-items: start;
+        position: absolute;
 
-  &:has([mui-text-field-input]:focus),
-  &:has([mui-text-field-input]:not(:placeholder-shown)) {
-    [mui-text-field-suffix] {
-      visibility: visible;
+        &::before,
+        &::after {
+          content: "";
+          display: block;
+          width: var(--spacing-16);
+          height: var(--spacing-16);
+          border-block-start: 1px solid var(--text-field-border-color);
+        }
+
+        &::after {
+          flex: 2;
+        }
+
+        & > span {
+          position: relative;
+          transform: translateY(-50%);
+        }
+      }
     }
 
     &[mui-text-field="filled"] {
+      border-block-end: 1px solid var(--text-field-border-color);
+      background-color: var(--color-surface-container-highest);
+      border-radius: var(--radius-xs) var(--radius-xs) 0 0;
+
       [mui-text-field-label] {
-        background-color: transparent;
-        transform: translateY(calc(-100% - var(--spacing-8)));
+        & > span {
+          position: absolute;
+          inset-inline-start: var(--spacing-16);
+          inset-block-start: calc(var(--text-field-height) / 4);
+        }
       }
-    }
-  }
 
-  [mui-text-field-input] {
-    height: 56px;
-    border: none;
-    outline: none;
-    font: var(--font-body-lg);
-    color: inherit;
-    background-color: transparent;
-    padding: var(--spacing-4) var(--spacing-16);
-    transition: var(--transition-standard-default-effects);
+      [mui-text-field-input] {
+        margin-block-start: var(--spacing-16);
+      }
 
-    &::placeholder {
-      color: var(--color-on-surface-variant);
-    }
-
-    &:required + [mui-text-field-label]:after {
-      content: " *";
-    }
-
-    &[type="number"]::-webkit-inner-spin-button,
-    &[type="number"]::-webkit-outer-spin-button {
-      margin: 0;
-      -webkit-appearance: none;
-    }
-
-    &:focus,
-    &:not(:placeholder-shown) {
-      & + [mui-text-field-label] {
-        font: var(--font-body-sm);
-        color: var(--color-primary);
-        /* TODO: bg should be dynamic */
-        background-color: var(--color-on-primary);
-        inset-inline-start: var(--spacing-12);
-        transform: translateY(
-          calc(-100% - var(--spacing-16) - var(--spacing-2))
-        );
+      [mui-text-field-prefix],
+      [mui-text-field-suffix] {
+        align-items: end;
+        padding-block-end: var(--spacing-8);
       }
     }
 
-    &:not(:focus) {
+    [mui-text-field-input] {
+      z-index: 2;
+      width: 100%;
+      border: none;
+      outline: none;
+      font: var(--font-body-lg);
+      color: var(--color-on-surface);
+      background-color: transparent;
+      border-radius: var(--radius-none);
+      caret-color: var(--text-field-primary-color);
+
       &::placeholder {
-        visibility: hidden;
-      }
-
-      & + [mui-text-field-label] {
         color: var(--color-on-surface-variant);
       }
+
+      &[data-no-spinner="true"] {
+        &[type="number"]::-webkit-inner-spin-button,
+        &[type="number"]::-webkit-outer-spin-button {
+          margin: 0;
+          -webkit-appearance: none;
+        }
+      }
+    }
+
+    [mui-text-field-label] {
+      user-select: none;
+      font: var(--font-body-lg);
+      color: var(--color-on-surface-variant);
+
+      & > span {
+        inset-block-start: calc(var(--text-field-height) / 2);
+        transition: var(--transition-standard-default-effects);
+      }
+    }
+
+    [mui-text-field-icon],
+    [mui-text-field-prefix],
+    [mui-text-field-suffix] {
+      display: flex;
+      align-items: center;
+      color: var(--color-on-surface-variant);
+
+      &:not([mui-text-field-icon]) {
+        visibility: hidden;
+      }
+    }
+
+    &:hover {
+      cursor: text;
+
+      --text-field-border-color: var(--color-on-surface);
+
+      &[data-error="true"] {
+        --text-field-border-color: var(--color-on-error-container);
+
+        [mui-text-field-label] {
+          color: var(--color-on-error-container);
+        }
+      }
+
+      &[mui-text-field="filled"] {
+        background-color: color-mix(in srgb, currentColor 8%, transparent);
+      }
+    }
+
+    &:has(
+        [mui-text-field-icon],
+        [mui-text-field-prefix],
+        [mui-text-field-suffix]
+      ) {
+      gap: var(--spacing-2);
+      color: var(--color-on-surface-variant);
+
+      &:has([mui-text-field-icon]) {
+        padding-inline: var(--spacing-12);
+
+        [mui-text-field-icon] {
+          margin-inline-end: var(--spacing-12);
+        }
+
+        &[mui-text-field="outlined"] {
+          [mui-text-field-label] {
+            &::before {
+              width: var(--spacing-48);
+            }
+          }
+        }
+
+        &[mui-text-field="filled"] {
+          [mui-text-field-label] {
+            & > span {
+              inset-inline-start: calc(var(--spacing-48) + var(--spacing));
+            }
+          }
+        }
+      }
+    }
+
+    &:has([mui-text-field-input][required]) {
+      [mui-text-field-label] > span {
+        &::after {
+          content: " *";
+        }
+      }
+    }
+
+    &:has(
+        [mui-text-field-input]:focus,
+        [mui-text-field-input]:not(:placeholder-shown)
+      ) {
+      overflow: visible;
+
+      [mui-text-field-prefix],
+      [mui-text-field-suffix] {
+        visibility: visible;
+      }
+
+      [mui-text-field-label] {
+        gap: var(--spacing-4);
+        font: var(--font-body-sm);
+      }
+
+      &[mui-text-field="outlined"] {
+        &::before {
+          content: none;
+        }
+
+        [mui-text-field-label] > span {
+          inset: 0;
+        }
+      }
+
+      &[mui-text-field="filled"] {
+        [mui-text-field-label] {
+          height: fit-content;
+
+          & > span {
+            inset-block-start: var(--spacing-8);
+          }
+        }
+      }
+    }
+
+    &:has([mui-text-field-input]:focus) {
+      border-color: var(--text-field-primary-color);
+
+      [mui-text-field-label] {
+        color: var(--text-field-primary-color);
+      }
+
+      &[mui-text-field="outlined"] {
+        box-shadow: -2px 0 0 0 var(--text-field-primary-color),
+          2px 0 0 0 var(--text-field-primary-color),
+          inset 0 -2px 0 0 var(--text-field-primary-color);
+
+        [mui-text-field-label] {
+          &::after,
+          &::before {
+            border-color: inherit;
+            width: var(--spacing-16);
+            box-shadow: inset 0 2px 0 var(--text-field-primary-color);
+          }
+        }
+      }
+
+      &[mui-text-field="filled"] {
+        box-shadow: inset 0 -2px 0 0 var(--text-field-primary-color);
+      }
     }
   }
 
-  [mui-text-field-icon],
-  [mui-text-field-label],
   [mui-text-field-supporting] {
-    position: absolute;
-  }
-
-  [mui-text-field-icon] {
-    z-index: -1;
-    width: 40px;
-    height: 40px;
-    color: var(--color-on-surface-variant);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    inset-block-start: 50%;
-    inset-inline-start: var(--spacing-8);
-    transform: translateY(-50%);
-
-    & + [mui-text-field-input] {
-      padding-inline-start: calc(40px + var(--spacing-8));
-    }
-
-    & ~ [mui-text-field-label] {
-      inset-inline-start: calc(40px + var(--spacing-8));
-    }
-  }
-
-  [mui-text-field-label] {
-    font: var(--font-body-lg);
-    padding-inline: var(--spacing-4);
-    inset-inline-start: var(--spacing-12);
-    inset-block-start: 50%;
-    pointer-events: none;
-    transform: translateY(-50%);
-    transition: var(--transition-standard-default-effects);
-  }
-
-  [mui-text-field-prefix],
-  [mui-text-field-suffix] {
-    visibility: hidden;
-    font: var(--font-body-lg);
-    padding-inline: var(--spacing-16) 0;
-    color: var(--color-on-surface-variant);
-
-    &[mui-text-field-suffix] {
-      padding-inline: 0 var(--spacing-16);
-    }
-
-    & + [mui-text-field-input] {
-      padding-inline-start: var(--spacing-4);
-    }
-
-    &:has(+ [mui-text-field-input]:focus),
-    &:has(+ [mui-text-field-input]:not(:placeholder-shown)) {
-      visibility: visible;
-    }
-  }
-
-  [mui-text-field-supporting] {
-    width: fit-content;
     font: var(--font-body-sm);
-    color: var(--color-on-surface-variant);
-    inset-inline: var(--spacing-16);
-    inset-block-start: calc(100% + var(--spacing-4));
+    color: var(--color-outline);
+    padding-inline: var(--spacing-16);
   }
 }
