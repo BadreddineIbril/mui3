@@ -58,8 +58,13 @@
           border-block-start: 1px solid var(--text-field-border-color);
         }
 
+        &::before {
+          border-start-start-radius: var(--radius-xs);
+        }
+
         &::after {
           flex: 2;
+          border-start-end-radius: var(--radius-xs);
         }
 
         & > span {
@@ -140,7 +145,7 @@
       }
     }
 
-    &:hover {
+    &:hover:has([mui-text-field-input]:not(:disabled)) {
       cursor: text;
 
       --text-field-border-color: var(--color-on-surface);
@@ -184,7 +189,7 @@
         &[mui-text-field="filled"] {
           [mui-text-field-label] {
             & > span {
-              inset-inline-start: calc(var(--spacing-48) + var(--spacing));
+              inset-inline-start: var(--spacing-48);
             }
           }
         }
@@ -196,6 +201,34 @@
         &::after {
           content: " *";
         }
+      }
+    }
+
+    &:has([mui-text-field-input][disabled]) {
+      --text-field-border-color: color-mix(
+        in srgb,
+        var(--color-on-surface) 38%,
+        transparent
+      );
+
+      & > * {
+        color: color-mix(in srgb, currentColor 38%, transparent);
+      }
+
+      &:has([mui-text-field-input]:not(:focus, :not(:placeholder-shown))) {
+        &::before {
+          inset-inline-start: 0;
+        }
+        [mui-text-field-label] {
+          &::after,
+          &::before {
+            border-color: transparent;
+          }
+        }
+      }
+
+      &[mui-text-field="filled"] {
+        background-color: color-mix(in srgb, currentColor 4%, transparent);
       }
     }
 
