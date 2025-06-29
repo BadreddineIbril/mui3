@@ -19,8 +19,9 @@ import SWITCH_DEMO from "@/components/examples/switch";
 import TABS_DEMO from "@/components/examples/tabs";
 import TOOLBAR_DEMO from "@/components/examples/toolbar";
 import TOOLTIP_DEMO from "@/components/examples/tooltip";
-import SELECT_DEMO from "./select";
-import TEXT_FIELD_DEMO from "./text-field";
+import SELECT_DEMO from "@/components/examples/select";
+import TEXT_FIELD_DEMO from "@/components/examples/text-field";
+import LIST_DEMO from "@/components/examples/list";
 import type { ComponentGroupDefinition } from "@/types/common";
 
 const COMPONENT_GROUPS: ComponentGroupDefinition[] = [
@@ -65,7 +66,7 @@ const COMPONENT_GROUPS: ComponentGroupDefinition[] = [
   {
     id: "layout",
     label: "Layout",
-    components: [BADGE_DEMO, CARD_DEMO, DIVIDER_DEMO],
+    components: [LIST_DEMO, BADGE_DEMO, CARD_DEMO, DIVIDER_DEMO],
   },
 ];
 

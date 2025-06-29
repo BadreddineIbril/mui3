@@ -8,6 +8,7 @@ import Divider from "@/components/ui/divider";
 
 type ListProps = ComponentProps<"div">;
 type ListItemProps = ComponentProps<"button"> & {
+  label: string;
   overline?: string;
   supportingText?: string;
   trailingSupportingText?: string;
@@ -53,6 +54,7 @@ const List = ({ ...props }: ListProps) => (
 
 const ListItem = ({
   children,
+  label,
   overline,
   supportingText,
   trailingSupportingText,
@@ -65,13 +67,14 @@ const ListItem = ({
       tabIndex={props.onClick ? 0 : -1}
       role={props.onClick ? "button" : "listitem"}>
       <div mui-list-item-content="">
-        {overline && <span mui-list-item-overline="">{overline}</span>}
         <div mui-list-item-label="">
-          {children}
+          {overline && <span mui-list-item-overline="">{overline}</span>}
+          {label}
           {supportingText && (
             <span mui-list-item-supporting="">{supportingText}</span>
           )}
         </div>
+        {children}
       </div>
       {trailingSupportingText && (
         <span mui-list-item-trailing-supporting="">
