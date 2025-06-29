@@ -1,4 +1,4 @@
-[mui-page="home"] {
+[mui-page*="home"] {
   .hero-area {
     display: flex;
     gap: var(--spacing-48);
