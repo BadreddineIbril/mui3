@@ -15,6 +15,7 @@ export interface GetStartedDefinition {
     label: string;
     description: string;
     content: () => JSX.Element;
+    references?: { label: string; value: string }[];
   }[];
 }
 

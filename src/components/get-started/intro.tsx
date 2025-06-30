@@ -27,7 +27,7 @@ const Intro = () => {
           </p>
         </article>
       </div>
-      <div className="intro-box">
+      <div className="intro-box" id="open-source">
         <div className="heading">
           <h2 className="title">Open source</h2>
         </div>
@@ -48,7 +48,7 @@ const Intro = () => {
           </p>
         </article>
       </div>
-      <div className="intro-box">
+      <div className="intro-box" id="syntax">
         <div className="heading">
           <h2 className="title">Syntax</h2>
         </div>
@@ -72,7 +72,7 @@ const Intro = () => {
           </p>
         </article>
       </div>
-      <div className="intro-box">
+      <div className="intro-box" id="beta">
         <div className="heading">
           <h2 className="title">Beta</h2>
         </div>

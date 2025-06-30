@@ -25,8 +25,12 @@ const Controls = () => {
   return (
     <aside className="controls-area">
       <div className="info-box">
-        <h2 className="title">{info[component ? "component" : "getStarted"].label}</h2>
-        <p className="description">{info[component ? "component" : "getStarted"].description}</p>
+        <h2 className="title">
+          {info[component ? "component" : "getStarted"].label}
+        </h2>
+        <p className="description">
+          {info[component ? "component" : "getStarted"].description}
+        </p>
       </div>
       <div className="links-box">
         <Tabs defaultTab={component ? "components" : "get-started"} inlineIcon>

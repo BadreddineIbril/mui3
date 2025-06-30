@@ -19,7 +19,7 @@ const Installation = () => {
           </p>
         </article>
       </div>
-      <div className="installation-box">
+      <div className="installation-box" id="create-a-project">
         <div className="heading">
           <h2 className="title">Create a project</h2>
         </div>
@@ -37,7 +37,7 @@ const Installation = () => {
           </div>
         </article>
       </div>
-      <div className="installation-box">
+      <div className="installation-box" id="alias">
         <div className="heading">
           <h2 className="title">Alias</h2>
         </div>
@@ -78,7 +78,7 @@ const Installation = () => {
           </div>
         </article>
       </div>
-      <div className="installation-box">
+      <div className="installation-box" id="icons">
         <div className="heading">
           <h2 className="title">Icons</h2>
         </div>
@@ -112,7 +112,7 @@ const Installation = () => {
           </div>
         </article>
       </div>
-      <div className="installation-box">
+      <div className="installation-box" id="font">
         <div className="heading">
           <h2 className="title">Font</h2>
         </div>
@@ -133,7 +133,7 @@ const Installation = () => {
           </div>
         </article>
       </div>
-      <div className="installation-box">
+      <div className="installation-box" id="tokens">
         <div className="heading">
           <h2 className="title">Tokens</h2>
         </div>

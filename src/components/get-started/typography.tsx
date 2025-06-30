@@ -24,6 +24,7 @@ const Typography = () => {
       {VARIANTS.map((variant) => (
         <div
           key={variant.id}
+          id={variant.id}
           className="variant"
           style={
             { "--variant-font": `var(--font-${variant.id})` } as CSSProperties

@@ -516,6 +516,20 @@
           .title {
             font: var(--font-headline-md);
           }
+
+          .description {
+            text-wrap: auto;
+          }
+        }
+
+        [mui-get-started="colors"] {
+          .preview {
+            grid-template-columns: repeat(2, 1fr);
+
+            .variant {
+              font: var(--font-body-sm);
+            }
+          }
         }
       }
     }

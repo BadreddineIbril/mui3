@@ -24,7 +24,10 @@
       text-align: center;
 
       .title {
-        display: ruby;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-16);
         font: var(--font-display-lg);
 
         & > .tag {

@@ -21,6 +21,22 @@ const OnThisPage = () => {
       <div className="guide-box">
         <h3 className="title">On this page</h3>
         <div className="actions">
+          <div className="links">
+            {info.getStarted.references && (
+              <ul>
+                {info.getStarted.references.map((ref) => (
+                  <li>
+                    <a
+                      mui-button={isActiveLink(ref.value) ? "filled" : "text"}
+                      data-size="sm"
+                      href={`#${ref.value}`}>
+                      {ref.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
           {component && (
             <div className="links">
               <h4 className="subtitle">Usage</h4>

@@ -1,5 +1,4 @@
 import type { CSSProperties } from "react";
-import Shape, { type ShapeVariant } from "@/components/misc/shape";
 
 const Colors = () => {
   const COLORS = [
@@ -172,7 +171,7 @@ const Colors = () => {
   return (
     <div mui-get-started="colors">
       {COLORS.map((color) => (
-        <div key={color.id} className="colors-box">
+        <div key={color.id} className="colors-box" id={color.id}>
           <div className="heading">
             <h2 className="title">{color.label}</h2>
             <p className="description">{color.description}</p>
@@ -189,7 +188,6 @@ const Colors = () => {
                 }>
                 <div className="info">
                   <span>{variant.name}</span>
-                  <Shape variant={color.symbol as ShapeVariant} />
                 </div>
               </div>
             ))}
