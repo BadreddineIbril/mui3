@@ -1,4 +1,6 @@
 [mui-code-block] {
+  overflow: auto;
+
   [mui-code-block-label] {
     height: 52px;
     display: flex;
@@ -17,6 +19,7 @@
   }
 
   [mui-code-block-output] {
+    overflow: auto;
     min-height: 100px;
     position: relative;
     background-color: var(--color-surface-container);
@@ -33,7 +36,6 @@
     background-size: 50px 50px;
 
     pre {
-      white-space: pre-wrap;
       padding: var(--spacing-24);
 
       [data-line] {

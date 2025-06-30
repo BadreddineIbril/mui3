@@ -12,7 +12,7 @@
   }
 
   &[mui-toolbar="floating"] {
-    width: fit-content;
+    width: max-content;
     gap: var(--spacing-4);
     padding: var(--spacing-8);
     box-shadow: var(--shadow-3);

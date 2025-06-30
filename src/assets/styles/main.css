@@ -32,6 +32,10 @@ body {
   & > main {
     flex: 2;
     padding-inline: 7%;
+
+    @media (max-width: 1024px) {
+      padding-inline: var(--spacing-24);
+    }
   }
 }
 
