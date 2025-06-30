@@ -76,4 +76,26 @@
       justify-content: center;
     }
   }
+
+  @media (max-width: 1024px) {
+    .hero-area {
+      .content {
+        width: auto;
+      }
+    }
+  }
+
+  @media (max-width: 769px) {
+    .hero-area {
+      .content {
+        .title {
+          font: var(--font-display-md);
+        }
+
+        .subtitle {
+          font: var(--font-body-lg);
+        }
+      }
+    }
+  }
 }

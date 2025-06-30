@@ -15,6 +15,7 @@ import IconButton from "@/components/ui/icon-button";
 type SideSheetProps = ComponentProps<"div"> & {
   variant?: "standard" | "modal";
   open?: boolean;
+  position?: "start" | "end";
 };
 type SideSheetContentProps = ComponentProps<"div">;
 type SideSheetHeaderProps = Omit<ComponentProps<"div">, "children"> & {
@@ -29,6 +30,7 @@ const SideSheetContext = createContext<{
   isOpen: boolean;
   toggle: (state: boolean) => void;
   variant: "standard" | "modal";
+  position: "start" | "end";
 } | null>(null);
 
 const useSideSheetContext = () => {
@@ -42,6 +44,7 @@ const useSideSheetContext = () => {
 const SideSheet = ({
   children,
   variant = "standard",
+  position = "end",
   ...props
 }: SideSheetProps) => {
   const ESC_KEY = "Escape";
@@ -60,7 +63,7 @@ const SideSheet = ({
   }, [isOpen]);
 
   return (
-    <SideSheetContext value={{ isOpen, toggle, variant }}>
+    <SideSheetContext value={{ isOpen, toggle, variant, position }}>
       {children}
       {isOpen && variant === "modal" && (
         <div mui-side-sheet-overlay="" onClick={() => toggle(false)} />
@@ -80,10 +83,15 @@ const SideSheetTrigger = ({
 };
 
 const SideSheetContent = ({ ...props }: SideSheetContentProps) => {
-  const { isOpen, variant } = useSideSheetContext();
+  const { isOpen, variant, position } = useSideSheetContext();
 
   return (
-    <div mui-side-sheet-content={variant} aria-hidden={!isOpen} {...props} />
+    <div
+      mui-side-sheet-content={variant}
+      data-position={position}
+      aria-hidden={!isOpen}
+      {...props}
+    />
   );
 };
 

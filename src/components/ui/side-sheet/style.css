@@ -3,7 +3,6 @@
 
   z-index: 9999;
   position: fixed;
-  inset-inline-end: 0;
   inset-block-start: 0;
   color: var(--color-on-surface-variant);
   background-color: var(--color-surface-container);
@@ -19,13 +18,31 @@
   }
 
   &[mui-side-sheet-content="modal"] {
-    border-start-start-radius: var(--radius-lg);
-    border-end-start-radius: var(--radius-lg);
     border-inline-start: 1px solid var(--color-outline-variant);
+
+    &[data-position="start"] {
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    }
+
+    &[data-position="end"] {
+      border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    }
   }
 
-  &[aria-hidden="true"] {
-    inset-inline-end: calc(var(--side-sheet-width) * -1);
+  &[data-position="start"] {
+    inset-inline-start: 0;
+
+    &[aria-hidden="true"] {
+      inset-inline-start: calc(var(--side-sheet-width) * -1);
+    }
+  }
+
+  &[data-position="end"] {
+    inset-inline-end: 0;
+
+    &[aria-hidden="true"] {
+      inset-inline-end: calc(var(--side-sheet-width) * -1);
+    }
   }
 
   [mui-side-sheet-header] {

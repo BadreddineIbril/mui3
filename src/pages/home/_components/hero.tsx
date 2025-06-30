@@ -20,7 +20,7 @@ const Hero = () => {
         </p>
       </div>
       <div className="actions">
-        <Button href="/docs">
+        <Button size="md" rounded href="/docs">
           Get Started <Icon name="arrow_forward" />
         </Button>
       </div>

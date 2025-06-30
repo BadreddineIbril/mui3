@@ -16,7 +16,7 @@ const Hero = () => (
       <p className="subtitle">This page could not be found</p>
     </div>
     <div className="actions">
-      <Button href="/">
+      <Button size="md" rounded href="/">
         <Icon name="arrow_back" /> Back to home
       </Button>
     </div>
