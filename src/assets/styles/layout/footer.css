@@ -2,9 +2,15 @@
   text-align: center;
   font: var(--font-label-lg);
   color: var(--color-on-surface-variant);
-  padding-block-end: calc(var(--spacing-48) * 2);
+  padding-block-end: var(--spacing-48);
 
   & > a {
     color: var(--color-primary);
+  }
+}
+
+&:has([mui-page="docs"]) {
+  [mui-layout="footer"] {
+    padding-block-end: calc(var(--spacing-48) * 2);
   }
 }

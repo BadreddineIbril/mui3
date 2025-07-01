@@ -12,7 +12,7 @@ const ButtonGroupVariant = () => {
   return (
     <div className="demo column">
       {variants.map((variant) => (
-        <ButtonGroup variant={variant}>
+        <ButtonGroup key={variant} variant={variant}>
           <ButtonGroupItem>
             <Icon name="directions_car" />
             Start

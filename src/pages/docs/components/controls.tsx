@@ -33,7 +33,7 @@ const Controls = () => {
         </p>
       </div>
       <div className="links-box">
-        <Tabs defaultTab={component ? "components" : "get-started"} inlineIcon>
+        <Tabs value={component ? "components" : "get-started"} inlineIcon>
           <TabsList>
             <TabsTrigger value="get-started" onClick={() => navigate("/docs")}>
               <Icon name="explore" /> Get Started
@@ -47,7 +47,7 @@ const Controls = () => {
           <TabsContent value="get-started">
             <ul className="group">
               {GET_STARTED_LINKS.map((item) => (
-                <>
+                <div className="sub-group" key={item.id}>
                   <li className="title">{item.label}</li>
                   <ul className="components">
                     {item.links.map((link) => (
@@ -59,20 +59,21 @@ const Controls = () => {
                             (pathname === "/docs" && link.id === "")
                               ? "filled"
                               : "text"
-                          }>
+                          }
+                          rounded>
                           {link.label}
                         </Button>
                       </li>
                     ))}
                   </ul>
-                </>
+                </div>
               ))}
             </ul>
           </TabsContent>
           <TabsContent value="components">
             <ul className="group">
               {COMPONENT_GROUPS.map((group) => (
-                <>
+                <div className="sub-group" key={group.id}>
                   <li key={group.id} className="title">
                     {group.label}
                   </li>
@@ -83,13 +84,14 @@ const Controls = () => {
                           href={`/docs/components/${component.id}`}
                           variant={
                             isActiveLink(component.id) ? "filled" : "text"
-                          }>
+                          }
+                          rounded>
                           {component.label}
                         </Button>
                       </li>
                     ))}
                   </ul>
-                </>
+                </div>
               ))}
             </ul>
           </TabsContent>

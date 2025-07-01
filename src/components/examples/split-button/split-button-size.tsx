@@ -13,7 +13,7 @@ const SplitButtonSize = () => {
   return (
     <div className="demo column">
       {sizes.map((size) => (
-        <SplitButton size={size}>
+        <SplitButton key={size} size={size}>
           <SplitButtonItem>
             <Icon name="edit" />
             Label

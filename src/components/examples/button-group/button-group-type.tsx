@@ -7,7 +7,7 @@ const ButtonGroupType = () => {
   return (
     <div className="demo column">
       {types.map((type) => (
-        <ButtonGroup type={type}>
+        <ButtonGroup key={type} type={type}>
           <ButtonGroupItem>
             <Icon name="directions_car" />
             Start

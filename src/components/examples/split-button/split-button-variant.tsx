@@ -12,7 +12,7 @@ const SplitButtonVariant = () => {
   return (
     <div className="demo">
       {variants.map((variant) => (
-        <SplitButton variant={variant}>
+        <SplitButton key={variant} variant={variant}>
           <SplitButtonItem>
             <Icon name="edit" />
             Label

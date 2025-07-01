@@ -45,6 +45,11 @@
           justify-content: start;
         }
 
+        .sub-group {
+          display: grid;
+          gap: var(--spacing-8);
+        }
+
         .sub-links {
           padding-inline-start: var(--spacing-16);
           border-inline-start: 1px dashed var(--color-outline-variant);

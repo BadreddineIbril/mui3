@@ -56,7 +56,8 @@
         }
       }
 
-      .group {
+      .group,
+      .sub-group {
         display: grid;
         gap: var(--spacing-24);
       }

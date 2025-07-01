@@ -13,7 +13,7 @@ const ButtonGroupSize = () => {
   return (
     <div className="demo column">
       {sizes.map((size) => (
-        <ButtonGroup size={size}>
+        <ButtonGroup key={size} size={size}>
           <ButtonGroupItem>
             <Icon name="bluetooth" />
           </ButtonGroupItem>

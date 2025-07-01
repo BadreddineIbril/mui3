@@ -69,11 +69,11 @@ const Navigation = () => {
               <h3 className="group-title">Get Started</h3>
               <div className="links">
                 {GET_STARTED_LINKS.map((group) => (
-                  <>
+                  <div className="sub-group" key={group.id}>
                     <h4 className="link-title">{group.label}</h4>
                     <div className="sub-links">
                       {group.links.map((link) => (
-                        <SideSheetClose>
+                        <SideSheetClose key={link.id}>
                           <Button
                             key={link.id}
                             variant={
@@ -89,7 +89,7 @@ const Navigation = () => {
                         </SideSheetClose>
                       ))}
                     </div>
-                  </>
+                  </div>
                 ))}
               </div>
             </div>
@@ -97,7 +97,7 @@ const Navigation = () => {
               <h3 className="group-title">Components</h3>
               <div className="links">
                 {COMPONENT_GROUPS.map((group) => (
-                  <>
+                  <div className="sub-group" key={group.id}>
                     <h4 className="link-title">{group.label}</h4>
                     <div className="sub-links">
                       {group.components.map((comp) => (
@@ -113,7 +113,7 @@ const Navigation = () => {
                         </SideSheetClose>
                       ))}
                     </div>
-                  </>
+                  </div>
                 ))}
               </div>
             </div>

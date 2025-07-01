@@ -13,6 +13,7 @@ import {
 type TabState = { index: number; value: string };
 type TabsProps = ComponentProps<"div"> & {
   variant?: "primary" | "secondary";
+  value?: string;
   defaultTab?: string;
   inlineIcon?: boolean;
 };
@@ -23,17 +24,19 @@ type TabsContentProps = ComponentProps<"div"> & { value: string };
 const TabsContext = createContext<{
   activeTab: TabState;
   setTab: (tab: TabState) => void;
+  registerTrigger: (value: string, index: number) => void;
 } | null>(null);
 
 const useTabsContext = () => {
   const ctx = useContext(TabsContext);
-  if (!ctx) throw new Error("TabsList must be used within a Tabs component");
+  if (!ctx) throw new Error("Must be used within Tabs component");
 
   return ctx;
 };
 
 const Tabs = ({
   variant = "primary",
+  value,
   defaultTab = "",
   inlineIcon,
   ...props
@@ -42,9 +45,20 @@ const Tabs = ({
     index: 0,
     value: defaultTab,
   });
+  const triggers = useRef<Map<string, number>>(new Map());
+
+  function registerTrigger(value: string, index: number) {
+    triggers.current.set(value, index);
+  }
+
+  useEffect(() => {
+    if (value && value !== activeTab.value) {
+      setTab({ index: triggers.current.get(value) ?? 0, value });
+    }
+  }, [value]);
 
   return (
-    <TabsContext value={{ activeTab, setTab }}>
+    <TabsContext value={{ activeTab, setTab, registerTrigger }}>
       <div mui-tabs={variant} data-inline-icon={inlineIcon} {...props} />
     </TabsContext>
   );
@@ -80,18 +94,16 @@ const TabsList = ({ ...props }: TabsListProps) => {
   );
 };
 
-const TabsTrigger = ({ value, onClick, ...props }: TabsTriggerProps) => {
+const TabsTrigger = ({ value, ...props }: TabsTriggerProps) => {
   const ref = useRef<HTMLButtonElement>(null);
-  const { activeTab, setTab } = useTabsContext();
+  const { activeTab, setTab, registerTrigger } = useTabsContext();
 
-  function getTabIndex(tab: HTMLButtonElement) {
+  function getIndex(tab: HTMLButtonElement) {
     return Array.from(tab.parentNode?.children || []).indexOf(tab);
   }
 
   useEffect(() => {
-    if (ref.current && activeTab.value === value) {
-      setTab({ value, index: getTabIndex(ref.current) });
-    }
+    if (ref.current) registerTrigger(value, getIndex(ref.current));
   }, []);
 
   return (
@@ -104,10 +116,10 @@ const TabsTrigger = ({ value, onClick, ...props }: TabsTriggerProps) => {
       tabIndex={activeTab.value === value ? 0 : -1}
       onClick={(e) => {
         setTab({
-          index: getTabIndex(e.currentTarget),
+          index: getIndex(e.currentTarget),
           value,
         });
-        onClick?.(e);
+        props.onClick?.(e);
       }}
     />
   );

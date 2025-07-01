@@ -18,7 +18,7 @@ const NavigationRailAlignment = () => {
   return (
     <div className="demo">
       {alignments.map((alignment) => (
-        <Rail>
+        <Rail key={alignment}>
           <RailHeader>
             <RailMenu>
               <Icon name="menu" />
