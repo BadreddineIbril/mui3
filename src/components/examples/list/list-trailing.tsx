@@ -20,6 +20,7 @@ const ListTrailing = () => {
           <ListItemTrailing type="icon" value="person" />
         </ListItem>
       </List>
+
       <List>
         <ListItem
           label="Nike"
@@ -37,6 +38,7 @@ const ListTrailing = () => {
           <ListItemTrailing type="switch" value="x-1" />
         </ListItem>
       </List>
+
       <List>
         <ListItem
           label="Nike"
@@ -54,6 +56,7 @@ const ListTrailing = () => {
           <ListItemTrailing type="checkbox" value="x-2" />
         </ListItem>
       </List>
+
       <List>
         <ListItem
           label="Nike"

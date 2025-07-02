@@ -64,7 +64,7 @@
       border-radius: var(--radius-xs);
       background-color: var(--color-surface-container);
       box-shadow: var(--shadow-2);
-      transition: padding-block var(--transition-standard-slow-spatial);
+      transition: padding-block var(--transition-standard-fast-spatial);
 
       [mui-select-option] {
         border: none;

@@ -61,6 +61,14 @@
       padding: var(--spacing-24);
     }
   }
+
+  @media (max-width: 769px) {
+    width: calc(100% - var(--spacing-48));
+
+    [mui-dialog-content] {
+      width: inherit !important;
+    }
+  }
 }
 
 [mui-dialog-overlay] {

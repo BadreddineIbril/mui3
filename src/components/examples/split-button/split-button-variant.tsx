@@ -10,7 +10,7 @@ const SplitButtonVariant = () => {
   ];
 
   return (
-    <div className="demo">
+    <div className="demo wrap">
       {variants.map((variant) => (
         <SplitButton key={variant} variant={variant}>
           <SplitButtonItem>

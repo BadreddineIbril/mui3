@@ -5,7 +5,9 @@ const CardDemo = () => {
   return (
     <div className="demo">
       <Card>
-        <h2 className="title">Play relaxing songs</h2>
+        <h2 className="title">
+          Play <br /> relaxing songs
+        </h2>
         <p className="description">From your recent favorites</p>
         <div className="actions">
           <Button rounded>Get started</Button>

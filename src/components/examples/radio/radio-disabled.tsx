@@ -3,8 +3,8 @@ import Radio from "@/components/ui/radio";
 const RadioDisabled = () => {
   return (
     <div className="demo">
-      <Radio defaultChecked disabled />
-      <Radio disabled />
+      <Radio name="animal" defaultChecked disabled />
+      <Radio name="animal" disabled />
     </div>
   );
 };

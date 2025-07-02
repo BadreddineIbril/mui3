@@ -20,6 +20,7 @@ const ListLeading = () => {
           <ListItemLeading type="monogram" value="X" />
         </ListItem>
       </List>
+
       <List>
         <ListItem
           label="Nike"
@@ -37,6 +38,7 @@ const ListLeading = () => {
           <ListItemLeading type="icon" value="person" />
         </ListItem>
       </List>
+
       <List>
         <ListItem
           label="Nike"
@@ -54,6 +56,7 @@ const ListLeading = () => {
           <ListItemLeading type="image" value="https://shorturl.at/RZN7E" />
         </ListItem>
       </List>
+
       <List>
         <ListItem
           label="Nike"
@@ -71,6 +74,7 @@ const ListLeading = () => {
           <ListItemLeading type="switch" value="x-1" />
         </ListItem>
       </List>
+
       <List>
         <ListItem
           label="Nike"
@@ -88,6 +92,7 @@ const ListLeading = () => {
           <ListItemLeading type="checkbox" value="x-2" />
         </ListItem>
       </List>
+
       <List>
         <ListItem
           label="Nike"

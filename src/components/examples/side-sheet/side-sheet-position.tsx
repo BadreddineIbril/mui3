@@ -9,22 +9,18 @@ import {
   SideSheetTrigger,
 } from "@/components/ui/side-sheet";
 
-const SideSheetVariant = () => {
-  const variants: Array<"standard" | "modal"> = ["standard", "modal"];
+const SideSheetPosition = () => {
+  const positions: Array<"start" | "end"> = ["start", "end"];
 
   return (
     <div className="demo wrap">
-      {variants.map((variant) => (
-        <SideSheet key={variant} variant={variant}>
+      {positions.map((position) => (
+        <SideSheet key={position} position={position} variant="modal">
           <SideSheetTrigger>
-            <Button variant="outlined">Click to open ({variant})</Button>
+            <Button variant="outlined">Click to open ({position})</Button>
           </SideSheetTrigger>
           <SideSheetContent>
-            <SideSheetHeader
-              headline="Title"
-              close={variant === "modal"}
-              back={variant === "standard"}
-            />
+            <SideSheetHeader headline="Title" back />
             <SideSheetBody>My content</SideSheetBody>
             <SideSheetFooter
               style={{ display: "flex", gap: "12px" }}
@@ -43,4 +39,4 @@ const SideSheetVariant = () => {
   );
 };
 
-export default SideSheetVariant;
+export default SideSheetPosition;

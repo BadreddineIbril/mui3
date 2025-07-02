@@ -11,6 +11,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const ComponentsPlayground = () => {
   const { component } = useParams();
+  const { content } = findComponent(component as ComponentIdDefinition);
+
+  const TREE = [
+    { label: "components/", icon: "folder_open" },
+    { label: "ui/", icon: "folder_open" },
+    { label: `${component}/`, icon: "folder_open" },
+  ];
 
   function isInstallation(id: string) {
     return id === "installation";
@@ -20,8 +27,6 @@ const ComponentsPlayground = () => {
     return typeof code === "object";
   }
 
-  const { content } = findComponent(component as ComponentIdDefinition);
-
   return (
     <>
       {content.map(({ id, label, preview, code }) => (
@@ -29,6 +34,16 @@ const ComponentsPlayground = () => {
           {label && (
             <div className="heading">
               <h2 className="title">{label}</h2>
+              {isInstallation(id) && (
+                <div className="tree">
+                  {TREE.map((dir, i) => (
+                    <span key={i} className="dir">
+                      <Icon name={dir.icon} />
+                      {dir.label}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           )}
           <Tabs

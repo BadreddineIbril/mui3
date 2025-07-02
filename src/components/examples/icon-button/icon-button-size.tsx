@@ -3,7 +3,7 @@ import IconButton from "@/components/ui/icon-button";
 
 const IconButtonSize = () => {
   return (
-    <div className="demo">
+    <div className="demo wrap">
       <IconButton size="xs" variant="tonal">
         <Icon name="play_arrow" />
       </IconButton>

@@ -81,4 +81,11 @@
       color: inherit;
     }
   }
+
+  @media (max-width: 769px) {
+    &:not([mui-snackbar*="center"]) {
+      inset-inline-end: auto !important;
+      inset-inline-start: auto !important;
+    }
+  }
 }

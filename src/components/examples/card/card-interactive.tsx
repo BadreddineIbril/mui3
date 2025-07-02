@@ -2,7 +2,7 @@ import { Card, CardActionArea } from "@/components/ui/card";
 
 const CardInteractive = () => {
   return (
-    <div className="demo">
+    <div className="demo wrap">
       <Card variant="elevated">
         <CardActionArea>Elevated</CardActionArea>
       </Card>

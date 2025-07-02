@@ -2,7 +2,7 @@ import Fab from "@/components/ui/fab";
 
 const FabSize = () => {
   return (
-    <div className="demo">
+    <div className="demo column">
       <Fab size="sm" variant="soft-secondary">
         Small
       </Fab>

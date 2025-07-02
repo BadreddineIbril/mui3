@@ -11,7 +11,7 @@ const TOOLTIP_DEMO: DemoDefinition = {
       id: "overview",
       label: "Overview",
       preview: TooltipDemo,
-      code: 'import Button from "@/components/ui/button";\nimport { Tooltip, TooltipContent } from "@/components/ui/tooltip";\n \nexport function TooltipDemo() {\n    return (\n        <div className="demo">\n            <Tooltip>\n                <Button variant="outlined">Hover or focus</Button>\n                <TooltipContent>Plain tooltip</TooltipContent>\n            </Tooltip>\n        </div>\n    );\n};',
+      code: 'import Button from "@/components/ui/button";\nimport { Tooltip, TooltipContent } from "@/components/ui/tooltip";\n \nconst TooltipDemo = () => {\n    return (\n        <div className="demo">\n            <Tooltip>\n                <Button variant="outlined">Hover or focus</Button>\n                <TooltipContent>Plain tooltip</TooltipContent>\n            </Tooltip>\n        </div>\n    );\n};\n \nexport default TooltipDemo;',
     },
     {
       id: "installation",
@@ -25,7 +25,7 @@ const TOOLTIP_DEMO: DemoDefinition = {
       id: "rich",
       label: "Rich",
       preview: TooltipRich,
-      code: `import Button from "@/components/ui/button";\nimport {\n    Tooltip,\n    TooltipAction,\n    TooltipContent,\n    TooltipFooter,\n    TooltipSubhead,\n    TooltipSupporting,\n} from "@/components/ui/tooltip";\n \nexport function TooltipRich() {\n    return (\n        <div className="demo">\n            <Tooltip>\n                <Button variant="outlined">Hover or focus</Button>\n                <TooltipContent>\n                    <TooltipSubhead>Rich tooltip</TooltipSubhead>\n                    <TooltipSupporting>\n                        Rich tooltips bring attention to a particular element of feature\n                        that warrants the user's focus.\n                    </TooltipSupporting>\n                    <TooltipFooter>\n                        <TooltipAction>Action</TooltipAction>\n                    </TooltipFooter>\n                </TooltipContent>\n            </Tooltip>\n        </div>\n    );\n};`,
+      code: `import Button from "@/components/ui/button";\nimport {\n    Tooltip,\n    TooltipAction,\n    TooltipContent,\n    TooltipFooter,\n    TooltipSubhead,\n    TooltipSupporting,\n} from "@/components/ui/tooltip";\n \nconst TooltipRich = () => {\n    return (\n        <div className="demo">\n            <Tooltip>\n                <Button variant="outlined">Hover or focus</Button>\n                <TooltipContent>\n                    <TooltipSubhead>Rich tooltip</TooltipSubhead>\n                    <TooltipSupporting>\n                        Rich tooltips bring attention to a particular element of feature\n                        that warrants the user's focus.\n                    </TooltipSupporting>\n                    <TooltipFooter>\n                        <TooltipAction>Action</TooltipAction>\n                    </TooltipFooter>\n                </TooltipContent>\n            </Tooltip>\n        </div>\n    );\n};\n \nexport default TooltipRich;`,
     },
   ],
 };

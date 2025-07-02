@@ -9,7 +9,7 @@ const ToolbarOrientation = () => {
   ];
 
   return (
-    <div className="demo">
+    <div className="demo wrap">
       {orientations.map((orientation) => (
         <Toolbar key={orientation} orientation={orientation} variant="floating">
           <IconButton>

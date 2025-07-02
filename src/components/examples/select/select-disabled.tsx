@@ -2,7 +2,7 @@ import { Select, SelectOption } from "@/components/ui/select";
 
 const SelectDisabled = () => {
   return (
-    <div className="demo">
+    <div className="demo wrap">
       <Select placeholder="Select your favorite fruit...">
         <SelectOption value="apple">Apple</SelectOption>
         <SelectOption disabled value="carrot">

@@ -6,7 +6,7 @@ import {
   RailHeader,
   RailItem,
   RailMenu,
-} from "@/components/ui/navigation/rail";
+} from "@/components/ui/navigation-rail";
 
 const NavigationRailDemo = () => {
   return (

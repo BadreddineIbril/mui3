@@ -1,7 +1,7 @@
 import Icon from "@/components/misc/icon";
 import IconButton from "@/components/ui/icon-button";
 
-const IconButtonWithIcon = () => {
+const IconButtonWidth = () => {
   return (
     <div className="demo">
       <IconButton width="narrow" variant="outlined">
@@ -17,4 +17,4 @@ const IconButtonWithIcon = () => {
   );
 };
 
-export default IconButtonWithIcon;
+export default IconButtonWidth;

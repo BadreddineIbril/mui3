@@ -4,7 +4,7 @@ const SelectVariant = () => {
   const variants: Array<"outlined" | "filled"> = ["outlined", "filled"];
 
   return (
-    <div className="demo">
+    <div className="demo wrap">
       {variants.map((variant) => (
         <Select
           key={variant}

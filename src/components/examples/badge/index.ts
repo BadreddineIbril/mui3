@@ -12,7 +12,7 @@ const BADGE_DEMO: DemoDefinition = {
       id: "overview",
       label: "Overview",
       preview: BadgeDemo,
-      code: 'import Icon from "@/components/misc/icon";\nimport IconButton from "@/components/ui/icon-button";\nimport Badge from "@/components/ui/badge";\n \nexport function BadgeDemo() {\n    return (\n        <div className="demo">\n            <IconButton>\n                <Badge>\n                    <Icon name="groups" />\n                </Badge>\n            </IconButton>\n        </div>\n    );\n};',
+      code: 'import Icon from "@/components/misc/icon";\nimport IconButton from "@/components/ui/icon-button";\nimport Badge from "@/components/ui/badge";\n \nconst BadgeDemo = () => {\n    return (\n        <div className="demo">\n            <IconButton>\n                <Badge>\n                    <Icon name="groups" />\n                </Badge>\n            </IconButton>\n        </div>\n    );\n};\n \nexport default BadgeDemo;',
     },
     {
       id: "installation",
@@ -26,7 +26,7 @@ const BADGE_DEMO: DemoDefinition = {
       id: "size",
       label: "Size",
       preview: BadgeSize,
-      code: 'import Icon from "@/components/misc/icon";\nimport IconButton from "@/components/ui/icon-button";\nimport Badge from "@/components/ui/badge";\n \nexport function BadgeSize() {\n    return (\n        <div className="demo">\n            <IconButton width="wide">\n                <Badge size="sm">\n                    <Icon name="groups" />\n                </Badge>\n            </IconButton>\n            <IconButton width="wide">\n                <Badge size="lg" label="999+">\n                    <Icon name="mail" />\n                </Badge>\n            </IconButton>\n        </div>\n    );\n};',
+      code: 'import Icon from "@/components/misc/icon";\nimport IconButton from "@/components/ui/icon-button";\nimport Badge from "@/components/ui/badge";\n \nconst BadgeSize = () => {\n    return (\n        <div className="demo">\n            <IconButton width="wide">\n                <Badge size="sm">\n                    <Icon name="groups" />\n                </Badge>\n            </IconButton>\n            <IconButton width="wide">\n                <Badge size="lg" label="999+">\n                    <Icon name="mail" />\n                </Badge>\n            </IconButton>\n        </div>\n    );\n};\n \nexport default BadgeSize;',
     },
   ],
 };
