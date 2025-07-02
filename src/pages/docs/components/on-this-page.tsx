@@ -25,8 +25,8 @@ const OnThisPage = () => {
             <div className="links">
               {info.getStarted.references && (
                 <ul>
-                  {info.getStarted.references.map((ref) => (
-                    <li>
+                  {info.getStarted.references.map((ref, i) => (
+                    <li key={i}>
                       <a
                         mui-button={isActiveLink(ref.value) ? "filled" : "text"}
                         data-rounded="true"

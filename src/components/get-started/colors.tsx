@@ -179,6 +179,7 @@ const Colors = () => {
           <div className="preview">
             {color.scheme.map((variant) => (
               <div
+                key={variant.id}
                 className="variant"
                 style={
                   {
