@@ -33,11 +33,13 @@
 
     .links-box {
       flex: 2;
-      overflow: scroll;
+      overflow-y: scroll;
       display: grid;
       gap: var(--spacing-16);
       border-radius: var(--radius-lg);
       background-color: var(--color-surface-container);
+      scrollbar-color: var(--color-surface-container-highest) transparent;
+      scrollbar-width: thin;
 
       ul {
         display: grid;
@@ -310,6 +312,11 @@
 
             & > [mui-tabs] {
               width: 500px;
+
+              [mui-tabs-content] {
+                text-align: center;
+                padding: var(--spacing-12);
+              }
             }
 
             & > [mui-toolbar] {
