@@ -7,6 +7,8 @@ import {
 } from "@material/material-color-utilities";
 import type { HexColor, Theme } from "@/types/context";
 
+const SEED_COLOR: string = "#9f86ff";
+
 const SCHEME_KEYS: (keyof Scheme)[] = [
   "background",
   "onBackground",
@@ -81,7 +83,7 @@ function applyTheme(color: HexColor, theme: Theme = getTheme()): void {
 }
 
 function getPrimary() {
-  return (localStorage.getItem("mui-primary") || "#121212") as HexColor;
+  return (localStorage.getItem("mui-primary") || SEED_COLOR) as HexColor;
 }
 
 function getTheme() {
