@@ -1,8 +1,12 @@
 {
-  "name": "mui-3-expressive-react",
+  "name": "mui3",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.0-beta.1",
   "type": "module",
+  "author": {
+    "name": "badreddine ibril",
+    "url": "https://x.com/badr_ibril"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
