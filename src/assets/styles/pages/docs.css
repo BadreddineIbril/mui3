@@ -467,6 +467,12 @@
               color: var(--color-on-secondary-container);
               background-color: var(--color-secondary-container);
             }
+
+            .resources {
+              display: grid;
+              gap: var(--spacing-12);
+              padding-inline-start: var(--spacing-24);
+            }
           }
         }
       }
@@ -611,6 +617,10 @@
           .description {
             text-wrap: auto;
           }
+        }
+
+        .content {
+          text-align: start !important;
         }
 
         [mui-get-started="colors"] {

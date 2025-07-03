@@ -22,8 +22,11 @@ const Intro = () => {
             MUI 3 is a lightweight, open source, no third party dependencies,
             and no build system drama. Just grab your component, drop in your{" "}
             <small>index.tsx</small> and <small>style.css</small>, and you're
-            off. Kind of like <a href="https://ui.shadcn.com/">shadcn/ui</a>,
-            but pure.
+            off. Kind of like{" "}
+            <a href="https://ui.shadcn.com/" target="_blank">
+              shadcn/ui
+            </a>
+            , but pure.
           </p>
         </article>
       </div>
@@ -87,6 +90,33 @@ const Intro = () => {
             bit by bit, depending on how hard they are, and how loud you ask for
             them.
           </p>
+        </article>
+      </div>
+      <div className="intro-box" id="beta">
+        <div className="heading">
+          <h2 className="title">Resources</h2>
+        </div>
+        <article className="content">
+          <p>If you're curious about the folks behind the original DS:</p>
+          <ul className="resources">
+            <li>
+              <a href="https://m3.material.io/" target="_blank">
+                Material Design 3 Showcase
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.figma.com/community/file/1035203688168086460/material-3-design-kit"
+                target="_blank">
+                Material 3 Design Kit
+              </a>
+            </li>
+            <li>
+              <a href="https://material-web.dev/" target="_blank">
+                Material Web
+              </a>
+            </li>
+          </ul>
         </article>
       </div>
     </div>

@@ -51,7 +51,7 @@ const Installation = () => {
           <div className="guide">
             <CodeBlock
               label="tsconfig.json"
-              code={`{\n    "files": [],\n    "references": [\n        {\n            "path": "./tsconfig.app.json"\n        },\n        {\n            "path": "./tsconfig.node.json"\n        }\n    ],\n    "compilerOptions": {\n        "baseUrl": ".",\n        "paths": {\n            "@/*": ["./src/*"]\n        }\n    }\n}`}
+              code={`{\n    "files": [],\n    "references": [\n        {\n            "path": "./tsconfig.app.json"\n        },\n        {\n            "path": "./tsconfig.node.json"\n        }\n    ],\n    // ...\n    "compilerOptions": {\n        "baseUrl": ".",\n        "paths": {\n            "@/*": ["./src/*"]\n        }\n    }\n    // ...\n}`}
             />
             <CodeBlock
               label="tsconfig.app.json"

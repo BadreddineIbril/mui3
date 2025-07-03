@@ -19,6 +19,7 @@ const GET_STARTED_LINKS: GetStartedDefinition[] = [
           { label: "Open Source", value: "open-source" },
           { label: "Syntax", value: "syntax" },
           { label: "Beta", value: "beta" },
+          { label: "Resources", value: "resources" },
         ],
       },
       {
