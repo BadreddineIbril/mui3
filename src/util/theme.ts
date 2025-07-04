@@ -1,4 +1,4 @@
-import { toKebab } from "@/util/helpers";
+import { setFavicon, toKebab } from "@/util/helpers";
 import {
   argbFromHex,
   hexFromArgb,
@@ -80,6 +80,8 @@ function applyTheme(color: HexColor, theme: Theme = getTheme()): void {
   )};\n}`;
   localStorage.setItem("mui-primary", color);
   localStorage.setItem("mui-theme", theme);
+
+  setFavicon();
 }
 
 function getPrimary() {
