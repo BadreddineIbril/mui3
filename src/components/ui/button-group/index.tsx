@@ -63,7 +63,6 @@ const ButtonGroupItem = ({
   disabled,
   width,
   asIcon,
-  target = "_self",
   ...props
 }: ButtonGroupItemProps) => {
   const ctx = useButtonGroupContext();
@@ -87,7 +86,6 @@ const ButtonGroupItem = ({
       variant={(variant ?? ctx.variant) as ButtonProps["variant"]}
       disabled={disabled ?? ctx.disabled}
       size={ctx.size}
-      target={target}
       {...props}
     />
   );
