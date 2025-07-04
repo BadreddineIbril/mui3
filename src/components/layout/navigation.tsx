@@ -140,10 +140,16 @@ const Navigation = () => {
         <ButtonGroupItem aria-label="theme" onClick={toggleTheme} width="wide">
           <Icon name={theme === "light" ? "dark_mode" : "light_mode"} />
         </ButtonGroupItem>
-        <ButtonGroupItem aria-label="github">
+        <ButtonGroupItem
+          href="https://github.com/BadreddineIbril/mui3"
+          target="_blank"
+          aria-label="github">
           <GithubIcon />
         </ButtonGroupItem>
-        <ButtonGroupItem aria-label="X">
+        <ButtonGroupItem
+          href="https://x.com/badr_ibril"
+          target="_blank"
+          aria-label="x">
           <XIcon />
         </ButtonGroupItem>
       </ButtonGroup>
