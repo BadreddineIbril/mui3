@@ -8,21 +8,19 @@ const Intro = () => {
               Material Design 3
             </a>{" "}
             hit different. It brought back expressive colors and a real sense of
-            feel. But here's the thing, there was no real web version. A few
-            half-baked attempts with{" "}
+            feel. But here's the thing, there was no real web version. Some{" "}
             <a
               href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components"
               target="_blank">
               Web Components
             </a>{" "}
-            existed, but nothing modern or easy to use. So I decided to build it
-            myself.
+            versions existed, but they were either outdated or too clunky to
+            use. So I decided to build it myself.
           </p>
           <p>
-            MUI 3 is a lightweight, open source, no third party dependencies,
-            and no build system drama. Just grab your component, drop in your{" "}
-            <small>index.tsx</small> and <small>style.css</small>, and you're
-            off. Kind of like{" "}
+            MUI3 is a lightweight, open source set of native components, no
+            third party dependencies. Drop them into your project and start
+            building. Kind of like{" "}
             <a href="https://ui.shadcn.com/" target="_blank">
               shadcn/ui
             </a>

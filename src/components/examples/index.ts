@@ -26,22 +26,32 @@ import type { ComponentGroupDefinition } from "@/types/common";
 
 const COMPONENT_GROUPS: ComponentGroupDefinition[] = [
   {
-    id: "form",
-    label: "Form",
+    id: "actions",
+    label: "Actions",
     components: [
       BUTTON_DEMO,
       ICON_BUTTON_DEMO,
       FAB_DEMO,
       BUTTON_GROUP_DEMO,
       SPLIT_BUTTON_DEMO,
+    ],
+  },
+  {
+    id: "selection",
+    label: "Selection",
+    components: [
       RADIO_DEMO,
       CHECKBOX_DEMO,
       SWITCH_DEMO,
       SLIDER_DEMO,
       CHIPS_DEMO,
-      TEXT_FIELD_DEMO,
       SELECT_DEMO,
     ],
+  },
+  {
+    id: "text-inputs",
+    label: "Text Inputs",
+    components: [TEXT_FIELD_DEMO],
   },
   {
     id: "navigation",
@@ -54,19 +64,20 @@ const COMPONENT_GROUPS: ComponentGroupDefinition[] = [
     ],
   },
   {
-    id: "modals",
-    label: "Modals",
-    components: [SIDE_SHEET_DEMO, DIALOG_DEMO],
+    id: "containment",
+    label: "Containment",
+    components: [
+      LIST_DEMO,
+      DIALOG_DEMO,
+      SIDE_SHEET_DEMO,
+      CARD_DEMO,
+      DIVIDER_DEMO,
+    ],
   },
   {
-    id: "feedback",
-    label: "Feedback",
-    components: [SNACKBAR_DEMO, TOOLTIP_DEMO],
-  },
-  {
-    id: "layout",
-    label: "Layout",
-    components: [LIST_DEMO, BADGE_DEMO, CARD_DEMO, DIVIDER_DEMO],
+    id: "communication",
+    label: "Communication",
+    components: [BADGE_DEMO, SNACKBAR_DEMO, TOOLTIP_DEMO],
   },
 ];
 

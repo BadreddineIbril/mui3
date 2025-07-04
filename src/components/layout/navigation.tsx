@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useTheme } from "@/contexts";
 import Icon from "@/components/misc/icon";
+import Logo from "@/components/misc/logo";
 import XIcon from "@/assets/icons/x";
 import GithubIcon from "@/assets/icons/github";
 import {
@@ -13,7 +14,6 @@ import {
 } from "@/components/ui/side-sheet";
 import Button from "@/components/ui/button";
 import { ButtonGroup, ButtonGroupItem } from "@/components/ui/button-group";
-import MaterialDesignIcon from "@/assets/icons/material-design";
 import GET_STARTED_LINKS from "@/components/get-started";
 import COMPONENT_GROUPS from "@/components/examples";
 import type { ComponentIdDefinition } from "@/types/demo";
@@ -23,7 +23,7 @@ const Navigation = () => {
   const { theme, toggleTheme } = useTheme();
 
   const LINKS = [
-    { icon: <MaterialDesignIcon />, href: "/" },
+    { icon: <Logo />, href: "/" },
     { label: "Docs", href: "/docs" },
     { label: "Components", href: "/docs/components/button" },
     { label: "Examples", href: "/examples" },
