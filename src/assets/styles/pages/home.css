@@ -23,12 +23,21 @@
       gap: var(--spacing-24);
       text-align: center;
 
+      &:has([mui-logo]) {
+        gap: var(--spacing-0);
+      }
+
       .title {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: var(--spacing-16);
         font: var(--font-display-lg);
+
+        [mui-logo] {
+          color: var(--color-primary);
+          margin-inline-end: calc(var(--spacing-16) * -2);
+        }
 
         & > .tag {
           width: fit-content;
@@ -91,8 +100,18 @@
   @media (max-width: 769px) {
     .hero-area {
       .content {
+        &:has([mui-logo]) {
+          gap: var(--spacing-8);
+        }
+
         .title {
           font: var(--font-display-md);
+
+          [mui-logo] {
+            width: 80px;
+            height: 80px;
+            margin-inline-end: calc(var(--spacing-16) * -1.8);
+          }
         }
 
         .subtitle {

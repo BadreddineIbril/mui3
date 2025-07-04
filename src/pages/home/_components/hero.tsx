@@ -1,4 +1,5 @@
 import Icon from "@/components/misc/icon";
+import Logo from "@/components/misc/logo";
 import Button from "@/components/ui/button";
 
 const Hero = () => {
@@ -6,7 +7,8 @@ const Hero = () => {
     <section className="hero-area">
       <div className="content">
         <div className="title">
-          Material{" "}
+          <Logo size="lg" />
+          aterial{" "}
           <div className="tag">
             UI 3 <span />
             <span />
