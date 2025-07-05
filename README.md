@@ -19,6 +19,10 @@
 
 Docs available at http://mui3.com/docs.
 
+## Beta
+
+[MUI3](http://mui3.com/) is still in beta, so expect a few bugs here and there. If you spot anything, or have ideas for improvements, feel free to open an issue.
+
 ## License
 
 Licensed under the [MIT license](https://github.com/BadreddineIbril/mui3/blob/main/LICENCE.md).
