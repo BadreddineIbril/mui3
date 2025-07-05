@@ -4,18 +4,12 @@ const Intro = () => {
       <div className="intro-box">
         <article className="content">
           <p>
+            I loved what{" "}
             <a href="https://m3.material.io" target="_blank">
               Material Design 3
             </a>{" "}
-            hit different. It brought back expressive colors and a real sense of
-            feel. But here's the thing, there was no real web version. Some{" "}
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components"
-              target="_blank">
-              Web Components
-            </a>{" "}
-            versions existed, but they were either outdated or too clunky to
-            use. So I decided to build it myself.
+            introduced, but using it on the web? Not easy. The few options out
+            there weren't practical. <br /> So I decided to build it myself.
           </p>
           <p>
             MUI3 is a lightweight, open source set of native components, no
@@ -80,8 +74,13 @@ const Intro = () => {
         <article className="content">
           <p>
             MUI3 is still in beta, so expect a few bugs here and there. If you
-            spot anything, or have ideas for improvements, feel free to open an
-            issue.
+            spot anything, or have ideas for improvements, feel free to{" "}
+            <a
+              href="https://github.com/BadreddineIbril/mui3/issues"
+              target="_blank">
+              open an issue
+            </a>
+            .
           </p>
           <p>
             Not every Material Design 3 component is here yet. I'm adding them

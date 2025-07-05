@@ -2,7 +2,7 @@ import Button from "@/components/ui/button";
 
 const ButtonVariant = () => {
   return (
-    <div className="demo">
+    <div className="demo wrap">
       <Button variant="elevated">Elevated</Button>
       <Button>Filled</Button>
       <Button variant="tonal">Tonal</Button>
