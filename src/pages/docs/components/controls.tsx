@@ -45,10 +45,10 @@ const Controls = () => {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="get-started">
-            <ul className="group">
+            <div className="group">
               {GET_STARTED_LINKS.map((item) => (
                 <div className="sub-group" key={item.id}>
-                  <li className="title">{item.label}</li>
+                  <div className="title">{item.label}</div>
                   <ul className="components">
                     {item.links.map((link) => (
                       <li key={link.id}>
@@ -68,15 +68,15 @@ const Controls = () => {
                   </ul>
                 </div>
               ))}
-            </ul>
+            </div>
           </TabsContent>
           <TabsContent value="components">
-            <ul className="group">
+            <div className="group">
               {COMPONENT_GROUPS.map((group) => (
                 <div className="sub-group" key={group.id}>
-                  <li key={group.id} className="title">
+                  <div key={group.id} className="title">
                     {group.label}
-                  </li>
+                  </div>
                   <ul className="components">
                     {group.components.map((component, i) => (
                       <li key={i}>
@@ -93,7 +93,7 @@ const Controls = () => {
                   </ul>
                 </div>
               ))}
-            </ul>
+            </div>
           </TabsContent>
         </Tabs>
       </div>

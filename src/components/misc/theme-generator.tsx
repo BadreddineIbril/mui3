@@ -27,8 +27,8 @@ const ThemeGenerator = () => {
       <Toolbar variant="floating" type="vibrant">
         <input
           type="color"
-          name="theme"
           value={color}
+          aria-label="theme color"
           onChange={(e) => setColor(e.currentTarget.value as HexColor)}
         />
         <div className="info">

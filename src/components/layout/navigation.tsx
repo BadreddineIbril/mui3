@@ -130,7 +130,8 @@ const Navigation = () => {
             key={i}
             href={link.href}
             variant={isActive(link.href) ? "filled" : "tonal"}
-            rounded={isActive(link.href)}>
+            rounded={isActive(link.href)}
+            aria-label={link.icon && "mui3"}>
             {link.icon || link.label}
           </ButtonGroupItem>
         ))}
