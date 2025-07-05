@@ -6,7 +6,7 @@ const Footer = () => {
         Badreddine Ibril
       </a>
       . The source code is available on{" "}
-      <a href="#" target="_blank">
+      <a href="https://github.com/BadreddineIbril/mui3" target="_blank">
         Github
       </a>
       .
